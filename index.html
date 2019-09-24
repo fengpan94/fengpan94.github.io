@@ -195,6 +195,111 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/09/24/高等数理统计0绪论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/24/高等数理统计0绪论/" class="post-title-link" itemprop="url">高等数理统计-绪论</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-24 21:31:31 / 修改时间：21:39:31" itemprop="dateCreated datePublished" datetime="2019-09-24T21:31:31+08:00">2019-09-24</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>文中有一些概念另附加了个人理解，欢迎指正</p>
+<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p>内容主要参考茆诗松、王静龙、濮晓龙老师的《高等数理统计(第二版)》，另外参考书包括韦博成老师的《参数统计教程》，学习该书的内容不需要测度论方面的知识；陈希孺老师的《高等数理统计学》，这是本非常好的书，当然也是非常难学难懂的；邵军老师的《Mathematical Statistics》荆炳义老师的《Advanced Mathematical Statistics》，这两本英文书尤其是绍军老师的书内容非常丰富，有很多新的理论知识。</p>
+<p>在前面的基础阶段侧重点主要还是《高等数理统计(第二版)》，难度适中。</p>
+<p>还是与高等概率论同样的问题：</p>
+<p><strong>什么是随机变量？</strong></p>
+<p>由概率空间$(\Omega,\mathfrak{F},\mathbb{P})$到实数空间$(R,\mathbb{B},m)$的可测映射$X$就是<strong>随机变量(random variable,r.v.)*</strong></p>
+<p>其中可测映射:$X^{-1}(\mathbb{B})=\{\omega\in\Omega,X(\omega)\in\mathbb{B}\}\in\mathfrak{F}$</p>
+<p>其中$\Omega$称为<strong>样本空间</strong>，$\mathfrak{F}$称为事件域，它是一个$\sigma$域.$\mathbb{P}$为概率测度$(\mathbb{P}(\Omega)=1)$，$\mathbb{B}$是$Borel$域，表示$R$中所有开集(就是开区间)全体产生的$\sigma$域。</p>
+<p>数理统计关心样本的概率分布，与概率论不同，概率论中当测度发生变化，实空间上的分布就会发生变化，变来变去的是测度。而在数理统计上，我们工作的<strong>终极目标是确定样本的概率分布</strong>，通过样本来推断总体的分布情况。</p>
+<p>按照《高等数理统计(第二版)》书本的设置，共分六章，分别是基本概念、点估计、假设检验、区间估计、统计决策理论与Bayes分析、统计计算。现大致说一下每一章的基本内容与关键知识点，以后的内容基本上围绕此展开，另外额外加的内容会开专题来讲。</p>
+<h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><p>统计结构（很多最基本的概念，需完全牢记）</p>
+<p>常用分布</p>
+<p>统计量及其分布（及其近似分布）</p>
+<p>充分统计量</p>
+<p>完备族</p>
+<h2 id="第二章-点估计"><a href="#第二章-点估计" class="headerlink" title="第二章 点估计"></a>第二章 点估计</h2><p>估计与优良性（即什么是好估计？准确、高效、富含信息量）</p>
+<p>信息不等式（是度量尺子的尺子）</p>
+<p>矩估计（Moment）</p>
+<p>极大似然估计</p>
+<p>最小二乘估计</p>
+<p>(*)同变估计</p>
+<p>稳健估计（Robust）与概率有关的统计量 比 与概率无关的统计量更稳健</p>
+<h2 id="第三章-假设检验"><a href="#第三章-假设检验" class="headerlink" title="第三章 假设检验"></a>第三章 假设检验</h2><p>基本概念（两类错误、势、水平、充分性）</p>
+<p>N-P引理</p>
+<p>一致最优势检验</p>
+<p>一致最优无偏检验</p>
+<p>多参数指数型分布族的假设检验</p>
+<p>似然比检验</p>
+<p>U统计量检验</p>
+<p>秩检验（非参法）</p>
+<h2 id="第四章-区间估计"><a href="#第四章-区间估计" class="headerlink" title="第四章 区间估计"></a>第四章 区间估计</h2><p>基本概念</p>
+<p>构造置信区间</p>
+<h2 id="第五章-统计决策理论与Bayes分析"><a href="#第五章-统计决策理论与Bayes分析" class="headerlink" title="第五章 统计决策理论与Bayes分析"></a>第五章 统计决策理论与Bayes分析</h2><p>先验概率$\times$似然，正比于后验概率</p>
+<h2 id="第六章-统计计算"><a href="#第六章-统计计算" class="headerlink" title="第六章 统计计算"></a>第六章 统计计算</h2>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/09/23/概率测度第一讲/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -413,7 +518,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -502,6 +607,8 @@
     
       
         
+      
+    
       
     
   
