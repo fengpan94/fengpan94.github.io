@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="1.3 可测空间与乘积可测空间1.3.1 可测空间定义1.3.1 $\Omega$为一集合，$\mathfrak{F}$为由$\Omega$的子集构成的$\sigma$域，则$(\Omega,\mathfrak{F})$称为可测空间，$\mathfrak{F}$中任一集合都称为$\mathfrak{F}$可测集，简称可测集。 从概率论上来看，可测空间$(\Omega,\mathfrak{F})$有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率测度第三讲">
+<meta property="og:url" content="http://www.fengpan.xyz/2019/10/24/测度与概率第三讲/index.html">
+<meta property="og:site_name" content="风磐&#39;Blog">
+<meta property="og:description" content="1.3 可测空间与乘积可测空间1.3.1 可测空间定义1.3.1 $\Omega$为一集合，$\mathfrak{F}$为由$\Omega$的子集构成的$\sigma$域，则$(\Omega,\mathfrak{F})$称为可测空间，$\mathfrak{F}$中任一集合都称为$\mathfrak{F}$可测集，简称可测集。 从概率论上来看，可测空间$(\Omega,\mathfrak{F})$有">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-24T11:47:22.278Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="概率测度第三讲">
+<meta name="twitter:description" content="1.3 可测空间与乘积可测空间1.3.1 可测空间定义1.3.1 $\Omega$为一集合，$\mathfrak{F}$为由$\Omega$的子集构成的$\sigma$域，则$(\Omega,\mathfrak{F})$称为可测空间，$\mathfrak{F}$中任一集合都称为$\mathfrak{F}$可测集，简称可测集。 从概率论上来看，可测空间$(\Omega,\mathfrak{F})$有">
+  <link rel="canonical" href="http://www.fengpan.xyz/2019/10/24/测度与概率第三讲/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>概率测度第三讲 | 风磐'Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风磐'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">谁无暴风劲雨时 守得云开见月明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/10/24/测度与概率第三讲/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">概率测度第三讲
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-24 19:28:08 / 修改时间：19:47:22" itemprop="dateCreated datePublished" datetime="2019-10-24T19:28:08+08:00">2019-10-24</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="1-3-可测空间与乘积可测空间"><a href="#1-3-可测空间与乘积可测空间" class="headerlink" title="1.3 可测空间与乘积可测空间"></a>1.3 可测空间与乘积可测空间</h2><h3 id="1-3-1-可测空间"><a href="#1-3-1-可测空间" class="headerlink" title="1.3.1 可测空间"></a>1.3.1 可测空间</h3><p><strong>定义1.3.1</strong> $\Omega$为一集合，$\mathfrak{F}$为由$\Omega$的子集构成的$\sigma$域，则$(\Omega,\mathfrak{F})$称为<strong>可测空间</strong>，$\mathfrak{F}$中任一集合都称为<strong>$\mathfrak{F}$可测集</strong>，简称<strong>可测集</strong>。</p>
+<p>从概率论上来看，可测空间$(\Omega,\mathfrak{F})$有如下含义:</p>
+<p>$\Omega$ 表示某一试验中可能结果全体，$\Omega$ 又称为<strong>基本空间</strong>。</p>
+<p>$\Omega$ 的元素 $\omega$ 称为<strong>基本事件</strong>。</p>
+<p>$\mathfrak{F}$ 表示随机事件全体，称为<strong>事件 $\omega$ 域</strong>。</p>
+<p>对可测空间$(\Omega,\mathfrak{F})$，若$(\Omega,\mathfrak{F})$赋予上述含义，则$(\Omega,\mathfrak{F})$也称为<strong>概率可测空间</strong>。这时 $\mathfrak{F}$ 中任一元素 $A$ 都可称为<strong>随机事件</strong>或<strong>事件</strong>。</p>
+<hr>
+<p><strong>集合的上下极限</strong></p>
+<p>对集合序列$\{A_n,n\ge1\}$，称$\cap_{k\ge 1}\cup_{n\ge k}A_n$为$\{A_n,n\ge1\}$的<strong>上限点集(也叫上极限)</strong>，也记为$\overline{\lim}_{n\rightarrow\infty}A_n$或$\lim\sup_{n\rightarrow\infty}A_n$，它由$\Omega$ 中属于无限多个 $A_n$ 的那些元素构成，即：</p>
+<p>$\overline{\lim}_{n\rightarrow\infty}A_n=\cap_{k\ge 1}\cup_{n\ge k}A_n=\{\omega:\omega\in A_n对无限个n成立\}=\{\omega:\forall m,\exist n(\omega)&gt;m,\omega\in A_{n(\omega)}\}$</p>
+<p>对集合序列$\{A_n,n\ge1\}$，称$\cup_{k\ge 1}\cap_{n\ge k}A_n$为$\{A_n,n\ge1\}$的<strong>下限点集(也叫下极限)</strong>，也记为$\underline{\lim}_{n\rightarrow\infty}A_n$或$\lim\inf_{n\rightarrow\infty}A_n$，它由$\Omega$ 中自某个指标 $n_0(\omega)$ 后属于所有 $A_n$ 的那些元素构成，即：</p>
+<p>$\underline{\lim}_{n\rightarrow\infty}A_n=\cup_{k\ge 1}\cap_{n\ge k}A_n=\{\omega:\omega不属于A_n中的有限多个\}=\{\omega:\exist k\ge1,\forall n\ge k,\omega\in A_n\}$</p>
+<p>当上下极限相等时，称$\{A_n\}$的极限存在，记为$\lim_{n\rightarrow\infty}A_n$.</p>
+<hr>
+<p><strong>上下限事件</strong></p>
+<p>事件$\overline{\lim}_{n\rightarrow\infty}A_n$称为$\{A_n\}$的上限事件，表示$\{A_n\}$中有无限个同时发生的事件</p>
+<p>事件$\underline{\lim}_{n\rightarrow\infty}A_n$称为$\{A_n\}$的下限事件，表示$\{A_n\}$中除有限个外同时发生的事件</p>
+<h3 id="1-3-2-乘积可测空间"><a href="#1-3-2-乘积可测空间" class="headerlink" title="1.3.2 乘积可测空间"></a>1.3.2 乘积可测空间</h3><p><strong>定义1.3.2</strong>  若$(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$是$n$个可测空间，$\Omega=\{(\omega_1,…,\omega_n):\omega_i\in\Omega_i,1\leq i\leq n\}$称为<strong>乘积空间</strong>。记为$\Omega= \prod^n_{i=1}\Omega_i$.（这里记法与课本上不一样，实在是没找到大叉号怎么打，反正都是表示连乘）</p>
+<p>对$A_i\in\Omega_i,1\leq i\leq n$，集合 $A=\{(\omega_1,…,\omega_n):\omega_i\in A_i,1\leq i\leq n\}$ 称为<strong>矩形集</strong>，记为$A= \prod^n_{i=1}A_i=A_1\times\cdots \times A_n$，特别地，当每个$A_i\in\mathfrak{F}_i$时，$A= \prod^n_{i=1}A_i$又称为<strong>可测矩形</strong>。</p>
+<blockquote>
+<p>以2个可测空间为例，$\Omega_1,\Omega_2$分别表示$x,y$轴上的$[0,1]$区间，$A_1,A_2$表示区间内任意长的一小段，它们的交集正好就是面积为1的乘积空间$\Omega=\Omega_1\times\Omega_2$中的一块矩形。是不是就形象的多了。</p>
+</blockquote>
+<p><strong>命题1.3.1</strong> 若 $(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$ 是 $n$ 个可测空间，$\Omega= \prod^n_{i=1}\Omega_i$，$\varphi$ 表示 $\Omega$ 中可测矩形全体，则 $\varphi$ 是一个半域，而且互不相交的可测矩形的有限并全体 $\mathcal{A}$ 就是一个域。</p>
+<p>证明:先证明 $\varphi$ 是一个半域</p>
+<p>（1）$\varnothing=\varnothing\times\cdots\times\varnothing\in\varphi, \Omega=\prod^n_{i=1}\Omega_i\in\varphi$</p>
+<blockquote>
+<p>曾经我也是不懂证明，往往就是两个反应”卧槽！这还用证？”,”卧槽，这还能证？”,等学深入了就能明白其背后的严谨的证明逻辑了，以上面这个为例，我想证明 $\Omega\in\varphi$,但并不知道$\Omega$是不是在里面，但我们知道 $\varphi$ 是可测矩形全体，因此可以取$A_i=\Omega_i$,就有$\prod^n_{i=1}A_i=\prod^n_{i=1}\Omega_i(=\Omega)\in\varphi$.很多时候不是不会证，是没发现所有的条件，以及证明目标需要怎样的条件，当对这些烂熟于心后，在不涉及高深的数学技巧的情况下，证明并不难。</p>
+</blockquote>
+<p>（2）若$A= \prod^n_{i=1}A_i,B= \prod^n_{i=1}B_i\Longrightarrow AB= \prod^n_{i=1}A_iB_i\in\varphi$.</p>
+<p>（3）若$A= \prod^n_{i=1}A_i$,则$A^c=\sum^n_{i=1}A_1\times\cdots\times A_{i-1}\times A^c_i\times\Omega_{i+1}\times\cdots\Omega_n\in\varphi$.</p>
+<blockquote>
+<p>以二维为例，$A=A_1\times A_2, A^c=A^c_1\times\Omega_2+A_1\times A^c_2$.</p>
+</blockquote>
+<p>再利用<strong>命题1.1.4</strong>即可得 $\mathcal{A}$ 是一个域。</p>
+<blockquote>
+<p>$\varphi$是一个半域，其内的<strong>互不相交</strong>的可测矩形的并构成$A$, $\mathcal{A}=\{A=\sum^n_{i=1}互不相交的可测矩形\}$,这些都完美符合命题1.1.4，因此$\mathcal{A}$（即互不相交的可测矩形的有限并(A)全体）是一个域。</p>
+</blockquote>
+<p><strong>定义 1.3.2</strong>  设$(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$是n个可测空间，$\varphi$表示$\Omega=\prod^n_{i=1}\Omega_i$中可测矩形全体。在 $\Omega$ 上，$\mathfrak{F}=\sigma(\varphi)$称为<strong>乘积</strong>$\boldsymbol{\sigma}$<strong>域</strong>，并记$\mathfrak{F}=\prod^n_{i=1}\mathfrak{F}_i$,  又$(\Omega,\mathfrak{F})$ 称为<strong>乘积可测空间</strong>，记为 $(\Omega,\mathfrak{F})=\prod^n_{i=1}(\Omega_i,\mathfrak{F}_i)$.</p>
+<p><strong>命题1.3.2</strong> 设$(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$ 是n个可测空间，$1\leq m\leq n$，则</p>
+<p>$\prod^n_{i=1}\Omega_i=(\prod^m_{i=1}\Omega_i)\times(\prod^n_{i=m+1}\Omega_i)$   </p>
+<p>$\prod^n_{i=1}\mathfrak{F}_i=(\prod^m_{i=1}\mathfrak{F}_i)\times(\prod^n_{i=m+1}\mathfrak{F}_i)$</p>
+<p>$\prod^n_{i=1}(\Omega_i,\mathfrak{F}_i)=(\prod^m_{i=1}(\Omega_i,\mathfrak{F}_i))\times(\prod^n_{m+1}(\Omega_i,\mathfrak{F}_i))$</p>
+<p>证明：略</p>
+<p><strong>命题1.3.3</strong> 若 $(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$ 是 n个可测空间，$(\Omega,\mathfrak{F})=\prod^n_{i=1}(\Omega_i,\mathfrak{F}_i)$ , 则对任一$A\in\mathfrak{F}$ 及任任意固定的$(\omega_1,…,\omega_m)$, 截口集 $A(\omega_1,…,\omega_m)=\{(\omega_{m+1},…,\omega_n):(\omega_1,…,\omega_n)\in A\}\in\prod^n_{i=m+1}\mathfrak{F}_i$.</p>
+<p>证明：略</p>
+<p><strong>定义1.3.4</strong> 若 $\{(\Omega_\alpha,\mathfrak{F}_\alpha),\alpha\in J\}$ 为一族可测空间，则$\Omega=\{(\omega_\alpha,\alpha\in J)\in\Omega:\omega_\alpha\in A_\alpha,\alpha\in I\}$ , 称为$(\omega_\alpha,\alpha\in J)$的<strong>乘积空间</strong>，记为 $\Omega=\prod_{\alpha\in J}\Omega_\alpha$, 若 $I$ 为 $J$ 的有限子集，对 $A_\alpha\in\mathfrak{F}_\alpha,\alpha\in I$, $B=\{(\omega_\alpha,\alpha\in J)\in\Omega:\omega_\alpha\in A_\alpha,\alpha\in I\}$,称 $B$ 为<strong>有限维基底可测矩形柱</strong>，简称<strong>有限维矩形柱</strong>，$\prod_{\alpha\in I}A_\alpha$ 称为 $B$ 的底。</p>
+<p><strong>命题 1.3.4</strong> 若 $\varphi=\{B:B为以\prod_{\alpha\in I}A_\alpha为底的矩形柱，A_\alpha\in\mathfrak{F}_\alpha,\alpha\in有限I\in J\}$, 其中 $I$ 取遍 $J$ 的一切有限子集，即 $\varphi$ 表示有限维基底可测矩形柱全体，则 $\varphi$ 是半域。</p>
+<p>证明：类似<strong>命题1.3.1</strong>.</p>
+<p><strong>定义1.3.5</strong> 在 $\Omega=\prod_{\alpha\in J}\Omega_\alpha$ 上，由上命题1.3.4 规定的 $\varphi$, $\mathfrak{F}=\sigma(\varphi)$ 称为 $\{\mathfrak{F}_\alpha,\alpha\in J\}$ 的乘积 $\sigma$ 域，记为 $\mathfrak{F}=\prod_{\alpha\in J}\mathfrak{F}_\alpha$, 而 $(\Omega,\mathfrak{F})$称为乘积可测空间，记为 $(\Omega,\mathfrak{F})=\prod_{\alpha\in J}(\Omega_\alpha,\mathfrak{F}_\alpha)$.</p>
+<p><strong>定义1.3.6</strong> 在 $\Omega$ 中，若 $I$ 为 $J$ 的任意子集，$A\sub\Omega_I=\prod_{\alpha\in I}\Omega_\alpha$, 则 $B=A\times \prod_{\alpha\in J\backslash I}\Omega_\alpha=\{(\omega_\alpha,\alpha\in J)\in\Omega:(\omega_\alpha,\alpha\in I)\in A\}$ 称为$\Omega$ 中的柱集，$A$ 称为 $B$ 的底。当$A\in\prod_{\alpha\in I}\mathfrak{F}_\alpha$, 柱集 $B$ 称为可测的. </p>
+<p>特别地，当 $I$ 为有限指标集时，$B$ 称为有限维基底可测柱集，简称为<strong>有限维柱集</strong>。当 $I$ 为可列指标集时，$B$ 称为可列维基底可测柱集，简称为<strong>可列维柱集</strong>。</p>
+<p><strong>命题 1.3.5</strong> 若 $\{(\Omega_\alpha,\,\mathfrak{F}_\alpha),\alpha\in J\}$ 为一族可测空间，$J$ 为无限指标集，$(\Omega,\mathfrak{F})=\prod_{\alpha\in J}(\Omega_\alpha,\mathfrak{F}_\alpha)$，又 $\mathcal{G}$ 表示 $\Omega$ 中可列维基底可测柱集全体，则 $\mathfrak{F}=\mathcal{G}$.</p>
+<p>证明：略</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/24/测度与概率第二讲/" rel="next" title="概率测度第二讲">
+                  <i class="fa fa-chevron-left"></i> 概率测度第二讲
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/24/测度与概率第四讲/" rel="prev" title="概率测度第四讲">
+                  概率测度第四讲 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-可测空间与乘积可测空间"><span class="nav-number">1.</span> <span class="nav-text">1.3 可测空间与乘积可测空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-可测空间"><span class="nav-number">1.1.</span> <span class="nav-text">1.3.1 可测空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-乘积可测空间"><span class="nav-number">1.2.</span> <span class="nav-text">1.3.2 乘积可测空间</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Feng Pan</p>
+  <div class="site-description" itemprop="description">高等数理统计、高等概率论学习心得</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feng Pan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+</body>
+</html>

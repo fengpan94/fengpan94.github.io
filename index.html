@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="高等数理统计、高等概率论学习心得">
+<meta property="og:type" content="website">
+<meta property="og:title" content="风磐&#39;Blog">
+<meta property="og:url" content="http://www.fengpan.xyz/index.html">
+<meta property="og:site_name" content="风磐&#39;Blog">
+<meta property="og:description" content="高等数理统计、高等概率论学习心得">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="风磐&#39;Blog">
+<meta name="twitter:description" content="高等数理统计、高等概率论学习心得">
+  <link rel="canonical" href="http://www.fengpan.xyz/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>风磐'Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风磐'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">谁无暴风劲雨时 守得云开见月明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/10/24/测度与概率第一讲/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/24/测度与概率第一讲/" class="post-title-link" itemprop="url">概率测度第一讲</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-24 19:28:08 / 修改时间：19:46:21" itemprop="dateCreated datePublished" datetime="2019-10-24T19:28:08+08:00">2019-10-24</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>文中有一些概念另附加了个人理解，欢迎指正。</p>
+<p>评论功能暂时不会开，有问题请前往知乎专栏<a href="https://zhuanlan.zhihu.com/fengpan" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/fengpan</a></p>
+<h1 id="0-绪论"><a href="#0-绪论" class="headerlink" title="0. 绪论"></a>0. 绪论</h1><p>内容主要参考<strong>汪嘉冈老师的《现代概率论基础》</strong>，之前老师说过这本书写的非常严谨，前面的内容在后面都会用到。另有参考书是严加安老师的《测度论讲义》，是一本内容非常充实的书。</p>
+<p>高等概率论(也叫现代概率论、测度与概率)，一般作为硕士研究生一年级的课程，在某些偏概率的学校也作为考博的内容。</p>
+<p>闲言少叙，先来一个统计学专业常接触，但是可能不少本科毕业生都没搞明白的问题：</p>
+<p><strong>什么是随机变量？</strong></p>
+<p>在茆诗松老师的《概率论与数理统计》第3页中是这样写的”用来表示随机现象结果的变量称为随机变量”，这个概念可能很多本科毕业的学生都是这么理解的，这个解释在本科阶段也够用了，因为本科阶段对数理统计与概率论仅仅停留在浅层次的应用，并不需要考虑深层次的为什么。但在硕士阶段就要搞明白了。</p>
+<p>由概率空间$(\Omega,\mathfrak{F},\mathbb{P})$到实数空间$(R,\mathbb{B},m)$的可测映射$X$就是<strong>随机变量(random variable,r.v.)*</strong></p>
+<p>其中可测映射:$X^{-1}(\mathbb{B})=\{\omega\in\Omega,X(\omega)\in\mathbb{B}\}\in\mathfrak{F}$</p>
+<p>其中$\Omega$称为<strong>样本空间</strong>，$\mathfrak{F}$称为事件域，它是一个$\sigma$域.$\mathbb{P}$为概率测度$(\mathbb{P}(\Omega)=1)$，$\mathbb{B}$是$Borel$域，表示$R$中所有开集(就是开区间)全体产生的$\sigma$域。</p>
+<p>$\boldsymbol{\star\star\star}$  高等概率论不关心可测空间$(\Omega,\mathfrak{F})$以及随机变量$X$，因为只要测度发生了变化，分布函数就会发生变化，我们关心的是函数的分布函数。（这句话说的还不够严谨，后续会改）</p>
+<p>*random variable在翻译上过去曾有争议，也叫随机函数，因此可测映射$X$被称为随机函数也就能解释的通了。</p>
+<h1 id="1-可测空间"><a href="#1-可测空间" class="headerlink" title="1. 可测空间"></a>1. 可测空间</h1><h2 id="1-1-集类与-sigma-域"><a href="#1-1-集类与-sigma-域" class="headerlink" title="1.1 集类与$\sigma$域"></a>1.1 集类与$\sigma$域</h2><h3 id="1-1-1-集合及运算"><a href="#1-1-1-集合及运算" class="headerlink" title="1.1.1 集合及运算"></a>1.1.1 集合及运算</h3><p>这一小节的内容基本上就是集合论的一小部分内容，不论是学测度还是实变，教材的开头都是这个内容。</p>
+<p>这里强调几个知识点</p>
+<hr>
+<p><strong>对称差</strong>：$A\Delta B=(A\backslash B)\bigcup(B\backslash A)$,其实这个对称差就是$(A\bigcup B)\backslash(A\bigcap B)$</p>
+<p><strong>De Morgen法则</strong>：$(\bigcup_\alpha A_\alpha)^c=\bigcap_\alpha A^c_\alpha,(\bigcap_\alpha A_\alpha)^c=\bigcup_\alpha A^c_\alpha$    这个计算法则在后面经常用到，比如取余封闭。</p>
+<hr>
+<p><strong>示性函数</strong>：</p>
+<p>$I_A(\omega）=\begin{cases}<br>1,\omega\in A \\<br>0,\omega \in A^c<br>\end{cases}$ </p>
+<p>示性函数可以用来表示集合间的运算，比如</p>
+<p>$A=B \iff I_A=I_B$</p>
+<p>$A\subset B \iff I_A\leq I_B$</p>
+<p>$I_{A\bigcap B}=\min\{I_A,I_B\}=I_A I_B$</p>
+<p>$I_{A\bigcup B}=\max\{I_A,I_B\}=I_A+I_B-I_{A\bigcap B}=I_A+I_B-I_A I_B$</p>
+<p>$I_{A^c}=1-I_A$</p>
+<p>$I_{A-B}=I_{A\bigcap B^c}=I_A(1-I_B)$</p>
+<p>关于利用示性函数计算我们在后面还有很多运用，更多上述的基础计算的例子可参见荆炳义老师的《Advanced Probability Theory》</p>
+<hr>
+<p><strong>首次进入分解</strong>  给定集合$\{A_i,1\leq i\leq n\}$,则</p>
+<script type="math/tex; mode=display">
+\bigcup^n_{i=1}A_j=\sum^n_{i=1}\left(A_i\backslash\bigcup_{j\leq i-1}A_j\right)</script><p>这个公式意味着每次并入的集合和现有的集合没有交集，在后面常会用到。比如半域的定义$(3)$就是两两互不相交集合的有限并。</p>
+<hr>
+<h3 id="1-1-2-集类与-sigma-域"><a href="#1-1-2-集类与-sigma-域" class="headerlink" title="1.1.2 集类与$\sigma$域"></a>1.1.2 集类与$\sigma$域</h3><p>在给出 <strong>域(也叫代数、algebra)、半域、$\sigma$-域，环，半环</strong>的定义之前，给出几个常用几个表示的称谓。</p>
+<p><strong>有限交</strong>：$A=\bigcap^n_{i=1}A_i$</p>
+<p><strong>可列(可数)交</strong>：$A=\bigcap^{\infty}_{i=1}A_i$</p>
+<p><strong>有限并</strong>：$A=\bigcup^n_{i=1}A_i$</p>
+<p><strong>可列(可数)并</strong>：$A=\bigcup^{\infty}_{i=1}A_i$</p>
+<p>(可以很明显的发现，有限与可列的区别就在于一个是n一个是$\infty$)</p>
+<p>当$A_i$互不相交时，上述的有限并和可列并就变成了</p>
+<p><strong>有限不交并</strong>：$A=\sum^n_{i=1}A_i$</p>
+<p><strong>可列不交并</strong>：$A=\sum^{\infty}_{i=1}A_i$</p>
+<p>至于为什么没有 有限不交交和可列不交交就不用说了吧？</p>
+<hr>
+<p>由 $\Omega$ 中子集构成的集合称为<strong>集类</strong>，用$\mathcal{P}$表示由$\Omega$的子集全体(包括$\Omega$和$\varnothing$)构成的集类(有老教授称$\mathcal{P}$为Power)。</p>
+<hr>
+<p><strong>域</strong> <strong>定义</strong>：$\mathcal{P}(\Omega)$的非空子集类$\mathcal{A}$称为域，假如它满足：</p>
+<p>（1）若$A\in\mathcal{A}$，则$A^c\in\mathcal{A}$    （即：取余封闭）</p>
+<p>（2）若$A\in\mathcal{A}$，$B\in\mathcal{A}$，则$A\bigcup B\in\mathcal{A}$  （即：有限并封闭）</p>
+<p>在某些教材或课程上会有一条额外的条件：$\Omega\in\mathcal{A},\varnothing\in\mathcal{A}$,但其实这一条并没有必要，因为由条件(1)可得$A\bigcup A^c=\Omega$,因此自然包含了$\Omega\in\mathcal{A}$.</p>
+<p>其中条件(2)有的教材会写成：若$A_j\in\mathcal{A},1\leq j\leq n$，则$\bigcup^n_{j=1}A_j\in\mathcal{A},\bigcap^n_{j=1}A_j\in\mathcal{A}$，即有限并与有限交封闭。与条件(2)是等价的，通过归纳法以及取余封闭可以轻松推导。有限并与有限交的写法在$\sigma$域的定义上同理。</p>
+<hr>
+<p><strong>环</strong> <strong>定义</strong>：关于差和并运算封闭的$\mathcal{P}(\Omega)$的非空子集类</p>
+<p>注1.1：当环$\mathcal{A}$包含$\Omega$时，$\mathcal{A}$必为域。换句话说，域就是包含了$\Omega$的环。</p>
+<hr>
+<p><strong>半域</strong> <strong>定义</strong>：$\mathcal{P}(\Omega)$的非空子集类$\mathcal{A}$称为半域，假如它满足：</p>
+<p>（1）$\Omega\in\mathcal{A},\varnothing\in\mathcal{A}$</p>
+<p>（2）当$A,B\in\mathcal{A}$，必有$A\bigcap B\in\mathcal{A}$</p>
+<p>（3）若$A\in \mathcal{A}$，则$A^c$可表为$\mathcal{A}$中两两互不相交集合的有限并。</p>
+<p>易见，<strong>域必为半域</strong>。</p>
+<hr>
+<p><strong>$\boldsymbol{\sigma}$-域</strong> <strong>定义</strong>：$\mathcal{P}(\Omega)$的非空子集类$\mathcal{A}$称为$\sigma$-域，假如它满足：</p>
+<p>（1）若$A\in\mathcal{A}$，则$A^c\in\mathcal{A}$</p>
+<p>（2）若对每个$n\ge 1,A_n\in\mathcal{A}$,则有$\bigcup^\infty_{i=1}A_n\in\mathcal{A}$    (即：可列并封闭)</p>
+<p>注1.2：从定义中可以看出，$\sigma$-域相较于域，区别就在于一个是可列并封闭，一个是有限并封闭</p>
+<hr>
+<p><strong>$\boldsymbol{\sigma(\varphi)}$ 定义</strong>：$\varphi$是$\Omega$的一个子集类，存在一个唯一的$\Omega$的$\sigma$域—$\sigma(\varphi)$，它包含$\varphi$而且被 包含$\varphi$的一切$\sigma$域所包含。由此$\sigma(\varphi)$称为<strong>包含$\varphi$的最小$\sigma$域(或:由$\varphi$生成的$\sigma$域)</strong> 。</p>
+<p>由定义可以看出，这个$\sigma(\varphi)$就是所有包含$\varphi$的$\sigma$域的交集。（所以被叫做包含$\varphi$的最小$\sigma$域嘛）</p>
+<p>注1.3：包含$\varphi$的最小域(或:由$\varphi$生成的域) 的原理与上面是一样的，就是所有包含$\varphi$的域的交集。另外$\sigma$域的交还是$\sigma$域，这个性质是上述定义的前提。</p>
+<hr>
+<p><strong>命题 1.1.4</strong> 若$\varphi$为半域，则 $\mathcal{A}=\left\{A=\sum_{i\in I}S_i:\{S_i,i \in I\}为 \varphi 中两两互不相交的有限族 \right\}$ 是包含$\varphi$ 的最小域。</p>
+<p>证明：首先证明$\mathcal{A}$ 是一个域，取$A,B\in\mathcal{A}$, 若$A=\sum A_i,B=\sum B_j,A_i,B_j\in\varphi$,明显有$A_i\cap B_j\in\varphi$, 因此$A\cap B=\sum\sum(A_i\cap B_j)\in\varphi$, 即 $\mathcal{A}$ 对有限交封闭。然后，取$A=\sum^n_{i=1}S_i\in\mathcal{A}$, 有$A^c=\cap^n_{i=1}S^c_i$,按照半域的定义$S^c_i$可以表示成有限不交并, 即 $S^c_i=\sum^{J_i}_{j=1}S_{ij},S_{ij}\in\varphi$, 所以$A^c=\cap^n_{i=1}S^c_i=\sum^{J_1}_{j_1=1}\cdots\sum^{J_n}_{j_n=1}\cap^n_{i=1}S_{ij}\in\mathcal{A}$,因此可以看出$\mathcal{A}$对取余运算也是封闭的。有限交封闭+取余封闭$\Longrightarrow$有限并封闭$\Longrightarrow\mathcal{A}$是一个域。</p>
+<p>再证$\mathcal{A}$是包含$\varphi$的最小域，即证明$\mathcal{A}=\mathcal{A}(\varphi)$,（用$\mathcal{A}(\varphi)$表示由$\varphi$生成的最小域）。那么首先，$\mathcal{A}\supset\varphi$,且$\mathcal{A}$是一个域，因此有$\mathcal{A}\supset\mathcal{A}(\varphi)$;然后，由于$\mathcal{A}(\varphi)$是域，对有限并封闭，因而$\varphi$的有限个子集的并属于$\mathcal{A}(\varphi)$,所以$\mathcal{A}(\varphi)\supset\mathcal{A}$,故$\mathcal{A}(\varphi)=\mathcal{A}$.即$\mathcal{A}$是包含$\varphi$的最小域.</p>
+<blockquote>
+<p>课本上给出的证法是：有$\mathcal{A}\supset\varphi$.若$\mathcal{A}’$也是一个包含$\varphi$的域，则对$S_i\in\varphi$,形为$A=\sum S_i$的集合必属于$\mathcal{A}’$,所以$\mathcal{A}’\supset\mathcal{A}$,即$\mathcal{A}$是最小的。</p>
+</blockquote>
+<p><strong>一般地，由一个集类$\varphi$生成一个域试可以先生成一个包含$\varphi$的半域$\mathcal{A}$，然后再由命题1.1.4的方法构造$\mathcal{A}(\varphi)$.</strong></p>
+<p> <strong>命题1.1.7</strong> 对$\Omega$的子集类$\varphi$,若以$\varphi\bigcap A$表示集类$\{BA:B\in\varphi\}$,则</p>
+<script type="math/tex; mode=display">
+\sigma_{\Omega}(\varphi)\bigcap A=\sigma_A(\varphi\bigcap A)</script><p>这里$\sigma_A(\varphi\bigcap A)$表示将$\varphi\bigcap A$看为$\mathcal{P}(A)$的子类在$A$上生成的$\sigma$域。</p>
+<p>证明：(该命题的证明颇具代表性，后面很多时候的证明都会用到这一思路,下一节就会用)</p>
+<p>证明分两步，先证$\sigma_{\Omega}(\varphi)\bigcap A\supset\sigma_A(\varphi\bigcap A)$,后证$\sigma_{\Omega}(\varphi)\bigcap A\subset\sigma_A(\varphi\bigcap A)$.两个一合并就是公式(2).命题得证.</p>
+<p>Step1：证明：$\sigma_{\Omega}(\varphi)\bigcap A\supset\sigma_A(\varphi\bigcap A)$</p>
+<p>首先，$\sigma_{\Omega}(\varphi)\bigcap A\supset(\varphi\bigcap A)$,又$\sigma_{\Omega}(\varphi)\bigcap A$是$A$上的一个$\sigma$域(需按定义逐项验证)，故$\sigma_{\Omega}(\varphi)\bigcap A\supset\sigma_A(\varphi\bigcap A)$.</p>
+<p>Step1在很多时候都可以简单证明，复杂在Step2上，因为需要构造一个集合</p>
+<p>Step2：证明：$\sigma_{\Omega}(\varphi)\bigcap A\subset \sigma_A(\varphi\bigcap A)$</p>
+<p>令$\mathcal{D}=\{B\in\mathcal{P}(\Omega):B\bigcap A\in\sigma_A(\varphi\bigcap A)\}$,则$\mathcal{D}\supset\varphi,\mathcal{D}$也是$\Omega$上的一个$\sigma$域(也需逐项验证)，故$\mathcal{D}\supset\sigma_{\Omega}(\varphi)$,即$\sigma_{\Omega}(\varphi)\bigcap A\subset \sigma_A(\varphi\bigcap A)$.              证毕。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/10/24/测度与概率第四讲/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/24/测度与概率第四讲/" class="post-title-link" itemprop="url">概率测度第四讲</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-24 19:28:08 / 修改时间：19:47:45" itemprop="dateCreated datePublished" datetime="2019-10-24T19:28:08+08:00">2019-10-24</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-4-可测映照与随机变量"><a href="#1-4-可测映照与随机变量" class="headerlink" title="1.4 可测映照与随机变量"></a>1.4 可测映照与随机变量</h2><h3 id="1-4-1-可测映照"><a href="#1-4-1-可测映照" class="headerlink" title="1.4.1 可测映照"></a>1.4.1 可测映照</h3><p><strong>定义 1.4.1</strong> $f$ 为 $\Omega_1$ 到 $\Omega_2$ 的映照，即对每个 $\omega_1\in\Omega_1$, 存在确定的 $\omega_2=f(\omega_1)\in\Omega_2$.对 $A_2\in\Omega_2$,</p>
+<p>$f^{-1}(A_2)=\{\omega_1\in\Omega_1:f(\omega_1)\in A_2\}$ 称为$A_2$ 的<strong>原像</strong>。对 $\mathcal{P}(\Omega_2)$ 的子类 $\mathcal{A}_2$,$f^{-1}(\mathcal{A}_2)=\{f^{-1}(A_2):A_2\in\mathcal{A}_2\}$ 称为 $\mathcal{A}_2$ 的<strong>原像</strong>。</p>
+<p><strong>命题 1.4.1</strong> （几个运算法则）  $f$ 为 $\Omega_1$ 到 $\Omega_2$ 的任一映照，则有</p>
+<p>$f^{-1}(\varnothing)=\varnothing , f^{-1}(\Omega_2)=\Omega_1$</p>
+<p>$(f^{-1}(A))^c=f^{-1}(A^c)$</p>
+<p>$f^{-1}(\cup_\alpha A_\alpha)=\cup_\alpha f^{-1}(A_\alpha),\ \ f^{-1}(\cap_\alpha A_\alpha)=\cap_\alpha f^{-1}(A_\alpha),\ \ f^{-1}(\sum_\alpha A_\alpha)=\sum_\alpha f^{-1}(A_\alpha)$</p>
+<hr>
+<p><strong>注</strong>：<strong>（1）</strong>由命题1.4.1 可见，$f^{-1}$ 与集合的并、交、余集、差、对称差等运算都是可交换的，而且也不限于可列运算。由此容易推出 $\Omega_2$ 上任一 $\sigma$ 域 $\mathcal{G}$ 的原像对余集和可列并运算必是封闭的，因而 $f^{-1}(\mathcal{G})$ 是 $\Omega_1$ 中的 $\sigma$ 域。</p>
+<p>即：<strong>若 $\mathcal{G}$ 是 $\Omega_2$ 中的 $\sigma$ 域，则 $f^{-1}(\mathcal{G})$ 是 $\Omega_1$ 中的 $\sigma$ 域</strong></p>
+<p>证明：首先 $f^{-1}(\mathcal{G})$ 是非空的，因为 $\Omega_1=f^{-1}(\Omega_2) \in f^{-1}(\mathcal{G})$ ,接下来，令 $A\in f^{-1}(\mathcal{G}),\exist B\in\mathcal{G}$ 使得$A=f^{-1}(B)$.有$A^c=f^{-1}(B^c)\in f^{-1}(\mathcal{G})$,所以 $f^{-1}(\mathcal{G})$ 对取余运算封闭。同理可证 $f^{-1}(\mathcal{G})$ 对可列并运算封闭，因此 $f^{-1}(\mathcal{G})$ 是 $\sigma$ 域。</p>
+<p><strong>（2）</strong>若 $A_1 \in\Omega_1$ , 规定 $f(A_1)=\{f(\omega):\omega\in A_1\}$ ,则 $f(\cup_\alpha A_\alpha)=\cup_\alpha f(A_\alpha)$ 总是成立的，即 $f$ 与并运算是可交换的，但取余集及交运算与 $f$ 未必是可交换的。</p>
+<hr>
+<p><strong>引理 1.4.1</strong> 设 $f$ 为 $\Omega_1$ 到 $\Omega_2$ 的映照，$\varphi$ 为 $\mathcal{P}(\Omega_2)$ 的子类，则 $\sigma_{\Omega_1}(f^{-1}(\varphi))=f^{-1}(\sigma_{\Omega_2}(\varphi))$.</p>
+<blockquote>
+<p>该引理另有教材表述方式为：$\varphi$ 是 $\Omega_2$ 的非空子集类，则 $\sigma(f^{-1}(\varphi))=f^{-1}(\sigma(\varphi))$ </p>
+<p>没有引理1.4.1 那么繁琐的下标，接下来证明这个引理 （按无下标公式为准）</p>
+</blockquote>
+<p>证明：先证明 $\sigma(f^{-1}(\varphi))\sub f^{-1}(\sigma(\varphi))$,因为$\varphi\sub\sigma(\varphi)$,所以 $f^{-1}(\varphi)\sub f^{-1}(\sigma(\varphi))$,而我们根据上面的<strong>注(1)</strong>可知 $f^{-1}(\sigma(\varphi))$ 是一个$\sigma$域，因此包含 $f^{-1}(\varphi)$ 的最小 $\sigma$ 域 $\sigma(f^{-1}(\varphi))\sub f^{-1}(\sigma(\varphi))$ .</p>
+<p>接下来我们要证明 $\sigma(f^{-1}(\varphi))\supset f^{-1}(\sigma(\varphi))$,令 $\mathcal{G}=\{B:f^{-1}(B)\in \sigma(f^{-1}(\varphi))\}$,很明显有 $\varphi\sub \mathcal{G}$,（证明：取 $B\in\varphi$,然后有$f^{-1}(B)\in f^{-1}(\varphi)\in \sigma(f^{-1}(\varphi))$ ，因此$B\in\mathcal{G}$,当$B=\varphi$,就是$\varphi\in\mathcal{G}$）下一步证明 $\mathcal{G}$ 是一个$\sigma$域：</p>
+<p>令$B\in\mathcal{G}$，有 $f^{-1}(B)\in\sigma(f^{-1}(\varphi))$ (根据$\mathcal{G}$的定义).对于 $f^{-1}(B^c)=(f^{-1}(B))^c,f^{-1}(\cup_\infty B_n)=\cup_\infty(f^{-1}(B_n))$,因为 $\sigma(f^{-1}(\varphi))$ 是$\sigma$ 域，所以有 $(f^{-1}(B))^c\in\sigma(f^{-1}(\varphi)),\cup_\infty(f^{-1}(B_n))\in\sigma(f^{-1}(\varphi))$,所以 $f^{-1}(B^c)\in\sigma(f^{-1}(\varphi)),f^{-1}(\cup_\infty B_n)\in\sigma(f^{-1}(\varphi))$.所以 $B^c\in\mathcal{G},\cup_\infty B_n\in\mathcal{G}$.因此 $\mathcal{G}$ 是一个 $\sigma$ 域。</p>
+<p>因为 $\varphi\sub \mathcal{G}$,所以$\sigma(\varphi)\sub\mathcal{G}$,将集合 $\mathcal{G}$ 里面的$B$ 换成 $\sigma(\varphi)$，即可得 $f^{-1}(\sigma(\varphi))\sub\sigma(f^{-1}(\varphi))$.</p>
+<hr>
+<p><strong>定义1.4.2</strong>  设 $(\Omega_1,\mathfrak{F}_1),(\Omega_2,\mathfrak{F}_2)$ 为可测空间，$f$ 为 $\Omega_1$ 到 $\Omega_2$ 的映照，若对每个 $A\in\mathfrak{F}_2,f^{-1}(A)\in\mathfrak{F}_1$ 或等价地 $f^{-1}(\mathfrak{F}_2)=\{f^{-1}(A):A\in\mathfrak{F}_2\}\sub\mathfrak{F}_1$，则称 $f$ 为 $(\Omega_1,\mathfrak{F}_1)$ 到 $(\Omega_2,\mathfrak{F}_1)$ 的<strong>可测映照</strong>，记为$\boldsymbol{f\in\mathfrak{F}_1/\mathfrak{F}_2}$,或在 $\mathfrak{F}_2$ 不引起混淆时简记为$\boldsymbol{f\in\mathfrak{F}_1}$,并记 $\sigma(f)=\sigma_{\Omega_1}(f)=f^{-1}(\mathfrak{F}_2)$,称它为由 $f$ 生产的 $\sigma$ 域。</p>
+<p><strong>例</strong> 若$(\Omega_1,\mathfrak{F}_1)=(\Omega_1,\mathcal{P}(\Omega_1))$,则 $(\Omega_1,\mathfrak{F}_1)$ 到 $(\Omega_2,\mathfrak{F}_2)$ 的任一映照都是可测的。</p>
+<p><strong>命题 1.4.2</strong> 若 $(\Omega_1,\mathfrak{F}_1),(\Omega_2,\mathfrak{F}_2)$为可测空间,$\varphi\sub\mathcal{P}(\Omega_2)$,又 $\mathfrak{F}_2=\sigma(\varphi)$,则$f\in\mathfrak{F}_1/\mathfrak{F}_2$的充要条件是 $f^{-1}(\varphi)\sub\mathfrak{F}_1$.</p>
+<p>证明：$\Longrightarrow$ 因为 $\varphi\sub\sigma(\varphi)=\mathfrak{F}_2$,所以 $f^{-1}(\varphi)\sub f^{-1}(\sigma(\varphi))=f^{-1}(\mathfrak{F}_2)$,因为 $f$ 为 $(\Omega_1,\mathfrak{F}_1)$ 到 $(\Omega_2,\mathfrak{F}_2)$ 的可测映照，所以有 $f^{-1}(\mathfrak{F}_2)\sub\mathfrak{F}_1$,进而有 $f^{-1}(\varphi)\sub\mathfrak{F}_1$</p>
+<p>$\Longleftarrow$  证明目标是$f^{-1}(\mathfrak{F}_2)\sub\mathfrak{F}_1$。其中$\mathfrak{F}_2=\sigma(\varphi)$ , 根据<strong>引理1.4.1</strong>，$f^{-1}(\mathfrak{F}_2)=f^{-1}(\sigma(\varphi))=\sigma(f^{-1}(\varphi))$,根据条件，我们有 $f^{-1}(\varphi)\sub\mathfrak{F}_1$,这里 $\mathfrak{F}_1$ 是 $\sigma$ 域，所以 $\sigma(f^{-1}(\varphi))\sub\mathfrak{F}_1$,由此我们就得到了 $f^{-1}(\mathfrak{F}_2)\sub\mathfrak{F}_1$.</p>
+<hr>
+<p><strong>命题1.4.3</strong> 设$(\Omega_i,\mathfrak{F}_i),i=1,2,3$ 为可测空间，若 $g$ 为$(\Omega_1,\mathfrak{F}_1)$ 到 $(\Omega_2,\mathfrak{F}_2)$ 的可测映射， $f$ 为$(\Omega_2,\mathfrak{F}_2)$ 到 $(\Omega_3,\mathfrak{F}_3)$ 的可测映射，则$f \circ g:(f \circ g)(\omega_1)=f(g(\omega_1))$ 是 $(\Omega_1,\mathfrak{F}_1)$ 到 $(\Omega_3,\mathfrak{F}_3)$ 的可测映射。</p>
+<p>证明：对 $\forall A\in\mathfrak{F}_3,(f \circ g)^{-1}(A)=\{\omega:f(g(\omega))\in A\}=\{\omega:g(\omega)\in f^{-1}(A)\}=g^{-1}(f^{-1}(A))$,所以 $(f \circ g)^{-1}(\mathfrak{F}_3)=g^{-1}(f^{-1}(\mathfrak{F}_3))\sub g^{-1}(\mathfrak{F}_2)\sub\mathfrak{F}_1$,即 $f \circ g\in\mathfrak{F}_1/\mathfrak{F}_3$.</p>
+<h3 id="1-4-2-可测函数—随机变量"><a href="#1-4-2-可测函数—随机变量" class="headerlink" title="1.4.2 可测函数—随机变量"></a>1.4.2 可测函数—随机变量</h3><p><strong>定义1.4.3</strong> 由 $(\Omega,\mathfrak{F})$ 到 $(R,\mathbb{B})$ 的可测映照称为<strong>可测函数</strong>，特别，当 $(\Omega,\mathfrak{F})$ 为概率可测空间时， $(\Omega,\mathfrak{F})$ 到 $(R,\mathbb{B})$ 的可测映照 $X$ 称为(有限值)<strong>随机变量</strong>(或广义实值随机变量)，也记为 $X\in\mathfrak{F}$.</p>
+<p>课本中的命题1.4.4涉及稠密集的概念，我们暂时不需要，因此采用荆炳义老师教材上相似的命题：</p>
+<p><strong>How to check a random variable?</strong></p>
+<p>检查$X$是否是一个随机变量，并不需要验证对所有的$B\in\mathbb{B}$都有$X^{-1}(B)\in\mathfrak{F}$,仅需在所有区间上进行验证。下面这个定理是<strong>命题1.4.2</strong> 的推论。</p>
+<p><strong>验证随机变量定理</strong>:$X$是一个$(\Omega,\mathfrak{F})$到$(R,\mathbb{B})$的随机变量$\iff\{X\leq a\}=X^{-1}((-\infty,a])\in\mathfrak{F}$</p>
+<p>注：定理中的$\{X\leq a\}$可以替换成一下任何形式$\{X\ge a\},\{X<a\},\{x>a\},\{a&lt;X&lt;b\}$</a\},\{x></p>
+<p><strong>命题1.4.5</strong> 若 $\{X_n,n\ge 1\}$ 为随机变量序列，则下面几个都是随机变量</p>
+<p>$\sup_{n\ge 1}X_n,\inf_{n\ge 1}X_n,\overline{\lim}_{n\rightarrow\infty}X_n,\underline{\lim}_{n\rightarrow\infty}X_n$</p>
+<hr>
+<p><strong>定义 1.4.4</strong> 若存在 $(\Omega,\mathfrak{F})$ 的一个有限分割 $\{A_i,i\in I\}$ (即 $I$ 为有限的，$A_i\in\mathfrak{F},A_iA_j=\varnothing,i\not=j,\sum_{i\in I}A_i=\Omega$) 及互不相同的实数 $\{x_i,i\in I\}$ ,使 $\Omega$ 上的函数 $X$ 可以表示为 $X(\omega)=x_i,\omega\in A_i,i\in I$ ,则称 $X$ 为<strong>阶梯随机变量(也叫简单随机变量)</strong>，显然<strong>阶梯随机变量还是随机变量</strong>，且当 $x_i$ 互不相同时，$x_i,A_i$ 由 $X$ 唯一确定。 对 $A\in\mathfrak{F},I_A(\omega)$ 便是一个阶梯随机变量，而上述定义中的 $X$ 又可表示为 $X(\omega)=\sum_{i\in I}x_iI_{A_i}(\omega)$</p>
+<p><strong>命题 1.4.6</strong> $(\Omega,\mathfrak{F})$ 上的<strong>阶梯随机变量全体构成一个代数和格</strong>。</p>
+<p>$\boldsymbol{\star\star\star}$ <strong>命题 1.4.7</strong> $X$ 为 $(\Omega,\mathfrak{F})$ 上的随机变量的充要条件是存在阶梯随机变量序列 $\{X_n,n\ge 1\}$ ,使 $X(\omega)=\lim_{n\rightarrow\infty}X_n(\omega),\forall\omega\in\Omega$. </p>
+<p>且当 $X$ 为负时，$\{X_n\}$ 可取成是非负递增的；当 $|X|\leq M$ 时，$\{X_n\}$ 也可取成是 $|X_n|\leq M$.</p>
+<p><strong>命题 1.4.8</strong> （1）若 $X,Y$ 为随机变量$(X,Y\in\mathfrak{F})$，则对任意实数 $a,b$ ,只要 $aX+bY,XY,X/Y,X\land Y,X \lor Y$ 对每个 $\omega$ 有意义，(即不发生 $(+\infty)+(-\infty),0\times\infty,0/0,\infty/\infty$等情况)  他们就都是随机变量。</p>
+<blockquote>
+<p>补充内容：$\lor$表示取大，$\land$表示取小, $X^+=X\lor0,X^-=X\lor0,X=X^+-X^-,|X|=X^++X^-$.</p>
+</blockquote>
+<p>证明：仅证明其中部分</p>
+<p>$\{X+Y&lt;r\}=\bigcup_{a\in\mathbb{Q}}[\{X\leq r-a\}\cap\{Y\leq a\}]\in\mathfrak{F}$</p>
+<p>$\{X^2\leq a\}=\{|X|\leq\sqrt{t}\}=\{X\leq\sqrt{t}\}-\{X&lt;-\sqrt{t}\}\in\mathfrak{F},<del>~~if</del>t&gt;0$</p>
+<p>$\{XY&lt;a\}=[\{X=0\}\cup\{Y=0\}]\bigcup[\cup_{r\in\mathbb{Q}}(\{X\leq\frac{a}{r}\}\cap\{Y\leq r\})]\in\mathfrak{F}$</p>
+<blockquote>
+<p>另一种思路就是$XY=\frac{1}{2}((X+Y)^2-X^2-Y^2)$</p>
+</blockquote>
+<p>（2）若 $\{X_n,n\ge 1\}$ 为随机变量，则 $\{\omega:\overline\lim_nX_n(\omega)=\underline\lim_nX_n(\omega)\}$ 是 $\mathfrak{F}$ 可测的。</p>
+<hr>
+<p><strong>定义 1.4.5</strong>  若 $\mathfrak{F}_1$ 为 $\mathfrak{F}$ 的子 $\sigma$ 域，且 $f\in\mathfrak{F}_1/\mathbb{B}$ ,则称 $f$ 为 $\mathfrak{F}_1$ 可测，记为 $f\in \mathfrak{F}_1$.</p>
+<p><strong>定理 (Doob) 1.4.1</strong> 若 $f$ 是 $(\Omega,\mathfrak{F})$ 到可测空间 $(E, \varepsilon )$ 的可测映照，$\sigma(f)=f^{-1}( \varepsilon)$ , 则 $(\Omega,\mathfrak{F})$ 上的随机变量 $X$ 为 $\sigma(f)$ 可测的充要条件是存在 $(E, \varepsilon )$ 上的随机变量 $h$ , 使 $X=h\circ f$ </p>
+<blockquote>
+<p>$\sigma(f)$ 是$\mathfrak{F}$的子域，就是定义1.4.5说的那样。</p>
+<p>另外该定理的另一种表述方式：A function $X:(\Omega,\sigma(f))\rightarrow(\mathbb{R},\mathbb{B})$ is measurable if and only if there is a measurable function $h:(E,\varepsilon)\rightarrow(\mathbb{R},\mathbb{B})$ such that $X=h\circ f$.</p>
+<p>两种表述方式结合起来看就能明白这之间的关系了：$f:(\Omega,\mathfrak{F})\rightarrow(E, \varepsilon),h:(E,\varepsilon)\rightarrow(\mathbb{R},\mathbb{B}),X:(\Omega,\sigma(f))\rightarrow(\mathbb{R},\mathbb{B})$</p>
+</blockquote>
+<p>证明：$\Longleftarrow X^{-1}(\mathbb{B})=(h\circ f)^{-1}(\mathbb{B})=f^{-1}(h^{-1}(\mathbb{B}))\sub f^{-1}(\varepsilon)=\sigma(f)$.</p>
+<p> $\Longrightarrow$ 若$X=\sum_{i\leq n}a_i I_{A_i}$为$\sigma(f)$可测阶梯随机变量，则由$A_i\in\sigma(f)=f^{-1}(\varepsilon)$，一定存在$ B_i\in\varepsilon,s.t.A_i=f^{-1}(B_i)$,取$C_i=B_i\backslash(\cup_{j&lt;i}B_j)$，则$\{C_i\}$就是$\varepsilon$中互不相交的集合(之所以做这么一步，是因为尽管$A_i$互不相交，但是我们不能保证$B_i$也是互不相交的)，且$f^{-1}(C_i)=f^{-1}(B_i\backslash(\cup_{j&lt;i}B_j))=A_i\backslash(\cup_{j&lt;i}A_j)=A_i$,令$h=\sum_{i\leq n}a_i I_{C_i}$,则$h$为$(E, \varepsilon )$上的随机变量，且当$\omega\in A_i$时，$f(\omega)\in C_i,h(f(\omega))=a_i=X(\omega)$，即$X=h\circ f$.</p>
+<blockquote>
+<p>证明的思路就是提换$X$的阶梯函数中的$A_i$为属于$\varepsilon$中的$C_i$,然后构建出了定义在$\varepsilon$上的阶梯随机变量。</p>
+</blockquote>
+<p><strong>命题1.4.9</strong> 对一般的$X$,由<strong>命题1.4.7</strong>，存在$\sigma(f)$可测阶梯随机变量$X_n,X=\lim_n X_n$,而$X_n$可表示成$X_n=h_n\circ f$,这里的$h_n$为$(E, \varepsilon )$上的随机变量，取$h=\overline\lim_{n\rightarrow\infty}h_n$，则$h$为$(E, \varepsilon )$上的随机变量，且$h\circ f(\omega)=(\overline\lim_{n\rightarrow\infty}h_n)\circ f(\omega)=\lim_{n\rightarrow\infty}X_n(\omega)=X(\omega)$.</p>
+<h3 id="1-4-3-单调类定理"><a href="#1-4-3-单调类定理" class="headerlink" title="1.4.3 单调类定理"></a>1.4.3 单调类定理</h3><blockquote>
+<p>本节一个定义，两个定理</p>
+</blockquote>
+<p><strong>定义1.4.6</strong> 设$\mathcal{L}$为$\Omega$上的函数族，它满足：当$X\in\mathcal{L}$时，$X^+,X^-\in\mathcal{L}$.</p>
+<p><strong>定义1.4.6</strong>  $\Omega$上的函数族$\mathcal{H}$称为$\mathcal{L}$类，若它满足：（1）$1\in\mathcal{H}$（2）$\mathcal{H}$是线性空间（3）设$X_n\ge0,X_n\in\mathcal{H},X_n \uparrow X$且$X$有界或$X\in\mathcal{L}$,则$X\in\mathcal{H}$.</p>
+<blockquote>
+<p>本来是一个定义，拆成两个了，为了找起来方便</p>
+</blockquote>
+<p><strong>$\boldsymbol{\star\star\star}$概率论中经常用到下列函数形式的单调类定理(参考自《测度与概率》严士健 北师大出版社)</strong></p>
+<p><strong>定理1.4.2</strong>  若$\pi$类$\mathcal{C}\in\mathcal{P}(\Omega)$，又$\mathcal{H}$为$\Omega$上的一个$\mathcal{L}$类，且$\mathcal{H}\supset\{I_A,A\in\mathcal{C}\}$, 则$\mathcal{H}$包含$\Omega$上一切属于$\mathcal{L}$的$\sigma(\mathcal{C})$可测函数。</p>
+<blockquote>
+<p>另一种表述方式：若$\mathcal{L}$类$\mathcal{H}$包含某$\pi$类$\varphi$的示性函数，则$\mathcal{H}$包含$\mathcal{L}$中$\sigma(\varphi)$可测函数全体。</p>
+</blockquote>
+<p>证明：已知$\forall A\in\mathcal{C},I_A\in\mathcal{H}$,欲证结论，需要证明$\sigma(\mathcal{C})$可测的有界简单函数都在$\mathcal{H}$中。构造$\mathfrak{F}_1=\{A:I_A\in\mathcal{H}\}$,若证得$\mathfrak{F}_1\supset\sigma(\mathcal{C})$，就证明了上述目标。</p>
+<p>由<strong>定理1.2.2</strong>可知，仅需证明$\mathfrak{F}_1$是$\lambda$类即可。接下来验证$\mathfrak{F}_1$是$\lambda$类：（1）若$A\in\mathfrak{F}_1$,即$I_A\in\mathcal{H}$,因为$\mathcal{H}$包含1且是线性空间，因此$I_{A^c}=1-I_A\in\mathcal{H}$,即$A^c\in\mathfrak{F}_1$ （2）若$A\in\mathfrak{F}_1,B\in\mathfrak{F}_1,A\cap B=\varnothing$,则$I_{A\cup B}=I_A+I_B\in\mathcal{H}$,即$A+B\in\mathfrak{F}_1$（3）若$A_n\in\mathfrak{F}_1,A_n\uparrow$,则$I_{\cup^\infty_{n=1}A_n}=\lim_{n\rightarrow\infty}I_{A_n}$,因为$I_{A_n}\in\mathcal{H}$且有界(0或1)，所以$\lim_{n\rightarrow\infty}I_{A_n}\in\mathcal{H}$,即$\cup^\infty_{n=1}A_n\in\mathfrak{F}$. 于是得证：$\mathfrak{F}_1$是$\lambda$类.</p>
+<p>$\boldsymbol{\star\star\star}$<strong>关于该定理的用法</strong>：我们要证明某一函数族$\mathfrak{F}$具备某性质$A$，（1）首先引入一个$\mathcal{L}$.（2）接着引入一个$\mathcal{H}=\{f:f具有性质A\}$,并验证该$\mathcal{H}$是一个$\lambda$类(在文献的证明中验证的这一步常常略去).（3）引入$\pi$类$\mathcal{C}$,使$\mathcal{L}$中$\sigma(f)$可测函数类包含$\mathfrak{F}$.做完这些，根据该定理，只需验证$I_{\mathcal{C}}\in\mathcal{H}$即可。</p>
+<p><strong>应用</strong>：以此定理来证明定理1.4.1（Doob）（1.4.2节）</p>
+<p>若 $f$ 是 $(\Omega,\mathfrak{F})$ 到可测空间 $(E, \varepsilon )$ 的可测映照，$\sigma(f)=f^{-1}( \varepsilon)$ , 则 $(\Omega,\mathfrak{F})$ 上的随机变量 $X$ 为 $\sigma(f)$ 可测的充要条件是存在 $(E, \varepsilon )$ 上的随机变量 $h$ , 使 $X=h\circ f$ </p>
+<p>证明：$\Longrightarrow$ 构建$\mathcal{L}=\{X:\Omega\rightarrow\mathbb{R}\}$满足$X^+,X^-\in\mathcal{L}$.构建$\mathcal{H}=\{h\circ f:h是(E,\varepsilon)上的r.v.\}$</p>
+<p>下证$\mathcal{H}$为是一个$\mathcal{L}$类（条件看定义1.4.6）：（1）取$(E,\varepsilon)$上的r.v. $I_E$,有$I_E\circ f=I_E(f(\omega))=1 $($f$是从$(\Omega,\mathfrak{F})$ 到 $(E, \varepsilon )$ 的可测映照，因此$f(\omega)\sub E$),因此$1\in\mathcal{H}$.（2）验证$\mathcal{H}$是线性空间，数乘封闭：若$\alpha$是常数，$h\circ f\in\mathcal{H}$,则$\alpha(h\circ f)=(\alpha h\circ f)\in\mathcal{H}$.求和封闭：$h_1\circ f\in\mathcal{H},h_2\circ f\in\mathcal{H}$,令$h=h_1+h_2$，则$h$也是$(E,\varepsilon)$上的r.v.,因此$h\circ f\in\mathcal{H}$（3）若$h_n\circ f\in\mathcal{H},h_n\circ f=X_n,X_n\uparrow X$,令$h=\sup h_n$,则$h$也是r.v.则$X=h\circ f\in\mathcal{H}$.由此证得$\mathcal{H}=\{h\circ f:h是(E,\varepsilon)上的r.v.\}$是一个$\mathcal{L}$类。</p>
+<p>对于$C\in\sigma(f)$,只需证得$I_C\in\mathcal{H}$即可证明该定理（这里没有考虑$\pi$类$\mathcal{C}$,直接考虑$\mathcal{H}$包含$\sigma(f)$元素的示性函数即可）.若$C\in\sigma(f),\exists B\in\varepsilon,s.t.f^{-1}(B)=C$,于是取$(E,\varepsilon)$上的r.v. $I_B$,有$I_C=I_B\circ f\in\mathcal{H}$,由<strong>定理1.4.2</strong>，该定理证毕。</p>
+<p><strong>定理1.4.3</strong> 若$\mathcal{H}$为$\Omega$上某些有界实函数的集合，则存在$\Omega$上$\sigma$域$\mathfrak{F}_1$,使$\mathcal{H}$为$(\Omega,\mathfrak{F}_1)$有界随机变量全体的充要条件是：</p>
+<p>（1）$1\in\mathcal{H}$（2）$\mathcal{H}$是线性空间（3）$\mathcal{H}$是个格（4）若$\{f_n,n\ge 1\}$是$\mathcal{H}$中一致有界递增随机变量序列，$f=\lim_nf_n$,则$f\in\mathcal{H}$.且这时$\mathfrak{F}_1=\sigma(f,f\in\mathcal{H})$.</p>
+<p>证明：以后补</p>
+<h3 id="1-4-4-多维随机变量"><a href="#1-4-4-多维随机变量" class="headerlink" title="1.4.4 多维随机变量"></a>1.4.4 多维随机变量</h3><p><strong>定义1.4.7</strong> 若$X_1,…,X_n$为$n$个随机变量，则$X=(X_1,…,X_n)$称为$n$维随机变量，也称随机向量(Random vectors).</p>
+<p><strong>命题1.4.9</strong> $X=(X_1,…,X_n)$ 为$n$维随机变量的充要条件是$X$为$(\Omega,\mathfrak{F})$到$(\mathbb{R}^n,\mathbb{B}^n)$的可测映射，且$\sigma(X)=\sigma(X_i,1\leq i\leq n)$</p>
+<p><strong>命题1.4.12</strong> 若$(\Omega,\mathfrak{F})=(\Omega_1,\mathfrak{F}_1)\times(\Omega_2,\mathfrak{F}_2)$为乘积空间，$f$为$(\Omega,\mathfrak{F})$到$(\mathbb{R},\mathbb{B})$的可测函数，则对每个$\omega^0_1\in\Omega_1,g(\omega_2)=f(\omega^0_1,\omega_2)$是$(\Omega_2,\mathfrak{F}_2)$到$(\mathbb{R},\mathbb{B})$的可测函数.</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/10/24/测度与概率第三讲/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/24/测度与概率第三讲/" class="post-title-link" itemprop="url">概率测度第三讲</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-24 19:28:08 / 修改时间：19:47:22" itemprop="dateCreated datePublished" datetime="2019-10-24T19:28:08+08:00">2019-10-24</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-3-可测空间与乘积可测空间"><a href="#1-3-可测空间与乘积可测空间" class="headerlink" title="1.3 可测空间与乘积可测空间"></a>1.3 可测空间与乘积可测空间</h2><h3 id="1-3-1-可测空间"><a href="#1-3-1-可测空间" class="headerlink" title="1.3.1 可测空间"></a>1.3.1 可测空间</h3><p><strong>定义1.3.1</strong> $\Omega$为一集合，$\mathfrak{F}$为由$\Omega$的子集构成的$\sigma$域，则$(\Omega,\mathfrak{F})$称为<strong>可测空间</strong>，$\mathfrak{F}$中任一集合都称为<strong>$\mathfrak{F}$可测集</strong>，简称<strong>可测集</strong>。</p>
+<p>从概率论上来看，可测空间$(\Omega,\mathfrak{F})$有如下含义:</p>
+<p>$\Omega$ 表示某一试验中可能结果全体，$\Omega$ 又称为<strong>基本空间</strong>。</p>
+<p>$\Omega$ 的元素 $\omega$ 称为<strong>基本事件</strong>。</p>
+<p>$\mathfrak{F}$ 表示随机事件全体，称为<strong>事件 $\omega$ 域</strong>。</p>
+<p>对可测空间$(\Omega,\mathfrak{F})$，若$(\Omega,\mathfrak{F})$赋予上述含义，则$(\Omega,\mathfrak{F})$也称为<strong>概率可测空间</strong>。这时 $\mathfrak{F}$ 中任一元素 $A$ 都可称为<strong>随机事件</strong>或<strong>事件</strong>。</p>
+<hr>
+<p><strong>集合的上下极限</strong></p>
+<p>对集合序列$\{A_n,n\ge1\}$，称$\cap_{k\ge 1}\cup_{n\ge k}A_n$为$\{A_n,n\ge1\}$的<strong>上限点集(也叫上极限)</strong>，也记为$\overline{\lim}_{n\rightarrow\infty}A_n$或$\lim\sup_{n\rightarrow\infty}A_n$，它由$\Omega$ 中属于无限多个 $A_n$ 的那些元素构成，即：</p>
+<p>$\overline{\lim}_{n\rightarrow\infty}A_n=\cap_{k\ge 1}\cup_{n\ge k}A_n=\{\omega:\omega\in A_n对无限个n成立\}=\{\omega:\forall m,\exist n(\omega)&gt;m,\omega\in A_{n(\omega)}\}$</p>
+<p>对集合序列$\{A_n,n\ge1\}$，称$\cup_{k\ge 1}\cap_{n\ge k}A_n$为$\{A_n,n\ge1\}$的<strong>下限点集(也叫下极限)</strong>，也记为$\underline{\lim}_{n\rightarrow\infty}A_n$或$\lim\inf_{n\rightarrow\infty}A_n$，它由$\Omega$ 中自某个指标 $n_0(\omega)$ 后属于所有 $A_n$ 的那些元素构成，即：</p>
+<p>$\underline{\lim}_{n\rightarrow\infty}A_n=\cup_{k\ge 1}\cap_{n\ge k}A_n=\{\omega:\omega不属于A_n中的有限多个\}=\{\omega:\exist k\ge1,\forall n\ge k,\omega\in A_n\}$</p>
+<p>当上下极限相等时，称$\{A_n\}$的极限存在，记为$\lim_{n\rightarrow\infty}A_n$.</p>
+<hr>
+<p><strong>上下限事件</strong></p>
+<p>事件$\overline{\lim}_{n\rightarrow\infty}A_n$称为$\{A_n\}$的上限事件，表示$\{A_n\}$中有无限个同时发生的事件</p>
+<p>事件$\underline{\lim}_{n\rightarrow\infty}A_n$称为$\{A_n\}$的下限事件，表示$\{A_n\}$中除有限个外同时发生的事件</p>
+<h3 id="1-3-2-乘积可测空间"><a href="#1-3-2-乘积可测空间" class="headerlink" title="1.3.2 乘积可测空间"></a>1.3.2 乘积可测空间</h3><p><strong>定义1.3.2</strong>  若$(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$是$n$个可测空间，$\Omega=\{(\omega_1,…,\omega_n):\omega_i\in\Omega_i,1\leq i\leq n\}$称为<strong>乘积空间</strong>。记为$\Omega= \prod^n_{i=1}\Omega_i$.（这里记法与课本上不一样，实在是没找到大叉号怎么打，反正都是表示连乘）</p>
+<p>对$A_i\in\Omega_i,1\leq i\leq n$，集合 $A=\{(\omega_1,…,\omega_n):\omega_i\in A_i,1\leq i\leq n\}$ 称为<strong>矩形集</strong>，记为$A= \prod^n_{i=1}A_i=A_1\times\cdots \times A_n$，特别地，当每个$A_i\in\mathfrak{F}_i$时，$A= \prod^n_{i=1}A_i$又称为<strong>可测矩形</strong>。</p>
+<blockquote>
+<p>以2个可测空间为例，$\Omega_1,\Omega_2$分别表示$x,y$轴上的$[0,1]$区间，$A_1,A_2$表示区间内任意长的一小段，它们的交集正好就是面积为1的乘积空间$\Omega=\Omega_1\times\Omega_2$中的一块矩形。是不是就形象的多了。</p>
+</blockquote>
+<p><strong>命题1.3.1</strong> 若 $(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$ 是 $n$ 个可测空间，$\Omega= \prod^n_{i=1}\Omega_i$，$\varphi$ 表示 $\Omega$ 中可测矩形全体，则 $\varphi$ 是一个半域，而且互不相交的可测矩形的有限并全体 $\mathcal{A}$ 就是一个域。</p>
+<p>证明:先证明 $\varphi$ 是一个半域</p>
+<p>（1）$\varnothing=\varnothing\times\cdots\times\varnothing\in\varphi, \Omega=\prod^n_{i=1}\Omega_i\in\varphi$</p>
+<blockquote>
+<p>曾经我也是不懂证明，往往就是两个反应”卧槽！这还用证？”,”卧槽，这还能证？”,等学深入了就能明白其背后的严谨的证明逻辑了，以上面这个为例，我想证明 $\Omega\in\varphi$,但并不知道$\Omega$是不是在里面，但我们知道 $\varphi$ 是可测矩形全体，因此可以取$A_i=\Omega_i$,就有$\prod^n_{i=1}A_i=\prod^n_{i=1}\Omega_i(=\Omega)\in\varphi$.很多时候不是不会证，是没发现所有的条件，以及证明目标需要怎样的条件，当对这些烂熟于心后，在不涉及高深的数学技巧的情况下，证明并不难。</p>
+</blockquote>
+<p>（2）若$A= \prod^n_{i=1}A_i,B= \prod^n_{i=1}B_i\Longrightarrow AB= \prod^n_{i=1}A_iB_i\in\varphi$.</p>
+<p>（3）若$A= \prod^n_{i=1}A_i$,则$A^c=\sum^n_{i=1}A_1\times\cdots\times A_{i-1}\times A^c_i\times\Omega_{i+1}\times\cdots\Omega_n\in\varphi$.</p>
+<blockquote>
+<p>以二维为例，$A=A_1\times A_2, A^c=A^c_1\times\Omega_2+A_1\times A^c_2$.</p>
+</blockquote>
+<p>再利用<strong>命题1.1.4</strong>即可得 $\mathcal{A}$ 是一个域。</p>
+<blockquote>
+<p>$\varphi$是一个半域，其内的<strong>互不相交</strong>的可测矩形的并构成$A$, $\mathcal{A}=\{A=\sum^n_{i=1}互不相交的可测矩形\}$,这些都完美符合命题1.1.4，因此$\mathcal{A}$（即互不相交的可测矩形的有限并(A)全体）是一个域。</p>
+</blockquote>
+<p><strong>定义 1.3.2</strong>  设$(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$是n个可测空间，$\varphi$表示$\Omega=\prod^n_{i=1}\Omega_i$中可测矩形全体。在 $\Omega$ 上，$\mathfrak{F}=\sigma(\varphi)$称为<strong>乘积</strong>$\boldsymbol{\sigma}$<strong>域</strong>，并记$\mathfrak{F}=\prod^n_{i=1}\mathfrak{F}_i$,  又$(\Omega,\mathfrak{F})$ 称为<strong>乘积可测空间</strong>，记为 $(\Omega,\mathfrak{F})=\prod^n_{i=1}(\Omega_i,\mathfrak{F}_i)$.</p>
+<p><strong>命题1.3.2</strong> 设$(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$ 是n个可测空间，$1\leq m\leq n$，则</p>
+<p>$\prod^n_{i=1}\Omega_i=(\prod^m_{i=1}\Omega_i)\times(\prod^n_{i=m+1}\Omega_i)$   </p>
+<p>$\prod^n_{i=1}\mathfrak{F}_i=(\prod^m_{i=1}\mathfrak{F}_i)\times(\prod^n_{i=m+1}\mathfrak{F}_i)$</p>
+<p>$\prod^n_{i=1}(\Omega_i,\mathfrak{F}_i)=(\prod^m_{i=1}(\Omega_i,\mathfrak{F}_i))\times(\prod^n_{m+1}(\Omega_i,\mathfrak{F}_i))$</p>
+<p>证明：略</p>
+<p><strong>命题1.3.3</strong> 若 $(\Omega_i,\mathfrak{F}_i),1\leq i\leq n$ 是 n个可测空间，$(\Omega,\mathfrak{F})=\prod^n_{i=1}(\Omega_i,\mathfrak{F}_i)$ , 则对任一$A\in\mathfrak{F}$ 及任任意固定的$(\omega_1,…,\omega_m)$, 截口集 $A(\omega_1,…,\omega_m)=\{(\omega_{m+1},…,\omega_n):(\omega_1,…,\omega_n)\in A\}\in\prod^n_{i=m+1}\mathfrak{F}_i$.</p>
+<p>证明：略</p>
+<p><strong>定义1.3.4</strong> 若 $\{(\Omega_\alpha,\mathfrak{F}_\alpha),\alpha\in J\}$ 为一族可测空间，则$\Omega=\{(\omega_\alpha,\alpha\in J)\in\Omega:\omega_\alpha\in A_\alpha,\alpha\in I\}$ , 称为$(\omega_\alpha,\alpha\in J)$的<strong>乘积空间</strong>，记为 $\Omega=\prod_{\alpha\in J}\Omega_\alpha$, 若 $I$ 为 $J$ 的有限子集，对 $A_\alpha\in\mathfrak{F}_\alpha,\alpha\in I$, $B=\{(\omega_\alpha,\alpha\in J)\in\Omega:\omega_\alpha\in A_\alpha,\alpha\in I\}$,称 $B$ 为<strong>有限维基底可测矩形柱</strong>，简称<strong>有限维矩形柱</strong>，$\prod_{\alpha\in I}A_\alpha$ 称为 $B$ 的底。</p>
+<p><strong>命题 1.3.4</strong> 若 $\varphi=\{B:B为以\prod_{\alpha\in I}A_\alpha为底的矩形柱，A_\alpha\in\mathfrak{F}_\alpha,\alpha\in有限I\in J\}$, 其中 $I$ 取遍 $J$ 的一切有限子集，即 $\varphi$ 表示有限维基底可测矩形柱全体，则 $\varphi$ 是半域。</p>
+<p>证明：类似<strong>命题1.3.1</strong>.</p>
+<p><strong>定义1.3.5</strong> 在 $\Omega=\prod_{\alpha\in J}\Omega_\alpha$ 上，由上命题1.3.4 规定的 $\varphi$, $\mathfrak{F}=\sigma(\varphi)$ 称为 $\{\mathfrak{F}_\alpha,\alpha\in J\}$ 的乘积 $\sigma$ 域，记为 $\mathfrak{F}=\prod_{\alpha\in J}\mathfrak{F}_\alpha$, 而 $(\Omega,\mathfrak{F})$称为乘积可测空间，记为 $(\Omega,\mathfrak{F})=\prod_{\alpha\in J}(\Omega_\alpha,\mathfrak{F}_\alpha)$.</p>
+<p><strong>定义1.3.6</strong> 在 $\Omega$ 中，若 $I$ 为 $J$ 的任意子集，$A\sub\Omega_I=\prod_{\alpha\in I}\Omega_\alpha$, 则 $B=A\times \prod_{\alpha\in J\backslash I}\Omega_\alpha=\{(\omega_\alpha,\alpha\in J)\in\Omega:(\omega_\alpha,\alpha\in I)\in A\}$ 称为$\Omega$ 中的柱集，$A$ 称为 $B$ 的底。当$A\in\prod_{\alpha\in I}\mathfrak{F}_\alpha$, 柱集 $B$ 称为可测的. </p>
+<p>特别地，当 $I$ 为有限指标集时，$B$ 称为有限维基底可测柱集，简称为<strong>有限维柱集</strong>。当 $I$ 为可列指标集时，$B$ 称为可列维基底可测柱集，简称为<strong>可列维柱集</strong>。</p>
+<p><strong>命题 1.3.5</strong> 若 $\{(\Omega_\alpha,\,\mathfrak{F}_\alpha),\alpha\in J\}$ 为一族可测空间，$J$ 为无限指标集，$(\Omega,\mathfrak{F})=\prod_{\alpha\in J}(\Omega_\alpha,\mathfrak{F}_\alpha)$，又 $\mathcal{G}$ 表示 $\Omega$ 中可列维基底可测柱集全体，则 $\mathfrak{F}=\mathcal{G}$.</p>
+<p>证明：略</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/10/24/测度与概率第二讲/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/24/测度与概率第二讲/" class="post-title-link" itemprop="url">概率测度第二讲</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-24 19:28:08 / 修改时间：19:46:47" itemprop="dateCreated datePublished" datetime="2019-10-24T19:28:08+08:00">2019-10-24</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-2-单调类定理-集合形式"><a href="#1-2-单调类定理-集合形式" class="headerlink" title="1.2 单调类定理(集合形式)"></a>1.2 单调类定理(集合形式)</h2><p>本节介绍两个定理，其余内容都是围绕这两个定理展开的。</p>
+<p>对$\Omega$上的任一非空集类$\mathcal{A}$,恒有$\mathcal{A}\subset\mathcal{M}(\mathcal{A})\subset\sigma(\mathcal{A})$.（这一条先写上，后面会用到）</p>
+<hr>
+<p><strong>定义 1.2.1</strong> $\mathcal{P}(\Omega)$的非空子集类$\mathcal{M}$称为<strong>单调类(Monotone class)</strong>，若对任一集合序列$\{A_n,n\ge 1\}\subset\mathcal{M}$,且</p>
+<p>当$\{A_n\}$递增时，即$A_n\subset A_{n+1}$,必有$\lim_{n\rightarrow\infty}A_n=\cup^{\infty}_{n=1}A_n\in\mathcal{M}$</p>
+<p>当$\{A_n\}$递减时，即$A_n\supset A_{n+1}$,必有$\lim_{n\rightarrow\infty}A_n=\cap^{\infty}_{n=1}A_n\in\mathcal{M}$</p>
+<hr>
+<p><strong>命题1.2.1</strong>  $\mathcal{P}(\Omega)$是一个单调类，每个$\sigma$域也必是一个单调类</p>
+<p>证明(作者自证，课本上没有，因为太简单了)：</p>
+<p>（1）对于$\{A_n,n\ge 1\}\subset\mathcal{P}(\Omega)$，因为$\mathcal{P}(\Omega)$包含子集全体，因此$\{A_n\}$的可列交或可列并仍包含在$\mathcal{P}(\Omega)$中。或：因为单调类$\mathcal{M}\subset \mathcal{P}(\Omega)$,因此$\{A_n\}$ 的可列交或可列并包含在$\mathcal{M}$中的同时，必然也包含在$\mathcal{P}(\Omega)$中。</p>
+<p>（2）对于$\sigma$域$\mathfrak{F}$，若对任一集合序列$\{A_n,n\ge 1\}\subset\mathfrak{F}$,当$\{A_n\}$递增时，$\cup^{\infty}_{n=1}A_n\in\mathfrak{F}$,(这是$\sigma$域成立的条件之一，既然$\mathfrak{F}$是$\sigma$域，那么这些子集的可列并就必然也在$\mathfrak{F}$中).当$\{A_n\}$递减时，$\cap^{\infty}_{n=1}A_n=(\cup^{\infty}_{n=1}A^c_n)^c$(De Morgen法则的运用)，接下来分析$(\cup^{\infty}_{n=1}A^c_n)^c$,因为$A_n\in\mathfrak{F}$,因此$A^c_n\in\mathfrak{F}$,($\sigma$域成立的条件之一),进而$(\cup^{\infty}_{n=1}A^c_n)\in\mathfrak{F}$,最后$(\cup^{\infty}_{n=1}A^c_n)^c\in\mathfrak{F}$.（从这里可以理解为什么前面说域和$\sigma$域的定义时既有并又有交了吧）</p>
+<hr>
+<p><strong>命题1.2.2</strong> 若非集类$\varphi\subset\mathcal{P}(\Omega)$,则必存在包含$\varphi$的<strong>最小单调类$\mathcal{M}(\varphi)$</strong>,它也称为<strong>由$\varphi$生成的单调类</strong>。</p>
+<p>证明：同包含$\varphi$的最小$\sigma$域，所有包含$\varphi$的单调类的<strong>交集</strong>即为包含$\varphi$的最小单调类$\mathcal{M}(\varphi)$.</p>
+<hr>
+<p><strong>命题1.2.3</strong> $\mathfrak{F}$为$\sigma$域的充要条件是$\mathfrak{F}$既是域又是单调类.</p>
+<p>证明：</p>
+<p>$\Longrightarrow$(必要性) 若$A,B\in\mathfrak{F},A\cup B=A\cup B\cup B\cup B\cup B\cdots\in\mathfrak{F}$，(前面的$A\cup B$是为了说明有限并，是为了证明域，后面的无穷个B的并是$\sigma$域的可列并，是已知条件）,所以$\mathfrak{F}$是一个域。$\sigma$域是单调类在命题1.2.1的(2)中给出了证明.</p>
+<p>$\Longleftarrow$(充分性)域和$\sigma$域的区别在于一个是有限并一个是可列并。对任一集合序列$\{A_n,n\ge 1\}\subset\mathfrak{F}$,（$\mathfrak{F}$是域）,有$\cup_{k\leq n}A_k\in \mathfrak{F}$，令$B_n=\cup_{k\leq n}A_k$，则$B_n\in\mathfrak{F}$且$B_n$是递增的. 若$\mathfrak{F}$还是单调类，则$\cup^\infty_{n= 1}B_n\in\mathfrak{F}$，由此可得$\cup_{k\ge 1}A_k=\cup_{k\ge 1}B_k\in\mathfrak{F}$,所以$\mathfrak{F}$是$\sigma$域。</p>
+<p>注1.4：关于充分性的证明，一开始我也是没看明白最后一个公式，其实整个过程就是: $A_n$是任意的，由$A_n$产生的$B_n$是单调的，$B_n$的可列并属于$\mathfrak{F}$，因为$\mathfrak{F}$是单调类。由此，把$B_n$换成$A_n$，$B_n$的可列并其实就是$A_n$的可列并，所以任意$A_n$的可列并也就属于$\mathfrak{F}$了，所以,所以$\mathfrak{F}$是$\sigma$域。</p>
+<hr>
+<p><strong>定理 1.2.1 (单调类定理)</strong>  若$\mathcal{A}$为域，则$\sigma(\mathcal{A})=\mathcal{M}(\mathcal{A})$</p>
+<p>证明：</p>
+<blockquote>
+<p>分析：这类问题的证明就像之前的那个证明一样，思路就是证明其相互的包含关系，既然相互包含，那必然相等了。<strong>该证明方法具有代表性，请牢记，另外现阶段的证明还是属于用条件堆出结论的，不需要太高的数学技巧。</strong>尽管如此，为了搞懂该证明的方方面面，我参考了不下三种证明方法，其本质是大同小异的，只是在细节处理上有差异。</p>
+</blockquote>
+<p>Step1 先证$\sigma(\mathcal{A})\supset \mathcal{M}(\mathcal{A})$</p>
+<p>首先$\sigma(\mathcal{A})\supset\mathcal{A},\sigma(\mathcal{A})$又是单调类(命题1.2.1)，所以$\sigma(\mathcal{A})\supset \mathcal{M}(\mathcal{A})$，（因为$ \mathcal{M}(\mathcal{A})$是包含$\mathcal{A}$最小的那个单调类）</p>
+<p>Step2 再证$\sigma(\mathcal{A})\subset \mathcal{M}(\mathcal{A})$</p>
+<blockquote>
+<p><strong>分析</strong>：上一步启发了我们，既然$\sigma(\mathcal{A})$是包含$\mathcal{A}$最小的$\sigma$域，那我们只需证明$\mathcal{M}(\mathcal{A})$是$\sigma$域就行了，这样$\sigma(\mathcal{A})\subset \mathcal{M}(\mathcal{A})$.由<strong>命题1.2.3</strong>我们知道，当一个$\mathfrak{F}$既是单调类也是域时，它就是一个$\sigma$域。因此我们证明的目标就变成了：$\mathcal{M}(\mathcal{A})$<strong>既是单调类也是域</strong>。因此接下来我们分别要定义两个集合(或者叫非空子集类也行),使之分别是单调类和域，而且与$\mathcal{M}(\mathcal{A})$相等，这样就能完成证明。</p>
+</blockquote>
+<p>记（该$\mathcal{M}_1$的记法与课本上有细微差别，本质上一样）</p>
+<script type="math/tex; mode=display">
+\mathcal{M}_1=\{A:A\in\mathcal{M}(\mathcal{A}),A^c\in\mathcal{M}(\mathcal{A}),A\cup B\in\mathcal{M}(\mathcal{A}),\forall B\in\mathcal{A}\}</script><p>目标:$\mathcal{M}_1=\mathcal{M}(\mathcal{A})$</p>
+<p>首先，这个集合的特点就是里面包含的所有$A$都是属于$\mathcal{M}(\mathcal{A})$的，因此$\mathcal{M}_1 \subset\mathcal{M}(\mathcal{A})$.</p>
+<p>接下来我们要证$\mathcal{M}_1 \supset\mathcal{M}(\mathcal{A})$,只需验证$\mathcal{M}_1$是一个包含$\mathcal{A}$的单调类即可。</p>
+<p>由于$\forall B\in\mathcal{A}$都有$A\cup B\in\mathcal{M}(\mathcal{A})$,因此$\mathcal{M}_1\supset\mathcal{A}$  (这里不容易理解的话，可以取$B=\mathcal{A}$就可以理解$\mathcal{M}_1 \supset\mathcal{A}$)。</p>
+<p>设$\{A_n\}$是取自 $\mathcal{M}_1$中的单调递增序列，我们需要证$\cup^\infty_{n=1}A_n\in\mathcal{M}_1$即可证得$\mathcal{M}_1$是一个单调类。根据$\mathcal{M}_1$的定义，可知$A_n\cup B\in\mathcal{M}(\mathcal{A}),\forall B\in\mathcal{A}$，且$A_n\cup B$是单调递增序列。因为$\mathcal{M}(\mathcal{A})$是单调类，因此$\cup^\infty_{n=1}(A_n\cup B)\in\mathcal{M}(\mathcal{A})$.根据集合运算法则,有$\cup^\infty_{n=1}(A_n\cup B)=(\cup^\infty_{n=1}A_n)\cup B$,因此$(\cup^\infty_{n=1}A_n)\cup B\in\mathcal{M}(\mathcal{A})$.</p>
+<p>我们可以看到，取自$\mathcal{M}_1$的单调序列$\{A_n\}$,我们考察它的极限(也就是其可列并)$\cup^\infty_{n=1}A_n$,有$\cup^\infty_{n=1}A_n\in\mathcal{M}(\mathcal{A})$(这是显而易见的)，$(\cup^\infty_{n=1}A_n)^c=\cap^\infty_{n=1}A^c_n\in\mathcal{M}(\mathcal{A})$,还有$(\cup^\infty_{n=1}A_n)\cup B\in\mathcal{M}(\mathcal{A}),\forall B\in\mathcal{A}$,这些都完全符合$\mathcal{M}_1$的设定，因此$\cup^\infty_{n=1}A_n\in\mathcal{M}_1$.由此我们得到结论$\mathcal{M}_1$是一个单调类</p>
+<p>若$\{A_n\}$是单调递减序列，其实，<strong>单调递减序列就是单调递增序列的补集</strong>。根据我们对 $\mathcal{M}_1$的定义，有$A_n,A^c_n\in\mathcal{M}(\mathcal{A})$。因此对于单调递减的序列$\{A_n\}$也可证得$\mathcal{M}_1$是单调类。<strong>这里同时表明了$\mathcal{M}_1$对取余封闭</strong>。</p>
+<p>因为$\mathcal{M}_1$是单调类，且$\mathcal{M}_1\supset\mathcal{A}$,因此$\mathcal{M}_1$是包含$\mathcal{A}$的一个单调类，所以$\mathcal{M}_1 \supset\mathcal{M}(\mathcal{A})$,进而得到$\mathcal{M}_1 =\mathcal{M}(\mathcal{A})$.</p>
+<p>记 </p>
+<script type="math/tex; mode=display">
+\mathcal{M}_2=\{B:B\in\mathcal{M}(\mathcal{A}),A\cup B\in\mathcal{M}(\mathcal{A}),\forall A\in\mathcal{M}(\mathcal{A})\}</script><p>目标:$\mathcal{M}_2=\mathcal{M}(\mathcal{A})$</p>
+<p>根据集合$\mathcal{M}_2$的定义，里面包含的所有$B$都是属于$\mathcal{M}(\mathcal{A})$的，因此$\mathcal{M}_2 \subset\mathcal{M}(\mathcal{A})$，</p>
+<p>因此接下来要证$\mathcal{M}_2 \supset\mathcal{M}(\mathcal{A})$</p>
+<p>由$\mathcal{M}_1$的证明我们得到,对$A\in\mathcal{M}(\mathcal{A})$有$A\cup B\in\mathcal{M}(\mathcal{A}),\forall B\in\mathcal{A}$.  （其实就是对$\mathcal{M}_1$的另一种写法）因此$\mathcal{A}\subset\mathcal{M}_2$.</p>
+<p>与上一步类似，根据$\cup^\infty_{n=1}(A_n\cup B)=(\cup^\infty_{n=1}A_n)\cup B$,可以证明$\mathcal{M}_2$也是一个包含$\mathcal{A}$的单调类。由此可得$\mathcal{M}_2\supset\mathcal{M}(\mathcal{A})$,进而$\mathcal{M}_2=\mathcal{M}(\mathcal{A})$.根据对$\mathcal{M}_2$的定义可以看出，它是<strong>对并运算封闭的</strong>。</p>
+<p><strong>最后</strong>，我们结合上述的结论，得到$\mathcal{M}_1=\mathcal{M}_2=\mathcal{M}(\mathcal{A})$,根据我们对$\mathcal{M}_1,\mathcal{M}_2$的定义，它们分别对取余运算和并运算封闭，因此可得$\mathcal{M}(\mathcal{A})$是一个域，根据命题1.2.2，可得$\mathcal{M}(\mathcal{A})$是一个包含$\mathcal{A}$的$\sigma$域。所以$\sigma(\mathcal{A})\subset \mathcal{M}(\mathcal{A})$</p>
+<p>结合Step1和Step2，我们得到$\sigma(\mathcal{A})=\mathcal{M}(\mathcal{A})$,定理证毕。</p>
+<blockquote>
+<p>Step1写的较为详细，Step2类似所以省略了一部分</p>
+</blockquote>
+<p><strong>定义 1.2.2</strong> $\mathcal{P}(\Omega)$的非空子集类$\mathcal{A}$称为$\boldsymbol{\pi}$<strong>类</strong>，若当$A,B\in\mathcal{A}$时，必有$AB\in\mathcal{A}$.（有限交封闭）</p>
+<p><strong>定义 1.2.3</strong> $\mathcal{P}(\Omega)$的非空子集类$\mathcal{D}$称为$\boldsymbol{\lambda}$<strong>类</strong>，若它满足：</p>
+<p>（1）当$A\in\mathcal{D}$时必有$A^c\in\mathcal{D}$;（取余封闭）</p>
+<p>（2）当$A,B\in\mathcal{D}$且$A\cap B=\varnothing$时，必有$A+B\in\mathcal{D}$;</p>
+<blockquote>
+<p>有的书上也这样写$A,B\in\mathcal{D},B\subset A\Longrightarrow A\backslash B\in\mathcal{D}$</p>
+</blockquote>
+<p>（3）对递增序列$\{A_n,n\ge 1\}\subset\mathcal{D}$，必有$\lim_nA_n\in\mathcal{D}$.</p>
+<p><strong>命题 1.2.3</strong> （1）$\mathfrak{F}$为$\sigma$域的充要条件是它同时为$\lambda$类和$\pi$类。</p>
+<p>（2）对$\mathcal{P}(\Omega)$的任一子集类$\varphi$,必存在包含$\varphi$的最小$\lambda$类$\lambda(\varphi)$.</p>
+<p>证明(作者自证，课本上没有，因为太简单了)：</p>
+<p>(1)$\Longrightarrow$(必要性)：</p>
+<p>当$\mathfrak{F}$是$\sigma$域时，必然也是一个域（命题1.2.2），因此对有限并封闭，对取余运算封闭，所以对有限交运算封闭，因此$\mathfrak{F}$是$\pi$类。</p>
+<p>当$\mathfrak{F}$是$\sigma$域，其对取余运算封闭；当$A,B\in\mathfrak{F}$且互不相交，$A\cup B\in\mathfrak{F}$；对$\mathfrak{F}$中的一组单调递增序列$\{A_n\}$,$\lim_nA_n=\cup^\infty_{n=1}A_n\in\mathfrak{F}$。由此三条可得$\mathfrak{F}$是$\lambda$类。</p>
+<p>$\Longleftarrow$(充分性)：</p>
+<p>当$\mathfrak{F}$同时为$\lambda$类和$\pi$类，首先，对于$\forall A\in \mathfrak{F}$,有$A^c\in\mathfrak{F}$ (因为是$\lambda$类).$\mathfrak{F}$对取余运算封闭得证。</p>
+<p>接下来证明$\mathfrak{F}$对可列并封闭。根据$\pi$类的性质，$\mathfrak{F}$对有限交封闭，根据$\lambda$类的性质，$\mathfrak{F}$对取余封闭，由此$\mathfrak{F}$对有限并封闭。任取序列$A_n\in\mathfrak{F}$,令$B_n=\cup^n_{n=1}A_n$,因为$\mathfrak{F}$对有限并封闭，所以$B_n\in\mathfrak{F}$且$B_n$是单调递增序列。对于单调递增序列$\{B_n\}$,根据$\lambda$类的性质，可知$\lim_{n\rightarrow\infty}B_n\in\mathfrak{F}$,将$A_n$带入，可得$\cup^\infty_{n=1}A_n=\lim_{n\rightarrow\infty}B_n\in\mathfrak{F}$，$\mathfrak{F}$对可列并运算封闭得证。</p>
+<p>综上，$\mathfrak{F}$对取余运算封闭，对可列并运算封闭，因此$\mathfrak{F}$是$\sigma$域。</p>
+<p>(2)同之前类似的命题证明</p>
+<p><strong>定理1.2.2</strong> 若$\varphi$为$\pi$类，则$\lambda(\varphi)=\sigma(\varphi)$</p>
+<p>证明：由命题1.2.3，$\sigma(\varphi)$也是$\lambda$类，因此$\sigma(\varphi)\supset\lambda(\varphi)$</p>
+<p>因此下一步需要证明$\sigma(\varphi)\subset\lambda(\varphi)$，根据命题1.2.3，只需证明$\lambda(\varphi)$是一个包含$\varphi$的$\pi$类即可，这样$\lambda(\varphi)$就是一个包含$\varphi$的$\sigma$域，自然有$\lambda(\varphi)\supset\sigma(\varphi)$.</p>
+<p>采用与定理1.2.1的证明相同的思路(这个思路看上去更清晰一些，因为只需要证其对可列交封闭)</p>
+<p><strong>Step1</strong>：记</p>
+<script type="math/tex; mode=display">
+\mathcal{D}_1=\{A:A\in\lambda(\varphi),AD\in\lambda(\varphi),\forall D\in\varphi\}</script><p>显然有$\mathcal{D}_1\subset\lambda(\varphi)$和$\mathcal{D}_1\supset\varphi$。下证$\mathcal{D}_1 \supset\lambda(\varphi)$.</p>
+<blockquote>
+<p>在证明$\mathcal{D}_1$是一个$\lambda$类之前，我们需要以另外一个方式来说明$\mathcal{D}_1\supset\varphi$，之前的证明是这么说的：根据 $\mathcal{D}_1$ 的定义，我们假设$D=\varphi$，这样$A\cup D\in\lambda(\varphi)$也就说明了$\varphi\subset\mathcal{D}_1$,（这里使用的是本次证明的记号，没用之前的记法）。但是本次我们定义的是$AD\in\lambda(\varphi)$,不是并而是交，因此之前的方法不能用了。这里需要这么证：令任意 $A\in\varphi$,带到$\mathcal{D}_1$上来看，$A\in\varphi\subset\lambda(\varphi)$,且由于$\varphi$是$\pi$类，因此$AD\in\varphi\subset\lambda(\varphi),\forall D\in\varphi$.这样 即可说明$\varphi\subset\mathcal{D}_1$</p>
+</blockquote>
+<p>为证明$\mathcal{D}_1 \supset\lambda(\varphi)$,需要<strong>证明$\mathcal{D}_1$是一个包含$\varphi$的$\lambda$类</strong>，我们需要根据$\lambda$类的定义，依次验证三个条件(取余封闭、积差封闭、递增序列的极限封闭)</p>
+<p><strong>(i)</strong> 验证当$A\in\mathcal{D_1}$有$A^c\in\mathcal{D_1}$</p>
+<p>$A\in\mathcal{D_1}\Longrightarrow A\in\lambda(\varphi)\Longrightarrow A^c\in\lambda(\varphi)$. 对 $\forall D\in\varphi$，$A^c\cap D=(A\cup D^c)^c=((A\cap D)\cup D^c)^c$,其中$A\cap D\in\lambda(\varphi)$;$D\in\varphi\subset\lambda(\varphi),\Longrightarrow D^c\in\lambda(\varphi)$,因为$A\cap D$和$D^c$互不相交且都在$\lambda(\varphi)$中，所以$((A\cap D)\cup D^c)\in\lambda(\varphi)$,进而$((A\cap D)\cup D^c)^c\in\lambda(\varphi)$.通过上述内容，我们验证了，当$A\in\mathcal{D_1}$时，有$A^c\in\mathcal{D_1}$（因为$A^c$也满足$\mathcal{D}_1$的条件：$A^c\in\lambda(\varphi),A^c D\in\lambda(\varphi),\forall D\in\varphi$）</p>
+<p><strong>(ii)</strong> 验证当$A\in\mathcal{D}_1,B\in\mathcal{D}_1,AB=\varnothing,\Longrightarrow A+B\in\mathcal{D}_1$</p>
+<p>首先$A,B\in\mathcal{D}_1,AB=\varnothing \Longrightarrow A,B\in\lambda(\varphi),A+B\in\lambda(\varphi)$;然后,对$\forall D\in\varphi$，$(A+B)\cap D=(A\cap D)+(B\cap D)$,其中$A\cap D$和$B\cap D$都属于$\lambda(\varphi)$且互不相交，因此$(A+B)\cap D=((A\cap D)+(B\cap D))\in\lambda(\varphi)$.因此我们验证了当$A\in\mathcal{D}_1,B\in\mathcal{D}_1,AB=\varnothing$ 有 $ A+B\in\mathcal{D}_1$</p>
+<p><strong>还是之前的话，因为$A+B$(将其视作一个整体)满足$\mathcal{D}_1$的条件：既属于$\lambda(\varphi)$且和$\forall D\in\varphi$相交后还是属于$\lambda(\varphi)$</strong></p>
+<p><strong>(iii)</strong> 验证当$A_n\in\mathcal{D}_1,A_n\subset A_{n+1}$有$\lim_nA_n=\cup^\infty_{n=1}A_n\in\mathcal{D}_1$</p>
+<p>首先$A_n\in\mathcal{D}_1\Longrightarrow A_n\in\lambda(\varphi)\Longrightarrow \cup^\infty_{n=1}A_n\in\lambda(\varphi)$.然后,对$\forall D\in\varphi,(\cup^\infty_{n=1}A_n)\cap D=\cup^\infty_{n=1}(A_n \cap D)$，在这里，因为$A_n\in\mathcal{D}_1$所以$(A_n\cap D)\in\lambda(\varphi)$,进而有$(\cup^\infty_{n=1}A_n)\cap D=\cup^\infty_{n=1}(A_n \cap D)\in\lambda(\varphi)$，由此我们验证了当$A_n\in\mathcal{D}_1,A_n\subset A_{n+1}$有$\lim_nA_n=\cup^\infty_{n=1}A_n\in\mathcal{D}_1$。</p>
+<p>由(i)(ii)(iii)可得$\mathcal{D}_1$是一个$\lambda$类，且包含$\varphi$,因此$\mathcal{D}_1 \supset\lambda(\varphi)$，进而$\mathcal{D}_1 =\lambda(\varphi)$.</p>
+<p>Step2:记</p>
+<script type="math/tex; mode=display">
+\mathcal{D}_2=\{D:D\in\lambda(\varphi),AD\in\lambda(\varphi),\forall A\in\lambda(\varphi)\}</script><p>由定义的内容可知$\mathcal{D}_2\subset\lambda(\varphi)$.</p>
+<p>由Step1，我们得到对 $\forall D\in\varphi$,及每个$A\in\lambda(\varphi)$都有$AD\in\lambda(\varphi)$，因此$\varphi\subset\mathcal{D}_2$.</p>
+<p>教材上并没有说为什么$\varphi\subset\mathcal{D}_2$，这里说一下：</p>
+<p>我们从Step1得到的结论是对任意$D\in\varphi$,有$AD\in\lambda(\varphi),\forall A\in\lambda(\varphi)$，</p>
+<p>在$D_2$的定义上，我们写的是对$D\in\lambda(\varphi)$有$AD\in\lambda(\varphi),\forall A\in\lambda(\varphi)$，</p>
+<p>很明显可以看出下面($\mathcal{D}_2$的定义)是包含上面($D\in\varphi$)的,当取$D=\varphi$，即可得$\varphi=D\in\mathcal{D}_2$.</p>
+<p>接下来我们同样可以验证$\mathcal{D}_2$是$\lambda$类（证明过程与Step1相似,故略），由此我们证明了$\mathcal{D}_2$是包含了$\varphi$的$\lambda$类。进而$\mathcal{D}_2\supset\lambda(\varphi)$,结合$\mathcal{D}_2\subset\lambda(\varphi)$，得$\mathcal{D}_2=\lambda(\varphi)$. 由$\mathcal{D}_2$的定义明显是对交封闭的，因此$\lambda(\varphi)$是$\pi$类。</p>
+<p>当一个$\lambda$类也是$\pi$类时，它就是一个$\sigma$域，因此$\lambda(\varphi)\supset\sigma(\varphi)$,进而$\lambda(\varphi)=\sigma(\varphi)$.  定理证毕。</p>
+<p><strong>系 1.2.1</strong> 若$\mathcal{D}$是$\lambda$类，又$\varphi$是$\pi$类，$\mathcal{D}\supset\varphi$,则$\mathcal{D}\supset\sigma(\varphi)$.</p>
+<p>证明：$\mathcal{D}$是一个包含$\varphi$的$\lambda$类，因此$\mathcal{D}\supset\lambda(\varphi)=\sigma(\varphi)$.</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/09/24/高等数理统计0绪论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/24/高等数理统计0绪论/" class="post-title-link" itemprop="url">高等数理统计-绪论</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-24 21:31:31 / 修改时间：21:39:31" itemprop="dateCreated datePublished" datetime="2019-09-24T21:31:31+08:00">2019-09-24</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>文中有一些概念另附加了个人理解，欢迎指正</p>
+<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p>内容主要参考茆诗松、王静龙、濮晓龙老师的《高等数理统计(第二版)》，另外参考书包括韦博成老师的《参数统计教程》，学习该书的内容不需要测度论方面的知识；陈希孺老师的《高等数理统计学》，这是本非常好的书，当然也是非常难学难懂的；邵军老师的《Mathematical Statistics》荆炳义老师的《Advanced Mathematical Statistics》，这两本英文书尤其是绍军老师的书内容非常丰富，有很多新的理论知识。</p>
+<p>在前面的基础阶段侧重点主要还是《高等数理统计(第二版)》，难度适中。</p>
+<p>还是与高等概率论同样的问题：</p>
+<p><strong>什么是随机变量？</strong></p>
+<p>由概率空间$(\Omega,\mathfrak{F},\mathbb{P})$到实数空间$(R,\mathbb{B},m)$的可测映射$X$就是<strong>随机变量(random variable,r.v.)*</strong></p>
+<p>其中可测映射:$X^{-1}(\mathbb{B})=\{\omega\in\Omega,X(\omega)\in\mathbb{B}\}\in\mathfrak{F}$</p>
+<p>其中$\Omega$称为<strong>样本空间</strong>，$\mathfrak{F}$称为事件域，它是一个$\sigma$域.$\mathbb{P}$为概率测度$(\mathbb{P}(\Omega)=1)$，$\mathbb{B}$是$Borel$域，表示$R$中所有开集(就是开区间)全体产生的$\sigma$域。</p>
+<p>数理统计关心样本的概率分布，与概率论不同，概率论中当测度发生变化，实空间上的分布就会发生变化，变来变去的是测度。而在数理统计上，我们工作的<strong>终极目标是确定样本的概率分布</strong>，通过样本来推断总体的分布情况。</p>
+<p>按照《高等数理统计(第二版)》书本的设置，共分六章，分别是基本概念、点估计、假设检验、区间估计、统计决策理论与Bayes分析、统计计算。现大致说一下每一章的基本内容与关键知识点，以后的内容基本上围绕此展开，另外额外加的内容会开专题来讲。</p>
+<h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><p>统计结构（很多最基本的概念，需完全牢记）</p>
+<p>常用分布</p>
+<p>统计量及其分布（及其近似分布）</p>
+<p>充分统计量</p>
+<p>完备族</p>
+<h2 id="第二章-点估计"><a href="#第二章-点估计" class="headerlink" title="第二章 点估计"></a>第二章 点估计</h2><p>估计与优良性（即什么是好估计？准确、高效、富含信息量）</p>
+<p>信息不等式（是度量尺子的尺子）</p>
+<p>矩估计（Moment）</p>
+<p>极大似然估计</p>
+<p>最小二乘估计</p>
+<p>(*)同变估计</p>
+<p>稳健估计（Robust）与概率有关的统计量 比 与概率无关的统计量更稳健</p>
+<h2 id="第三章-假设检验"><a href="#第三章-假设检验" class="headerlink" title="第三章 假设检验"></a>第三章 假设检验</h2><p>基本概念（两类错误、势、水平、充分性）</p>
+<p>N-P引理</p>
+<p>一致最优势检验</p>
+<p>一致最优无偏检验</p>
+<p>多参数指数型分布族的假设检验</p>
+<p>似然比检验</p>
+<p>U统计量检验</p>
+<p>秩检验（非参法）</p>
+<h2 id="第四章-区间估计"><a href="#第四章-区间估计" class="headerlink" title="第四章 区间估计"></a>第四章 区间估计</h2><p>基本概念</p>
+<p>构造置信区间</p>
+<h2 id="第五章-统计决策理论与Bayes分析"><a href="#第五章-统计决策理论与Bayes分析" class="headerlink" title="第五章 统计决策理论与Bayes分析"></a>第五章 统计决策理论与Bayes分析</h2><p>先验概率$\times$似然，正比于后验概率</p>
+<h2 id="第六章-统计计算"><a href="#第六章-统计计算" class="headerlink" title="第六章 统计计算"></a>第六章 统计计算</h2>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/09/23/概率测度第一讲/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/23/概率测度第一讲/" class="post-title-link" itemprop="url">概率测度第一讲</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-23 18:12:48" itemprop="dateCreated datePublished" datetime="2019-09-23T18:12:48+08:00">2019-09-23</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-24 14:47:43" itemprop="dateModified" datetime="2019-09-24T14:47:43+08:00">2019-09-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>文中有一些概念另附加了个人理解，欢迎指正</p>
+<h1 id="0-绪论"><a href="#0-绪论" class="headerlink" title="0. 绪论"></a>0. 绪论</h1><p>内容主要参考<strong>汪嘉冈老师的《现代概率论基础》</strong>，之前老师说过这本书写的非常严谨，前面的内容在后面都会用到。另有参考书是严加安老师的《测度论讲义》，是一本内容非常充实的书。</p>
+<p>高等概率论(也叫现代概率论、测度与概率)，一般作为硕士研究生一年级的课程，在某些偏概率的学校也作为考博的内容。</p>
+<p>闲言少叙，先来一个统计学专业常接触，但是可能不少本科毕业生都没搞明白的问题：</p>
+<p><strong>什么是随机变量？</strong></p>
+<p>在茆诗松老师的《概率论与数理统计》第3页中是这样写的”用来表示随机现象结果的变量称为随机变量”，这个概念可能很多本科毕业的学生都是这么理解的，这个解释在本科阶段也够用了，因为本科阶段对数理统计与概率论仅仅停留在浅层次的应用，并不需要考虑深层次的为什么。但在硕士阶段就要搞明白了。</p>
+<p>由概率空间$(\Omega,\mathfrak{F},\mathbb{P})$到实数空间$(R,\mathbb{B},m)$的可测映射$X$就是<strong>随机变量(random variable,r.v.)*</strong></p>
+<p>其中可测映射:$X^{-1}(\mathbb{B})=\{\omega\in\Omega,X(\omega)\in\mathbb{B}\}\in\mathfrak{F}$</p>
+<p>其中$\Omega$称为<strong>样本空间</strong>，$\mathfrak{F}$称为事件域，它是一个$\sigma$域.$\mathbb{P}$为概率测度$(\mathbb{P}(\Omega)=1)$，$\mathbb{B}$是$Borel$域，表示$R$中所有开集(就是开区间)全体产生的$\sigma$域。</p>
+<p>$\star\star\star$  高等概率论不关心可测空间$(\Omega,\mathfrak{F})$以及随机变量$X$，因为只要测度发生了变化，分布函数就会发生变化，我们关心的是函数的分布函数。（这句话说的还不够严谨，后续会改）</p>
+<p>*random variable在翻译上过去曾有争议，也叫随机函数，因此可测映射$X$被称为随机函数也就能解释的通了。</p>
+<h1 id="1-可测空间"><a href="#1-可测空间" class="headerlink" title="1. 可测空间"></a>1. 可测空间</h1><h2 id="1-1-集类与-sigma-域"><a href="#1-1-集类与-sigma-域" class="headerlink" title="1.1 集类与$\sigma$域"></a>1.1 集类与$\sigma$域</h2><h3 id="1-1-1-集合及运算"><a href="#1-1-1-集合及运算" class="headerlink" title="1.1.1 集合及运算"></a>1.1.1 集合及运算</h3><p>这一小节的内容基本上就是集合论的一小部分内容，不论是学测度还是实变，教材的开头都是这个内容。</p>
+<p>这里强调几个知识点</p>
+<p><strong>对称差</strong>：$A\Delta B=(A\backslash B)\bigcup(B\backslash A)$,其实这个对称差就是$(A\bigcup B)\backslash(A\bigcap B)$</p>
+<p><strong>De Morgen法则</strong>：$(\bigcup_\alpha A_\alpha)^c=\bigcap_\alpha A^c_\alpha,(\bigcap_\alpha A_\alpha)^c=\bigcup_\alpha A^c_\alpha$    这个计算法则在后面经常用到，比如取余封闭。</p>
+<p><strong>示性函数</strong>：</p>
+<p>$I_A(\omega）=\begin{cases}<br>1,\omega\in A \\<br>0,\omega \in A^c<br>\end{cases}$ </p>
+<p>示性函数可以用来表示集合间的运算，比如</p>
+<p>$A=B \iff I_A=I_B$</p>
+<p>$A\subset B \iff I_A\leq I_B$</p>
+<p>$I_{A\bigcap B}=\min\{I_A,I_B\}=I_A I_B$</p>
+<p>$I_{A\bigcup B}=\max\{I_A,I_B\}=I_A+I_B-I_{A\bigcap B}=I_A+I_B-I_A I_B$</p>
+<p>$I_{A^c}=1-I_A$</p>
+<p>$I_{A-B}=I_{A\bigcap B^c}=I_A(1-I_B)$</p>
+<p>关于利用示性函数计算我们在后面还有很多运用，更多上述的基础计算的例子可参见荆炳义老师的《Advanced Probability Theory》</p>
+<p><strong>首次进入分解</strong>  给定集合$\{A_i,1\leq i\leq n\}$,则</p>
+<script type="math/tex; mode=display">
+\bigcup^n_{i=1}A_j=\sum^n_{i=1}\left(A_i\backslash\bigcup_{j\leq i-1}A_j\right)</script><p>这个公式意味着每次并入的集合和现有的集合没有交集，在后面常会用到。比如半域的定义$(iii)$就是两两互不相交集合的有限并。</p>
+<h3 id="1-1-2-集类与-sigma-域"><a href="#1-1-2-集类与-sigma-域" class="headerlink" title="1.1.2 集类与$\sigma$域"></a>1.1.2 集类与$\sigma$域</h3><p>在给出 <strong>域(也叫代数、algebra)、半域、$\sigma$-域，环，半环</strong>的定义之前，给出几个常用几个表示的称谓。</p>
+<p><strong>有限交</strong>：$A=\bigcap^n_{i=1}A_i$</p>
+<p><strong>可列(可数)交</strong>：$A=\bigcap^{\infty}_{i=1}A_i$</p>
+<p><strong>有限并</strong>：$A=\bigcup^n_{i=1}A_i$</p>
+<p><strong>可列(可数)并</strong>：$A=\bigcup^{\infty}_{i=1}A_i$</p>
+<p>(可以很明显的发现，有限与可列的区别就在于一个是n一个是$\infty$)</p>
+<p>当$A_i$互不相交时，上述的有限并和可列并就变成了</p>
+<p><strong>有限不交并</strong>：$A=\sum^n_{i=1}A_i$</p>
+<p><strong>可列不交并</strong>：$A=\sum^{\infty}_{i=1}A_i$</p>
+<p>至于为什么没有 有限不交交和可列不交交就不用说了吧？</p>
+<p>由 $\Omega$ 中子集构成的集合称为<strong>集类</strong>，用$\mathcal{P}$表示由$\Omega$的子集全体(包括$\Omega$和$\varnothing$)构成的集类(有老教授称$\mathcal{P}$为Power)。</p>
+<p><strong>域</strong> <strong>定义</strong>：$\mathcal{P}(\Omega)$的非空子集类$\mathcal{A}$称为域，假如它满足：</p>
+<p>（1）若$A\in\mathcal{A}$，则$A^c\in\mathcal{A}$    （即：取余封闭）</p>
+<p>（2）若$A\in\mathcal{A}$，$B\in\mathcal{A}$，则$A\bigcup B\in\mathcal{A}$  （即：有限并封闭）</p>
+<p>在某些教材或课程上会有一条额外的条件：$\Omega\in\mathcal{A},\varnothing\in\mathcal{A}$,但其实这一条并没有必要，因为由条件(1)可得$A\bigcup A^c=\Omega$,因此自然包含了$\Omega\in\mathcal{A}$.</p>
+<p>其中条件(2)有的教材会写成：若$A_j\in\mathcal{A},1\leq j\leq n$，则$\bigcup^n_{j=1}A_j\in\mathcal{A},\bigcap^n_{j=1}A_j\in\mathcal{A}$，即有限并与有限交封闭。与条件(2)是等价的，通过归纳法以及取余封闭可以轻松推导。有限并与有限交的写法在$\sigma$域的定义上同理。</p>
+<p><strong>环</strong> <strong>定义</strong>：关于差和并运算封闭的$\mathcal{P}(\Omega)$的非空子集类</p>
+<p>注1.1：当环$\mathcal{A}$包含$\Omega$时，$\mathcal{A}$必为域。换句话说，域就是包含了$\Omega$的环。</p>
+<p><strong>半域</strong> <strong>定义</strong>：$\mathcal{P}(\Omega)$的非空子集类$\mathcal{A}$称为半域，假如它满足：</p>
+<p>（1）$\Omega\in\mathcal{A},\varnothing\in\mathcal{A}$</p>
+<p>（2）当$A,B\in\mathcal{A}$，必有$A\bigcap B\in\mathcal{A}$</p>
+<p>（3）若$A\in \mathcal{A}$，则$A^c$可表为$\mathcal{A}$中两两互不相交集合的有限并。</p>
+<p>易见，域必为半域。</p>
+<p><strong>$\boldsymbol{\sigma}$-域</strong> <strong>定义</strong>：$\mathcal{P}(\Omega)$的非空子集类$\mathcal{A}$称为$\sigma$-域，假如它满足：</p>
+<p>（1）若$A\in\mathcal{A}$，则$A^c\in\mathcal{A}$</p>
+<p>（2）若对每个$n\ge 1,A_n\in\mathcal{A}$,则有$\bigcup^\infty_{i=1}A_n\in\mathcal{A}$    (即：可列并封闭)</p>
+<p>注1.2：从定义中可以看出，$\sigma$-域相较于域，区别就在于一个是可列并封闭，一个是有限并封闭</p>
+<p><strong>$\boldsymbol{\sigma(\varphi)}$ 定义</strong>：$\varphi$是$\Omega$的一个子集类，存在一个唯一的$\Omega$的$\sigma$域—$\sigma(\varphi)$，它包含$\varphi$而且被 包含$\varphi$的一切$\sigma$域所包含。由此$\sigma(\varphi)$称为<strong>包含$\varphi$的最小$\sigma$域(或:由$\varphi$生成的$\sigma$域)</strong> 。</p>
+<p>由定义可以看出，这个$\sigma(\varphi)$就是所有包含$\varphi$的$\sigma$域的交集。（所以被叫做包含$\varphi$的最小$\sigma$域嘛）</p>
+<p>注1.3：包含$\varphi$的最小域(或:由$\varphi$生成的域) 的原理与上面是一样的，就是所有包含$\varphi$的域的交集。另外$\sigma$域的交还是$\sigma$域，这个性质是上述定义的前提。</p>
+<p> <strong>命题1.1.7</strong> 对$\Omega$的子集类$\varphi$,若以$\varphi\bigcap A$表示集类$\{BA:B\in\varphi\}$,则</p>
+<script type="math/tex; mode=display">
+\sigma_{\Omega}(\varphi)\bigcap A=\sigma_A(\varphi\bigcap A)</script><p>这里$\sigma_A(\varphi\bigcap A)$表示将$\varphi\bigcap A$看为$\mathcal{P}(A)$的子类在$A$上生成的$\sigma$域。</p>
+<p>证明：(该命题的证明颇具代表性，后面很多时候的证明都会用到这一思路,下一节就会用)</p>
+<p>证明分两步，先证$\sigma_{\Omega}(\varphi)\bigcap A\supset\sigma_A(\varphi\bigcap A)$,后证$\sigma_{\Omega}(\varphi)\bigcap A\subset\sigma_A(\varphi\bigcap A)$.两个一合并就是公式(2).命题得证.</p>
+<p>Step1：证明：$\sigma_{\Omega}(\varphi)\bigcap A\supset\sigma_A(\varphi\bigcap A)$</p>
+<p>首先，$\sigma_{\Omega}(\varphi)\bigcap A\supset(\varphi\bigcap A)$,又$\sigma_{\Omega}(\varphi)\bigcap A$是$A$上的一个$\sigma$域(需按定义逐项验证)，故$\sigma_{\Omega}(\varphi)\bigcap A\supset\sigma_A(\varphi\bigcap A)$.</p>
+<p>Step1在很多时候都可以简单证明，复杂在Step2上，因为需要构造一个集合</p>
+<p>Step2：证明：$\sigma_{\Omega}(\varphi)\bigcap A\subset \sigma_A(\varphi\bigcap A)$</p>
+<p>令$\mathcal{D}=\{B\in\mathcal{P}(\Omega):B\bigcap A\in\sigma_A(\varphi\bigcap A)\}$,则$\mathcal{D}\supset\varphi,\mathcal{D}$也是$\Omega$上的一个$\sigma$域(也需逐项验证)，故$\mathcal{D}\supset\sigma_{\Omega}(\varphi)$,即$\sigma_{\Omega}(\varphi)\bigcap A\subset \sigma_A(\varphi\bigcap A)$.              证毕。</p>
+<h2 id="1-2-单调类定理"><a href="#1-2-单调类定理" class="headerlink" title="1.2 单调类定理"></a>1.2 单调类定理</h2><p>本节介绍两个定理，其余内容都是围绕这两个定理展开的。</p>
+<p>对$\Omega$上的任一非空集类$\mathcal{A}$,恒有$\mathcal{A}\subset\mathcal{M}(\mathcal{A})\subset\sigma(\mathcal{A})$.（这一条先写上，后面会用到）</p>
+<p><strong>定义 1.2.1</strong> $\mathcal{P}(\Omega)$的非空子集类$\mathcal{M}$称为<strong>单调类(Monotone class)</strong>，若对任一集合序列$\{A_n,n\ge 1\}\subset\mathcal{M}$,且</p>
+<p>当$\{A_n\}$递增时，即$A_n\subset A_{n+1}$,必有$\lim_{n\rightarrow\infty}A_n=\cup^{\infty}_{n=1}A_n\in\mathcal{M}$</p>
+<p>当$\{A_n\}$递减时，即$A_n\supset A_{n+1}$,必有$\lim_{n\rightarrow\infty}A_n=\cap^{\infty}_{n=1}A_n\in\mathcal{M}$</p>
+<p><strong>命题1.2.1</strong>  $\mathcal{P}(\Omega)$是一个单调类，每个$\sigma$域也必是一个单调类</p>
+<p>证明(作者自证，课本上没有，因为太简单了)：</p>
+<p>（1）对于$\{A_n,n\ge 1\}\subset\mathcal{P}(\Omega)$，因为$\mathcal{P}(\Omega)$包含子集全体，因此$\{A_n\}$的可列交或可列并仍包含在$\mathcal{P}(\Omega)$中。或：因为单调类$\mathcal{M}\subset \mathcal{P}(\Omega)$,因此${A_n}$的可列交或可列并包含在$\mathcal{M}$中的同时，必然也包含在$\mathcal{P}(\Omega)$中。</p>
+<p>（2）对于$\sigma$域$\mathfrak{F}$，若对任一集合序列$\{A_n,n\ge 1\}\subset\mathfrak{F}$,当$\{A_n\}$递增时，$\cup^{\infty}_{n=1}A_n\in\mathfrak{F}$,(这是$\sigma$域成立的条件之一，既然$\mathfrak{F}$是$\sigma$域，那么这些子集的可列并就必然也在$\mathfrak{F}$中).当$\{A_n\}$递减时，$\cap^{\infty}_{n=1}A_n=(\cup^{\infty}_{n=1}A^c_n)^c$(De Morgen法则的运用)，接下来分析$(\cup^{\infty}_{n=1}A^c_n)^c$,因为$A_n\in\mathfrak{F}$,因此$A^c_n\in\mathfrak{F}$,($\sigma$域成立的条件之一),进而$(\cup^{\infty}_{n=1}A^c_n)\in\mathfrak{F}$,最后$(\cup^{\infty}_{n=1}A^c_n)^c\in\mathfrak{F}$.（从这里可以理解为什么前面说域和$\sigma$域的定义时既有并又有交了吧）</p>
+<p><strong>命题1.2.2</strong> 若非集类$\varphi\subset\mathcal{P}(\Omega)$,则必存在包含$\varphi$的<strong>最小单调类$\mathcal{M}(\varphi)$</strong>,它也称为<strong>由$\varphi$生成的单调类</strong>。</p>
+<p>证明：同包含$\varphi$的最小$\sigma$域，所有包含$\varphi$的单调类的<strong>交集</strong>即为包含$\varphi$的最小单调类$\mathcal{M}(\varphi)$.</p>
+<p><strong>命题1.2.3</strong> $\mathfrak{F}$为$\sigma$域的充要条件是$\mathfrak{F}$既是域又是单调类.</p>
+<p>证明：</p>
+<p>$\Longrightarrow$(必要性) 若$A,B\in\mathfrak{F},A\cup B=A\cup B\cup B\cup B\cup B\cdots\in\mathfrak{F}$，(前面的$A\cup B$是为了说明有限并，是为了证明域，后面的无穷个B的并是$\sigma$域的可列并，是已知条件）,所以$\mathfrak{F}$是一个域。$\sigma$域是单调类在命题1.2.1的(2)中给出了证明.</p>
+<p>$\Longleftarrow$(充分性)域和$\sigma$域的区别在于一个是有限并一个是可列并。对任一集合序列$\{A_n,n\ge 1\}\subset\mathfrak{F}$,（$\mathfrak{F}$是域）,有$\cup_{k\leq n}A_k\in \mathfrak{F}$，令$B_n=\cup_{k\leq n}A_k$，则$B_n\in\mathfrak{F}$且$B_n$是递增的. 若$\mathfrak{F}$还是单调类，则$\cup^\infty_{n= 1}B_n\in\mathfrak{F}$，由此可得$\cup_{k\ge 1}A_k=\cup_{k\ge 1}B_k\in\mathfrak{F}$,所以$\mathfrak{F}$是$\sigma$域。</p>
+<p>注1.4：关于充分性的证明，一开始我也是没看明白最后一个公式，其实整个过程就是: $A_n$是任意的，由$A_n$产生的$B_n$是单调的，$B_n$的可列并属于$\mathfrak{F}$，因为$\mathfrak{F}$是单调类。由此，把$B_n$换成$A_n$，$B_n$的可列并其实就是$A_n$的可列并，所以任意$A_n$的可列并也就属于$\mathfrak{F}$了，所以,所以$\mathfrak{F}$是$\sigma$域。</p>
+<p><strong>定理 1.2.1 (单调类定理)</strong>  若$\mathcal{A}$为域，则$\sigma(\mathcal{A})=\mathcal{M}(\mathcal{A})$</p>
+<p>证明：这类问题的证明就像之前的那个证明一样，思路就是证明其相互的包含关系，既然相互包含，那必然相等了。<strong>该证明方法具有代表性，请牢记，另外现阶段的证明还是属于用条件堆出结论的，不需要太高的数学技巧。</strong></p>
+<p>Step1 先证$\sigma(\mathcal{A})\supset \mathcal{M}(\mathcal{A})$</p>
+<p>首先$\sigma(\mathcal{A})\supset\mathcal{A},\sigma(\mathcal{A})$又是单调类，所以$\sigma(\mathcal{A})\supset \mathcal{M}(\mathcal{A})$，（因为$ \mathcal{M}(\mathcal{A})$是包含$\mathcal{A}$最小的那个单调类）</p>
+<p>Step2 再证$\sigma(\mathcal{A})\subset \mathcal{M}(\mathcal{A})$</p>
+<p><strong>分析</strong>：上一步启发了我们，既然$\sigma(\mathcal{A})$是包含$\mathcal{A}$最小的$\sigma$域，那我们只需证明$\mathcal{M}(\mathcal{A})$是$\sigma$域就行了，这样$\sigma(\mathcal{A})\subset \mathcal{M}(\mathcal{A})$.由<strong>命题1.2.3</strong>我们知道，当一个$\mathfrak{F}$既是单调类也是域时，它就是一个$\sigma$域。因此我们证明的目标就变成了：$\mathcal{M}(\mathcal{A})$<strong>既是单调类也是域</strong>。因此接下来我们分别要定义两个集合(或者叫非空子集类也行?),使之分别是单调类和域，而且与$\mathcal{M}(\mathcal{A})$相等，这样就能完成证明。</p>
+<p>记 $\mathcal{M}_1=\{A\in\mathcal{M}(\mathcal{A}):A^c\in\mathcal{M}(\mathcal{A}),A\cup B\in\mathcal{M}(\mathcal{A}),\forall B\in\mathcal{A}\}$这个集合的特点就是里面包含的所有$A$都是属于$\mathcal{M}(\mathcal{A})$的，因此$\mathcal{M}_1$是$\mathcal{M}(\mathcal{A})$的子集，另外$\forall B\in\mathcal{A}$都有$A\cup B\in\mathcal{M}(\mathcal{A})$,因此$\mathcal{M}_1\supset\mathcal{A}$。下面要验证我们定义的这个$\mathcal{M}_1$是一个单调类</p>
+<p>设$\{A_n\}$是取自 $\mathcal{M}_1$中的单调序列，同时，根据我们对 $\mathcal{M}_1$的定义，可以知道该序列满足$A_n,A^c_n\in\mathcal{M}(\mathcal{A})$,由此</p>
+<p>若$\{A_n\}$是单调递增序列，$\cup^\infty_{i=1}A_n\in\mathcal{M}(\mathcal{A}$),(因为$\mathcal{M}(\mathcal{A})$就是一个单调类)，既然$A_n$的可列并属于$\mathcal{M}(\mathcal{A})$,而这些$A_n$本身是取自$\mathcal{M}_1$的，因此$\cup^\infty_{i=1}A_n\in\mathcal{M}_1$.（这里有点绕，但至少比书上写的详细一些了）</p>
+<p>若$\{A_n\}$是单调递减序列，其实，单调递减序列就是单调递增序列的补集，正如我们前面所说，补集也是属于$\mathcal{M}(\mathcal{A})$的。因此对于单调</p>
+<p>记 $\mathcal{M}_2=\{B\in\mathcal{M}(\mathcal{A}):A\cup B\in\mathcal{M}(\mathcal{A}),\forall A\in\mathcal{M}(\mathcal{A})\}$这个集合</p>
+<p><strong>定义 1.2.2</strong> $\mathcal{P}(\Omega)$的非空子集类$\mathcal{A}$称为$\boldsymbol{\pi}$<strong>类</strong>，若当$A,B\in\mathcal{A}$时，必有$AB\in\mathcal{A}$.（有限交封闭）</p>
+<p><strong>定义 1.2.3</strong> </p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+  </div>
+
+  
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Feng Pan</p>
+  <div class="site-description" itemprop="description">高等数理统计、高等概率论学习心得</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feng Pan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+</body>
+</html>
