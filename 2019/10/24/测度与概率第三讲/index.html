@@ -57,14 +57,14 @@
 
   <meta name="description" content="1.3 可测空间与乘积可测空间1.3.1 可测空间定义1.3.1 $\Omega$为一集合，$\mathfrak{F}$为由$\Omega$的子集构成的$\sigma$域，则$(\Omega,\mathfrak{F})$称为可测空间，$\mathfrak{F}$中任一集合都称为$\mathfrak{F}$可测集，简称可测集。 从概率论上来看，可测空间$(\Omega,\mathfrak{F})$有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率测度第三讲">
+<meta property="og:title" content="概率与测度—1.3节 可测空间与乘积可测空间">
 <meta property="og:url" content="http://www.fengpan.xyz/2019/10/24/测度与概率第三讲/index.html">
 <meta property="og:site_name" content="风磐&#39;Blog">
 <meta property="og:description" content="1.3 可测空间与乘积可测空间1.3.1 可测空间定义1.3.1 $\Omega$为一集合，$\mathfrak{F}$为由$\Omega$的子集构成的$\sigma$域，则$(\Omega,\mathfrak{F})$称为可测空间，$\mathfrak{F}$中任一集合都称为$\mathfrak{F}$可测集，简称可测集。 从概率论上来看，可测空间$(\Omega,\mathfrak{F})$有">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-24T11:47:22.278Z">
+<meta property="og:updated_time" content="2019-10-24T11:55:48.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="概率测度第三讲">
+<meta name="twitter:title" content="概率与测度—1.3节 可测空间与乘积可测空间">
 <meta name="twitter:description" content="1.3 可测空间与乘积可测空间1.3.1 可测空间定义1.3.1 $\Omega$为一集合，$\mathfrak{F}$为由$\Omega$的子集构成的$\sigma$域，则$(\Omega,\mathfrak{F})$称为可测空间，$\mathfrak{F}$中任一集合都称为$\mathfrak{F}$可测集，简称可测集。 从概率论上来看，可测空间$(\Omega,\mathfrak{F})$有">
   <link rel="canonical" href="http://www.fengpan.xyz/2019/10/24/测度与概率第三讲/">
 
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>概率测度第三讲 | 风磐'Blog</title>
+  <title>概率与测度—1.3节 可测空间与乘积可测空间 | 风磐'Blog</title>
   
 
 
@@ -209,7 +209,7 @@
       <meta itemprop="name" content="风磐'Blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">概率测度第三讲
+        <h1 class="post-title" itemprop="name headline">概率与测度—1.3节 可测空间与乘积可测空间
 
           
         </h1>
@@ -225,7 +225,7 @@
                 
               
 
-              <time title="创建时间：2019-10-24 19:28:08 / 修改时间：19:47:22" itemprop="dateCreated datePublished" datetime="2019-10-24T19:28:08+08:00">2019-10-24</time>
+              <time title="创建时间：2019-10-24 19:28:08 / 修改时间：19:55:48" itemprop="dateCreated datePublished" datetime="2019-10-24T19:28:08+08:00">2019-10-24</time>
             </span>
           
             
@@ -253,9 +253,9 @@
 <hr>
 <p><strong>集合的上下极限</strong></p>
 <p>对集合序列$\{A_n,n\ge1\}$，称$\cap_{k\ge 1}\cup_{n\ge k}A_n$为$\{A_n,n\ge1\}$的<strong>上限点集(也叫上极限)</strong>，也记为$\overline{\lim}_{n\rightarrow\infty}A_n$或$\lim\sup_{n\rightarrow\infty}A_n$，它由$\Omega$ 中属于无限多个 $A_n$ 的那些元素构成，即：</p>
-<p>$\overline{\lim}_{n\rightarrow\infty}A_n=\cap_{k\ge 1}\cup_{n\ge k}A_n=\{\omega:\omega\in A_n对无限个n成立\}=\{\omega:\forall m,\exist n(\omega)&gt;m,\omega\in A_{n(\omega)}\}$</p>
+<p>$\overline{\lim}_{n\rightarrow\infty}A_n=\cap_{k\ge 1}\cup_{n\ge k}A_n=\{\omega:\omega\in A_n对无限个n成立\}=\{\omega:\forall m,\exists n(\omega)&gt;m,\omega\in A_{n(\omega)}\}$</p>
 <p>对集合序列$\{A_n,n\ge1\}$，称$\cup_{k\ge 1}\cap_{n\ge k}A_n$为$\{A_n,n\ge1\}$的<strong>下限点集(也叫下极限)</strong>，也记为$\underline{\lim}_{n\rightarrow\infty}A_n$或$\lim\inf_{n\rightarrow\infty}A_n$，它由$\Omega$ 中自某个指标 $n_0(\omega)$ 后属于所有 $A_n$ 的那些元素构成，即：</p>
-<p>$\underline{\lim}_{n\rightarrow\infty}A_n=\cup_{k\ge 1}\cap_{n\ge k}A_n=\{\omega:\omega不属于A_n中的有限多个\}=\{\omega:\exist k\ge1,\forall n\ge k,\omega\in A_n\}$</p>
+<p>$\underline{\lim}_{n\rightarrow\infty}A_n=\cup_{k\ge 1}\cap_{n\ge k}A_n=\{\omega:\omega不属于A_n中的有限多个\}=\{\omega:\exists k\ge1,\forall n\ge k,\omega\in A_n\}$</p>
 <p>当上下极限相等时，称$\{A_n\}$的极限存在，记为$\lim_{n\rightarrow\infty}A_n$.</p>
 <hr>
 <p><strong>上下限事件</strong></p>
@@ -293,7 +293,7 @@
 <p><strong>命题 1.3.4</strong> 若 $\varphi=\{B:B为以\prod_{\alpha\in I}A_\alpha为底的矩形柱，A_\alpha\in\mathfrak{F}_\alpha,\alpha\in有限I\in J\}$, 其中 $I$ 取遍 $J$ 的一切有限子集，即 $\varphi$ 表示有限维基底可测矩形柱全体，则 $\varphi$ 是半域。</p>
 <p>证明：类似<strong>命题1.3.1</strong>.</p>
 <p><strong>定义1.3.5</strong> 在 $\Omega=\prod_{\alpha\in J}\Omega_\alpha$ 上，由上命题1.3.4 规定的 $\varphi$, $\mathfrak{F}=\sigma(\varphi)$ 称为 $\{\mathfrak{F}_\alpha,\alpha\in J\}$ 的乘积 $\sigma$ 域，记为 $\mathfrak{F}=\prod_{\alpha\in J}\mathfrak{F}_\alpha$, 而 $(\Omega,\mathfrak{F})$称为乘积可测空间，记为 $(\Omega,\mathfrak{F})=\prod_{\alpha\in J}(\Omega_\alpha,\mathfrak{F}_\alpha)$.</p>
-<p><strong>定义1.3.6</strong> 在 $\Omega$ 中，若 $I$ 为 $J$ 的任意子集，$A\sub\Omega_I=\prod_{\alpha\in I}\Omega_\alpha$, 则 $B=A\times \prod_{\alpha\in J\backslash I}\Omega_\alpha=\{(\omega_\alpha,\alpha\in J)\in\Omega:(\omega_\alpha,\alpha\in I)\in A\}$ 称为$\Omega$ 中的柱集，$A$ 称为 $B$ 的底。当$A\in\prod_{\alpha\in I}\mathfrak{F}_\alpha$, 柱集 $B$ 称为可测的. </p>
+<p><strong>定义1.3.6</strong> 在 $\Omega$ 中，若 $I$ 为 $J$ 的任意子集，$A\subset\Omega_I=\prod_{\alpha\in I}\Omega_\alpha$, 则 $B=A\times \prod_{\alpha\in J\backslash I}\Omega_\alpha=\{(\omega_\alpha,\alpha\in J)\in\Omega:(\omega_\alpha,\alpha\in I)\in A\}$ 称为$\Omega$ 中的柱集，$A$ 称为 $B$ 的底。当$A\in\prod_{\alpha\in I}\mathfrak{F}_\alpha$, 柱集 $B$ 称为可测的. </p>
 <p>特别地，当 $I$ 为有限指标集时，$B$ 称为有限维基底可测柱集，简称为<strong>有限维柱集</strong>。当 $I$ 为可列指标集时，$B$ 称为可列维基底可测柱集，简称为<strong>可列维柱集</strong>。</p>
 <p><strong>命题 1.3.5</strong> 若 $\{(\Omega_\alpha,\,\mathfrak{F}_\alpha),\alpha\in J\}$ 为一族可测空间，$J$ 为无限指标集，$(\Omega,\mathfrak{F})=\prod_{\alpha\in J}(\Omega_\alpha,\mathfrak{F}_\alpha)$，又 $\mathcal{G}$ 表示 $\Omega$ 中可列维基底可测柱集全体，则 $\mathfrak{F}=\mathcal{G}$.</p>
 <p>证明：略</p>
@@ -313,8 +313,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/24/测度与概率第二讲/" rel="next" title="概率测度第二讲">
-                  <i class="fa fa-chevron-left"></i> 概率测度第二讲
+                <a href="/2019/10/24/测度与概率第二讲/" rel="next" title="概率与测度—1.2节 单调类定理(集合形式)">
+                  <i class="fa fa-chevron-left"></i> 概率与测度—1.2节 单调类定理(集合形式)
                 </a>
               
             </div>
@@ -323,8 +323,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/10/24/测度与概率第四讲/" rel="prev" title="概率测度第四讲">
-                  概率测度第四讲 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/10/24/测度与概率第四讲/" rel="prev" title="概率与测度—1.4节 可测映照与随机变量">
+                  概率与测度—1.4节 可测映照与随机变量 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -389,7 +389,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
