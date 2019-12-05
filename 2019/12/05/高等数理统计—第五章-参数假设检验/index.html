@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="欢迎指正">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高等数理统计—第五章 参数假设检验">
+<meta property="og:url" content="http://www.fengpan.xyz/2019/12/05/高等数理统计—第五章-参数假设检验/index.html">
+<meta property="og:site_name" content="风磐&#39;Blog">
+<meta property="og:description" content="欢迎指正">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:/Users/zl807/AppData/Roaming/Typora/typora-user-images/image-20191126151605485.png">
+<meta property="og:image" content="c:/Users/zl807/AppData/Roaming/Typora/typora-user-images/image-20191126151528050.png">
+<meta property="og:updated_time" content="2019-12-02T06:29:07.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高等数理统计—第五章 参数假设检验">
+<meta name="twitter:description" content="欢迎指正">
+<meta name="twitter:image" content="c:/Users/zl807/AppData/Roaming/Typora/typora-user-images/image-20191126151605485.png">
+  <link rel="canonical" href="http://www.fengpan.xyz/2019/12/05/高等数理统计—第五章-参数假设检验/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>高等数理统计—第五章 参数假设检验 | 风磐'Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风磐'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">谁无暴风劲雨时 守得云开见月明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/12/05/高等数理统计—第五章-参数假设检验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">高等数理统计—第五章 参数假设检验
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-05 16:21:13" itemprop="dateCreated datePublished" datetime="2019-12-05T16:21:13+08:00">2019-12-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-02 14:29:07" itemprop="dateModified" datetime="2019-12-02T14:29:07+08:00">2019-12-02</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>欢迎指正</p><a id="more"></a>
+<h1 id="第五章-参数假设检验"><a href="#第五章-参数假设检验" class="headerlink" title="第五章 参数假设检验"></a>第五章 参数假设检验</h1><p><strong>参数估计</strong>与<strong>假设检验</strong>是<strong>统计推断</strong>的两个主要部分。参数估计我们之前说过了，是对分布中未知参数通过一些方法来估计。假设检验问题是要对”要对总体分布的某种判断（或假设）”是否成立进行鉴定（或检验）。</p>
+<p><strong>目录</strong></p>
+<p>5.1 基本概念</p>
+<p>5.2 N-P基本引理</p>
+<p>5.3 单调似然比分布族的<strong>单边</strong>检验</p>
+<p>5.4 <strong>单参数</strong>指数族分布的<strong>双边</strong>检验$~\bigstar$</p>
+<p>5.5 <strong>多参数</strong>指数族的检验$~\bigstar$</p>
+<h2 id="5-1-基本概念"><a href="#5-1-基本概念" class="headerlink" title="5.1 基本概念"></a>5.1 基本概念</h2><p>假设$X\sim f(x,\theta),\theta\in\Theta$，考虑一般的<strong>假设检验问题</strong>：</p>
+<script type="math/tex; mode=display">
+H_0:\theta\in\Theta_0\longleftrightarrow H_1:\theta\in\Theta_1\tag{1}</script><p>对于该检验问题，称以下$\phi(x)$为它的一个<strong>检验函数</strong>：</p>
+<script type="math/tex; mode=display">
+\phi(x)=\begin{cases} 
+1,  x\in R \\
+0, x\in\overline{R}
+\end{cases}</script><p>这里$R$是否定域，$\phi(x)$表示抽样到$X=x$时否定原假设$H_0$的概率。若对任意的$\theta\in\Theta$有$E_\theta[\phi(X)]\leq\alpha$，则$\phi(x)$称为假设检验问题的水平为$\alpha$的检验。易见，否定域$R$与检验函数是完全等价的，具体说来，若$\phi(x)=1$（即$x\in R$），则否定$H_0$（因为$x$落在否定域）；若$\phi(x)=0$（即$x\in\overline{R}$），则不否定$H_0$（因为$x$落在接受域，接受域这个说法并不严谨，我们只能说是不拒绝/不否定$H_0$，不能说接受$H_1$）。</p>
+<hr>
+<p><strong>两类错误与功效函数/势函数</strong></p>
+<p><strong>第一类错误</strong>$I(\theta)$：$H_0$成立时，我们否定$H_0$的概率（拒真错误）</p>
+<p><strong>第二类错误</strong>$II(\theta)$：$H_1$成立时，不否定$H_0$的概率（纳伪错误）</p>
+<p>对于假设检验问题（1）的一个否定域$R$或一个检验函数$\phi(x)$，其<strong>功效函数</strong>（亦称<strong>势函数</strong>）定义为：</p>
+<script type="math/tex; mode=display">
+\beta(\theta)=E_\theta[\phi(X)]=P_\theta(X\in R),\forall\theta\in\Theta</script><p>其中$\beta(\theta)$表示当参数取$\theta$时，否定$H_0$的平均概率。</p>
+<blockquote>
+<p>功效函数可以统一两类错误，拿否定域来说，当$\theta\in\Theta_0$时，$\beta(\theta)=E_\theta[\phi(X)]=P_\theta(X\in R)=I(\theta)$，而当$\theta\in\Theta_1$时，$\beta(\theta)=E_\theta[\phi(X)]=P_\theta(X\in R)=1-P_\theta(X\in \overline{R})=1-II(\theta)$。</p>
+</blockquote>
+<hr>
+<p><strong>N-P准则与一致最优势检验(UMPT)</strong></p>
+<p>$\bigstar\bigstar\bigstar$ 对于假设检验问题（1）的一个解，统称为一个检验$\phi(x)$，其功效函数伪$\beta(\theta)=E_\theta[\phi(X)]$。根据N-P准则，首先确定一个第一类错误的允许水平$\alpha$，其值很小，在此前提下，寻找第二类错误尽量小（即功效函数$\beta(\theta)=1-II(\theta)$尽可能大）的解。</p>
+<p><strong>一致最优势检验（uniform most powerful test,UMPT）</strong>：对于给定的检验问题（1）和给定的水平$\alpha$（通常$0&lt;\alpha&lt;1$，且很小），若检验$\phi(x)$满足：</p>
+<script type="math/tex; mode=display">
+\beta_\phi(x)=E_\theta[\phi(X)]\leq\alpha,\forall\theta\in\Theta</script><p>则称$\phi(x)$为假设检验问题（1）的一个水平为$\alpha$的检验，并记$\Phi_\alpha=\{一切\phi(x):\beta_\phi(\theta)=E_\theta[\phi(x)]\leq\alpha,\theta\in\Theta_0\}$，若存在$\phi^*(x)\in\Phi_\alpha$使得</p>
+<script type="math/tex; mode=display">
+\beta_{\phi^*}(\theta)\ge\beta_\phi(\theta),\forall\theta\in\Theta_1,\phi(x)\in\Phi_\alpha</script><p>则称$\phi^<em>(x)$为假设检验问题（1）的水平为$\alpha$的<em>*一致最优势检验（UMPT）</em></em>。</p>
+<blockquote>
+<p>根据以上所述，很明显，UMPT就是将第一类错误$I(\theta)$限制在给定的$\alpha$内，第二类错误最小（功效函数最大）的那个检验$\phi(x)$。</p>
+</blockquote>
+<p><strong>引理 （充分统计量的函数）</strong>对于假设检验问题（1），设$T=T(X)$为充分统计量，任给一个检验$\phi(x)$，则必存在一个检验$\tilde{\phi}(T)$为充分统计量$T$的函数，并且与$\phi(x)$有相同的功效。</p>
+<blockquote>
+<p>这个引理就是告诉我们UMPT可以通过充分统计量的函数里得到。</p>
+</blockquote>
+<h2 id="5-2-Neyman-Pearson基本引理"><a href="#5-2-Neyman-Pearson基本引理" class="headerlink" title="5.2 Neyman-Pearson基本引理"></a>5.2 Neyman-Pearson基本引理</h2><p>给出基本定义定理后直接上例题。</p>
+<p><strong>简单假设检验问题</strong>接下来都采用这种形式：</p>
+<script type="math/tex; mode=display">
+H_0:\theta=\theta_0\longleftrightarrow H_1:\theta=\theta_1\tag{2}</script><p>其最优解就是势函数最大的那个。对于简单假设检验问题（2），它的一致最优势检验（UMPT）就是其<strong>最优势检验（most powerful test,MPT）</strong>。</p>
+<blockquote>
+<p>我们先考虑“简单”情况下的假设检验问题，以后在看复杂情况下的。</p>
+</blockquote>
+<p><strong>定理1（Neyman-Pearson基本引理）</strong> 假设$X\sim f(x,\theta)$为离散型或连续型密度函数，对简单假设检验问题（2）有</p>
+<p>（1）存在性.设检验函数$\phi(x)$由似然比$\lambda(x)=f(x,\theta_1)/f(x,\theta_0)$，定义为</p>
+<script type="math/tex; mode=display">
+\phi(x)=\begin{cases} 
+1,~~~x\in R^+=\{x:\lambda(x)>c\} \\
+\gamma ,~~~x\in R^0=\{x:\lambda(x)=c\}  \\
+0,~~~x\in R^-=\{x:\lambda(x)<c\}
+\end{cases}\tag{3}</script><p>则对任意给定的$0&lt;\alpha&lt;1$，必存在$c\ge0,0\leq\gamma\leq1$，使$E_{\theta_0}[\phi(X)]=\beta_\phi(\theta_0)=\alpha$.</p>
+<p>（2）最优性或充分性.满足（3）式的$\phi(x)$必为假设检验问题（2）的最优势检验。</p>
+<p>（3）唯一性或必要性.以上$\phi(x)$在$R^+\cup R^-$上为（2）的唯一的最优势检验。</p>
+<p><strong>推论1</strong> 对任意统计量$T=T(X)$，定义函数$\phi(x)$如下：</p>
+<script type="math/tex; mode=display">
+~~\phi(x)=\begin{cases} 
+1,~~~T(x)>c \\
+\gamma ,~~~T(x)=c\\
+0,~~~T(x)<c
+\end{cases}</script><p>则对任意给定的$0&lt;\alpha&lt;1$，必存在$c\ge0,0\leq\gamma\leq1$使$E_{\theta_0}[\phi(X)]=\alpha$.</p>
+<p><strong>推论2</strong> 若$T=T(X)$为充分统计量，且$T\sim g(t,\theta)$，则上述定理中的最优势检验可表示为：</p>
+<script type="math/tex; mode=display">
+~~\phi(t)=\begin{cases} 
+1,~~~t\in R^+=\{t:\lambda(t)>c\} \\
+\gamma ,~~~t\in R^0=\{t:\lambda(t)=c\}  \\
+0,~~~t\in R^-=\{t:\lambda(t)<c\}
+\end{cases}</script><p>其中$\lambda(t)=g(t,\theta_1)/g(t,\theta_0)$，且$c,\gamma$由$E_{\theta_0}[\phi(T)]=\alpha$决定。即$\lambda(x)$可表示为充分统计量的函数。</p>
+<p><strong>推论3</strong> 若似然比$\lambda(x)$为某一个统计量$T(x)$的增函数：$\lambda(x)=h(T(x)),h(\cdot)$严增，则$\phi(x)$可表示为：</p>
+<script type="math/tex; mode=display">
+~~\phi(x)=\begin{cases} 
+1,~~~x\in R^+=\{x:T(x)>k\} \\
+\gamma ,~~~x\in R^0=\{x:T(x)=k\}  \\
+0,~~~x\in R^-=\{x:T(x)<k\}
+\end{cases}</script><p>其中$c,\gamma$由$E_{\theta_0}[\phi(T)]=\alpha$决定。</p>
+<hr>
+<p>$\bigstar\bigstar\bigstar$ 根据上述定理，求最优势检验，主要是确定$c,\gamma$，使之满足</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\beta_\phi(\theta_0)&=E_{\theta_0}[\phi(X)]=P_{\theta_0}(X\in R^+)+\gamma P_{\theta_0}(X\in R^0)\\
+&=P_{\theta_0}(\lambda(X)>c)+\gamma P_{\theta_0}(\lambda(X)=c)=\alpha
+\end{align}\tag{4}</script><p>其中若$\lambda(X)$为连续性分布，则$P_{\theta_0}(X\in R^0)=P_{\theta_0}(\lambda(X)=c)=0$，问题就变成了使$P_{\theta_0}(\lambda(X)&gt;c)=\alpha$.</p>
+<p><strong>例1（连续型）</strong> 设$X_1,…,X_n$为来自正态总体$N(\theta,\sigma^2)$的简单样本，设$\sigma^2$已知，$\theta$未知，任取$\theta_0,\theta_1,\theta_0&lt;\theta_1$，给定检验水平$\alpha(0&lt;\alpha&lt;1)$，考虑检验问题</p>
+<script type="math/tex; mode=display">
+H_0:\theta=\theta_0\longleftrightarrow H_1:\theta=\theta_1</script><p>计算上检验问题水平为$\alpha$的<strong>MPT</strong>.</p>
+<p>解：样本$X=(X_1,…,X_n)$的概率密度为：$f(x,\theta)=(2\pi\sigma^2)^{-n/2}\exp\{-\frac{1}{2\sigma^2}\sum^n_{i=1}(x_i-\theta)^2\}$</p>
+<p>似然比$\lambda(x)=\frac{f(x,\theta_1)}{f(x,\theta_0)}=\exp\{\frac{\theta_1-\theta_0}{\sigma^2}\sum^n_{i=1}x_i-\frac{n}{2\sigma^2}(\theta^2_1-\theta^2_0)\}$（这里符合<strong>推论3</strong>，其实和推论几有关只与我们最后得到的检验的写法有关系）。对于任意正数$c&gt;0$，考察</p>
+<p>$\{\lambda(x)\ge c\}=\{\exp\{\frac{\theta_1-\theta_0}{\sigma^2}\sum^n_{i=1}x_i-\frac{n}{2\sigma^2}(\theta^2_1-\theta^2_0)\}\ge c\}=\{\sum^n_{i=1}x_i\ge\rho\}$，其中$\rho=\frac{\sigma^2}{\theta_1-\theta_0}[\ln c+\frac{n(\theta^n_1-\theta^2_0)}{2\sigma^2}]$.（$\rho$的具体表达式不重要）</p>
+<p>当$\theta=\theta_0$时，即$H_0$成立时（之所以要这么写，是应为我们的检验是用来得到“拒绝/不拒绝$H_0$”这个结论的，自然要拿$H_0$来算），有$\sum^n_{i=1}X_i\sim N(n\theta_0,n\sigma^2)$，进而$\frac{\sum X_i-n\theta_0}{\sqrt{n}\sigma}\sim N(0,1)$， 有</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\alpha&=P_{\theta_0}(\lambda(X)\ge c)=P_{\theta_0}\left(\sum^n_{i=1}x_i\ge\rho\right)\\
+&=P_{\theta_0}\left(\frac{\sum X_i-n\theta_0}{\sqrt{n}\sigma}\ge\frac{\rho-n\theta_0}{\sqrt{n}\sigma}\right)\\
+&=P\left(N(0,1)\ge\frac{\rho-n\theta_0}{\sqrt{n}\sigma}\right)
+\end{align}</script><p>用$z_\alpha$表示标准正态分布$N(0,1)$的上$\alpha$分位点，于是就有$\frac{\rho-n\theta_0}{\sqrt{n}\sigma}=z_\alpha$，即$\rho=n\theta_0+\sqrt{n}\sigma z_\alpha$，由此得到检验水平为$\alpha$的一个UMPT为</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\phi(x)&=
+\begin{cases} 
+1,  \lambda(x)\ge c \\
+0, \lambda(x)<c
+\end{cases}\\
+&=\begin{cases} 
+1,\sum x_i\ge n\theta_0+\sqrt{n}\sigma z_\alpha \\
+0,\sum x_i< n\theta_0+\sqrt{n}\sigma z_\alpha
+\end{cases}\\
+&=\begin{cases} 
+1,\overline{x}\ge\theta_0+\frac{\sigma}{\sqrt{n}}z_\alpha \\
+0,\overline{x}<\theta_0+\frac{\sigma}{\sqrt{n}}z_\alpha 
+\end{cases}
+\end{align}</script><p>对应拒绝域为$R=\{x\in\mathbb{R}^n|\overline{x}\ge\theta_0+\frac{\sigma}{\sqrt{n}}z_\alpha\}$.</p>
+<blockquote>
+<p>这个例子是一个很有代表性的例题，由于是连续性的，不存在$\lambda(x)=c$这种概率为0的情况，接下来我们看一个离散型的。</p>
+</blockquote>
+<p><strong>例2（离散型）</strong>  设$X_1,…,X_n$独立同分布，$X_1\sim Poisson(\lambda)$，给定检验水平$\alpha(0&lt;\alpha<1)$，求假设检验问题：$h_0:\lambda=\lambda_0\longleftrightarrow h_1:\lambda="\lambda_1(\lambda_1">\lambda_0)$的水平为$\alpha$的<strong>MPT</strong>.</1)$，求假设检验问题：$h_0:\lambda=\lambda_0\longleftrightarrow></p>
+<p>解：对于检验问题，其似然比为</p>
+<script type="math/tex; mode=display">
+\lambda(x)=\frac{f(x,\lambda_1)}{f(x,\lambda_0)}=\frac{\prod^n_{i=1}e^{-\lambda_1}\frac{\lambda^{x_i}_1}{x_i!}}{\prod^n_{i=1}e^{-\lambda_0}\frac{\lambda^{x_i}_0}{x_i!}}=e^{-n(\lambda_1-\lambda_0)}(\frac{\lambda_1}{\lambda_0})^{\sum^n_{i=1}x_i}</script><p>因为$\lambda_1&gt;\lambda_0$，所以明显$\lambda(x)$是$\sum x_i$的增函数，对于任意正数$c&gt;0$，考察</p>
+<p>$\{\lambda(x)&gt;c\}=\{e^{-n(\lambda_1-\lambda_0)}(\frac{\lambda_1}{\lambda_0})^{\sum^n_{i=1}x_i}&gt;c\}=\{\sum^n_{i=1}x_i\ge\rho\}$，其中$\rho=\log_{\lambda_1/\lambda_0}(c\cdot e^{n(\lambda_1-\lambda_0)})$。</p>
+<p>当$\lambda=\lambda_0$时，即$H_0$成立时，有$\sum^n_{i=1}X_i\sim Poisson(n\lambda_0)$， 记其分布函数为$F(u)$，有</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\alpha&=P_{\lambda_0}(\lambda(X)>c)+\gamma P_{\lambda_0}(\lambda(X)=c)\\
+&=P_{\lambda_0}(\sum^n_{i=1}x_i>\rho)+\gamma P_{\lambda_0}(\sum^n_{i=1}x_i=\rho)\\
+&=1-P_{\lambda_0}(\sum^n_{i=1}x_i\leq\rho)+\gamma P_{\lambda_0}(\lambda(X)=\rho)\\
+&=1-F(\rho)+\gamma[F(\rho)-F(\rho-0)]
+\end{align}</script><p>上式整理下可得$F(\rho)=(1-\alpha)+\gamma[F(\rho)-F(\rho-0)]$，然后用$u_{1-\alpha}$表示$Poisson(n\lambda_0)$的$1-\alpha$分位数，可取$\rho=u_{1-\alpha},\gamma=[F(\rho)-(1-\alpha)]/[F(\rho)-F(\rho-0)]$，由此可得检验问题的MPT：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\phi(x)&=\begin{cases} 
+1,\sum^n_{i=1} x_i>u_{1-\alpha} \\
+\gamma ,\sum^n_{i=1}x_i=u_{1-\alpha} \\
+0,\sum^n_{i=1}x_i<u_{1-\alpha}
+\end{cases}
+\end{align}</script><blockquote>
+<p>两个例题，摸清套路就会解这类简单假设检验问题了。</p>
+</blockquote>
+<hr>
+<p>以上例题都是针对简单假设检验问题的，求得的最优势检验（MPT）函数$\phi(x)$也是一致最优势检验（UMPT）。</p>
+<p>很明显我们不会只遇到简单假设检验的问题，下面这个引理对于求解复杂假设检验问题很有帮助：</p>
+<p><strong>引理1</strong> 考虑以下假设检验问题：</p>
+<p>（i）$H_0:\theta=\theta_0\longleftrightarrow H_1:\theta=\theta_1,~~~\theta_o\in\Theta_0,\theta_1\in\Theta_1$</p>
+<p>（ii）$H_0:\theta=\theta_0\longleftrightarrow H_1:\theta\in\Theta_1$</p>
+<p>（iii）$H_0:\theta\in\Theta_0\longleftrightarrow H_1:\theta\in\Theta_1$</p>
+<p>（1）若$\phi(x)$为（i）的MPT，但$\phi(x)$与$\theta_1$无关，则$\phi(x)$为（ii）的UMPT。</p>
+<p>（2）若$\phi(x)$为（ii）的UMPT，且又为（iii）的水平为$\alpha$的检验，则$\phi(x)$亦为（iii）的UMPT。</p>
+<p>续上面例子来简单看下这个引理怎么用。</p>
+<p><strong>例2（续）</strong> 求检验问题$H_0:\lambda=\lambda_0\longleftrightarrow H_1:\lambda&gt;\lambda_0$，由在例2中得到的检验函数$\phi(x)$中没有$\lambda_1$，因此检验函数$\phi(x)$是该检验的UMPT。（根据引理1中的（ii））</p>
+<h2 id="5-3-单调似然比分布族的单边假设"><a href="#5-3-单调似然比分布族的单边假设" class="headerlink" title="5.3 单调似然比分布族的单边假设"></a>5.3 单调似然比分布族的单边假设</h2><p>N-P基本引理是关于简单假设检验问题最优解的定理，要用来解决复合假设检验问题就会受到诸多限制，本节主要讨论<strong>单参数的单边假设检验</strong>问题。</p>
+<p>逐步讨论这三个假设检验：</p>
+<p><strong>（i）</strong>$H_0:\theta=\theta_0\longleftrightarrow H_1:\theta=\theta_1,~~~\theta_1&gt;\theta_0$ </p>
+<p><strong>（ii）</strong>$H_0:\theta=\theta_0\longleftrightarrow H_1:\theta&gt;\theta_0$</p>
+<p><strong>（iii）</strong><script type="math/tex">H_0:\theta\leq\theta_0\longleftrightarrow H_1:\theta>\theta_0</script></p>
+<p>其中（iii）是比较常见的情况，通常称为<strong>单边假设检验问题</strong>，其解决办法与上一节类似，但在分布族等方面有所推广。</p>
+<p><strong>定义</strong> 设$X\sim f(x,\theta),\theta\in R^1$为单参数，若</p>
+<p>（1）当$\theta_1\not=\theta_2$时$\mu\{f(x,\theta_1)\not=f(x,\theta_2)\}&gt;0$</p>
+<p>（2）当$\theta_1&gt;\theta_0$时，似然比$\lambda(x)=\frac{f(x,\theta_1)}{f(x,\theta_0)}=h(T(x))$为$T=T(x)$的非减函数</p>
+<p>则称分布族$\{f(x,\theta),\theta\in\Theta\}$关于$T=T(x)$为<strong>单调似然比分布族</strong>，简称<strong>MLR分布族</strong>。</p>
+<p><strong>例3</strong> 几个MLR分布族的例子：设$X_1,…,X_n$独立同分布，若$X_1$服从$b(1,\theta),N(0,\sigma^2),P(\lambda)$,指数族分布，则它们是MLR分布族。</p>
+<p>两点分布：$f(x,\theta)=\prod\theta^{x_i}(1-\theta)^{1-x_i}=\theta^{\sum x_i}(1-\theta)^{(n-\sum x_i)}$,当$\theta_1&gt;\theta_0$时，有$\lambda(x)=(\frac{\theta_1}{\theta_0})^T(\frac{1-\theta_0}{1-\theta_1})^T(\frac{1-\theta_1}{1-\theta_0})^n=h(T(x))$是关于$T(x)$的非减函数，因此$b(1,\theta)$是MLR分布族。</p>
+<p>正态分布、Poisson分布我们在例1例2中出过似然比的公式，都符合MLR分布族的条件。</p>
+<p>指数族分布：$f(x,\theta)\sim h(x)e^{(Q(\theta)T(x)-b(\theta))}$，当$\theta_1&gt;\theta_0$，似然比$\lambda(x)=\frac{f(x,\theta_1)}{f(x,\theta_0)}=\exp\{[Q(\theta_1)-Q(\theta_0)]T(x)-[b(\theta_1)-b(\theta_0)]\}$为$T(x)$的增函数，为MLR分布族。</p>
+<hr>
+<p><strong>引理</strong> 对于MLR分布族，定义函数$\phi(x)$如下：</p>
+<script type="math/tex; mode=display">
+\phi(x)=\begin{cases}
+1,T(x)>k\\
+\gamma,T(x)=k\\
+0,T(x)<k
+\end{cases}\tag{5}</script><p>则对任意给定的$0&lt;\alpha&lt;1$，必存在$k,\gamma$，使$E_{\theta_0}[\phi(X)]=\alpha$。</p>
+<p><strong>定理2</strong> 设$X\sim\{f(x,\theta),\theta\in R^1\}$为关于$T=T(X)$的MLR分布族，则由（5）式确定的$\phi(x)$为假设检验（i）的MPT,（ii）的UMPT。</p>
+<p><strong>定理3</strong> 设$\phi(x)$为（5）式确定的检验，其功效函数记为$\beta(\theta)=E_\theta[\phi(X)]$，则有</p>
+<p>（1）$\beta(\theta)$为$\theta$的非减函数，且在$\{\theta:0&lt;\beta(\theta)&lt;1\}$上为$\theta$的严增函数；</p>
+<p>（2）$\phi(x)$为假设检验问题（iii）的UMPT。</p>
+<blockquote>
+<p>上面两个定理和引理1很相似，不过这里是在MLR分布族下的，区别在于MLR分布族下似然比要求是非减的，这样包含了更多的分布族。上面针对引理1的（2）没有细讲例题，下面给出MLR分布族的情况下（iii）的检验。</p>
+</blockquote>
+<p><strong>例4</strong> 设$X=(X_1,…,X_n)$，其分量独立同分布，$X_1\sim R(0,\theta),\theta&gt;0$，求假设检验问题$H_0:\theta\leq\theta_0\longleftrightarrow H_1:\theta&gt;\theta_0$的UMPT及其功效函数$\beta(\theta)$。</p>
+<p>解：当$\theta_1&gt;\theta_0$时，其分布密度函数和似然比分别为</p>
+<script type="math/tex; mode=display">
+\begin{align}
+f(x,\theta)&=\frac{1}{\theta^n}I\{x_{(1)}\ge0\}I\{x_{(n)}\leq\theta\}\\
+\lambda(x)=\frac{f(x,\theta_1)}{f(x,\theta_0)}&=\left(\frac{\theta_0}{\theta_1}\right)^n\frac{I\{x_{(n)}\leq\theta_1\}}{I\{x_{(n)}\leq\theta_0\}}=\left(\frac{\theta_0}{\theta_1}\right)^nU(x_{(n)})
+\end{align}</script><p>其中</p>
+<script type="math/tex; mode=display">
+U(x_{(n)})=\frac{I\{x_{(n)}\leq\theta_1\}}{I\{x_{(n)}\leq\theta_0\}}=\begin{cases}1,~~~~~~0\leq x_{(n)}\leq\theta_0\\
++\infty,\theta_0<x_{(n)}\leq\theta_1
+\end{cases}</script><p>而$\lambda(x)$为$U(x_{(n)})$的严增函数，而且$U(x_{(n)})$为统计量$x_{(n)}$的非减函数，因此$\lambda(x)$为$x_{(n)}$的非减函数，所以$X$的分布关于$T(x)=x_{(n)}$为MLR分布族。</p>
+<p>由定理（3）可知，假设检验问题的UMPT的形式为$\phi(x)=\begin{cases}1,x_{(n)}&gt;k\\0,x_{(n)}<k\end{cases}$，其中$k$由$e_{\theta_0}[\phi(x)]=\alpha$决定。因为有$\frac{x_{(n)}}{\theta_0}\sim be(n,1),x_{(n)}\sim\frac{ny^{n-1}}{\theta^n_0}i\{0\leq y\leq\theta_0\}$，所以$k$应满足$e_{\theta_0}[\phi(x)]="P_{\theta_0}(X_{(n)}">k)=\int^{\theta_0}_k\frac{ny^{n-1}}{\theta^n_0}dy=\alpha$，由此可得$k=\theta_0 \sqrt[n]{1-\alpha}\stackrel{d}{=}k_0$，其功效函数为：$\beta_\phi(\theta)=E_{\theta}[\phi(x)]=P_{\theta_0}(X_{(n)}&gt;k_0)=\int^{\theta}_{k_0}\frac{ny^{n-1}}{\theta^n}dy=1-\left(\frac{\theta_0}{\theta}\right)^n(1-\alpha)$.</k\end{cases}$，其中$k$由$e_{\theta_0}[\phi(x)]=\alpha$决定。因为有$\frac{x_{(n)}}{\theta_0}\sim></p>
+<p>易见功效函数$\beta_\phi(\theta)$是$\theta$的增函数。</p>
+<hr>
+<p>上面的三种检验问题并不能包含全部情况，但是其他情况的解法与之类似：</p>
+<p><strong>（i‘）</strong>$H_0:\theta=\theta_0\longleftrightarrow H_1:\theta=\theta_1,~~~\theta_1&lt;\theta_0$ </p>
+<p><strong>（ii‘）</strong>$H_0:\theta=\theta_0\longleftrightarrow H_1:\theta&lt;\theta_0$</p>
+<p><strong>（iii’）</strong><script type="math/tex">H_0:\theta\ge\theta_0\longleftrightarrow H_1:\theta<\theta_0</script></p>
+<p>对于这里与前面完全相反的检验方向，解法其实相差不大，为方便理解与记忆，在此稍作推导：</p>
+<p>以（i’）为例，根据N-P基本引理，其MTP的否定域为$R^+=\{\lambda(x)=\frac{f(x,\theta_1)}{f(x,\theta_0)}&gt;c\},\theta_1&lt;\theta_0$</p>
+<p>由于$\theta_1&lt;\theta_0$，根据MLR的定义，$\lambda(x)=\left[\frac{f(x,\theta_1)}{f(x,\theta_0)}\right]^{-1}=[h(T(x))]^{-1}$，其中$h[T(x)]$为$T(x)$的非减函数，因而$\lambda(x)=h^{-1}(x)$为$T(x)$的非增函数，所以有</p>
+<script type="math/tex; mode=display">
+R^+=\{\lambda(x)>c\}=\{[h(T(x))]^{-1}>c\}\subset\{T(x)<k\}</script><blockquote>
+<p>与之前相比我们会发现拒绝域的里的大于小于号换方向了</p>
+</blockquote>
+<p>所以，对于MLR分布族，定义函数$\phi’(x)$如下：</p>
+<script type="math/tex; mode=display">
+\phi'(x)=\begin{cases}
+1,T(x)<k\\
+\gamma,T(x)=k\\
+0,T(x)>k
+\end{cases}\tag{5}</script><p>其中$k,\gamma$由$E_{\theta_0}[\phi’(X)]=\alpha$决定，而且相应的功效函数$\beta’(\theta)$为$\theta$的减函数。</p>
+<p><strong>例5</strong> 设$X_1,…,X_n$独立同分布，$X_\sim N(o,\sigma^2)$，求假设检验问题：$H_0:\sigma\ge\sigma_0\longleftrightarrow H_1:\sigma&lt;\sigma_0$的UMPT及其功效函数。</p>
+<p>解：当$\sigma_1&gt;\sigma_0$时，似然比为</p>
+<script type="math/tex; mode=display">
+\lambda(x)=\prod^n_{i=1}\frac{\frac{1}{\sqrt{2\pi}\sigma_1}\exp\{-\frac{x^2_i}{2\sigma^2_1}\}}{\frac{1}{\sqrt{2\pi}\sigma_0}\exp\{-\frac{x^2_i}{2\sigma^2_0}\}}=(\frac{\sigma_0}{\sigma_1})^n\exp\left\{-\frac{1}{2}(\sum x^2_i)(\frac{1}{\sigma^2_1}-\frac{1}{\sigma^2_0})\right\}</script><p>因此相应的分布族关于$T=\sum x^2_i$为MLR，由上面的公式（5）我们得到检验问题的UMPT为：$\phi’(x)=\begin{cases}1,T(x)<k\\0,t(x)>k\end{cases}$，其中$k$由$E_{\theta_0}[\phi’(X)]=\alpha$决定。由于$T/\sigma^2_0=\sum x^2_i/\sigma^2_0\sim\chi^2(n)$，因此$E[\phi’(x)]=P(T&lt;k)=P(T/\sigma^2_0&lt;k/\sigma^2_0)=\alpha$，由此可得$k/\sigma^2_0=\chi^2(n,\alpha)$（卡方分布的$\alpha$分位数）</k\\0,t(x)></p>
+<p>，$k=\sigma^2_0\chi^2(n,\alpha)\stackrel{d}{=}k_0$，带入上面的$\phi’(x)$即可得UMPT。其功效函数为</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\beta_{\phi'(x)}(\sigma)&=E_\sigma[\phi'(x)]=P_\sigma(T<k_0)=P_\sigma(T/\sigma^2<k_0/\sigma^2)\\
+&=P\{\chi^2(n)<(\sigma^2_0\chi^2(n,\alpha))/\sigma^2\}
+\end{align}</script><p>易见功效函数$\beta_{\phi’}(\sigma)$是$\sigma$的减函数。</p>
+<h2 id="5-4-单参数指数族分布的双边检验"><a href="#5-4-单参数指数族分布的双边检验" class="headerlink" title="5.4 单参数指数族分布的双边检验"></a>5.4 单参数指数族分布的双边检验</h2><p>双边检验较单边假设要复杂，必须对分布族和检验函数进一步加以限制。本节主要讨论指数族分布和无偏检验的一致最优势检验。</p>
+<h3 id="5-4-1-双边检验问题及无偏检验"><a href="#5-4-1-双边检验问题及无偏检验" class="headerlink" title="5.4.1 双边检验问题及无偏检验"></a>5.4.1 双边检验问题及无偏检验</h3><p>设$X\sim f(x,\theta),\theta\in R^1$，考虑以下双边假设检验问题：</p>
+<p>（i）$H_0:\theta\leq\theta_1~or~\theta\ge\theta_2\longleftrightarrow H_1:\theta_1&lt;\theta&lt;\theta_2$</p>
+<p>（ii）$H_0:\theta_1&lt;\theta&lt;\theta_2\longleftrightarrow H_1:\theta\leq\theta_1~or~\theta\ge\theta_2$</p>
+<p>（iii）$H_0:\theta=\theta_0\longleftrightarrow H_1:\theta\not=\theta_0$</p>
+<p><img src="C:\Users\zl807\AppData\Roaming\Typora\typora-user-images\image-20191126151605485.png" alt="image-20191126151605485"></p>
+<p><strong>定义</strong> <strong>无偏检验和一致最优无偏检验</strong>   对于假设检验问题$H_0:\theta\in\Theta_0\longleftrightarrow H_1:\theta\in\Theta_1$，若</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\beta_\phi(\theta)&=E_\theta[\phi(X)]\leq \alpha,\theta\in\Theta_0\\
+\beta_\phi(\theta)&=E_\theta[\phi(X)]\ge \alpha,\theta\in\Theta_1
+\end{align}</script><p>则称$\phi(x)$为假设检验问题一个水平为$\alpha$的<strong>无偏检验</strong>，并记$\Phi^<em>_\alpha=\{一切\phi:E_\theta[\phi(X)]\leq \alpha,\theta\in\Theta_0;~~<br>E_\theta[\phi(X)]\ge \alpha,\theta\in\Theta_1\}$，则称$\Phi^</em>_\alpha$为假设检验问题水平为$\alpha$的无偏检验类。若$\phi(x)\in\Phi^<em>_\alpha$，且对一切$\tilde{\phi}(x)\in\Phi^</em>_\alpha$有$\beta_\phi(\theta)=E_\theta[\phi(X)]\ge E_\theta[\tilde{\phi}(x)]=\beta_{\tilde{\phi}}(\theta)$，则称$\phi(x)$为<strong>一致最优无偏检验</strong>，记为<strong>UMPUT</strong>。</p>
+<p><img src="C:\Users\zl807\AppData\Roaming\Typora\typora-user-images\image-20191126151528050.png" alt="image-20191126151528050"></p>
+<h3 id="5-4-2-指数族分布的双边检验"><a href="#5-4-2-指数族分布的双边检验" class="headerlink" title="5.4.2 指数族分布的双边检验"></a>5.4.2 指数族分布的双边检验</h3><p>由于双边假设检验问题的复杂性，目前只能在指数族分布中得到一致最优势检验，因此本小节仅限于讨论指数族分布下的检验。</p>
+<blockquote>
+<p>如果现在有所突破，那么这句话就不对了，但对于基础阶段这些就够了。</p>
+</blockquote>
+<hr>
+<p><strong>引理4</strong> 对于指数分布族$X\sim f(x,\theta)=a(\theta)h(x)e^{Q(\theta)T(x)},\theta\in R^1$，其中$Q(\theta)$为$\theta$的严增函数，考虑假设检验问题:</p>
+<p><strong>（i‘）</strong>$H_0:\theta=\theta_1~or~\theta=\theta_2\longleftrightarrow H_1:\theta=\theta_3,~\theta_1&lt;\theta_3&lt;\theta_2$</p>
+<p>设$0&lt;\alpha<1$，设检验函数$\phi_1(x)$可表示为$\phi_1(x)=\begin{cases}1,~~~k_1<t(x)<k_2\\\gamma_{1i},t(x)=k_i(i=1,2)\\0,~~~t(x)<k_1~or~t(x)>k_2\end{cases}$，若存在$k_i,\gamma_{11},\gamma_{12}$，使$E_{\theta_1}[\phi_1(X)]=E_{\theta_2}[\phi_1(X)]=\alpha$，则$\phi_1(x)$为假设检验问题<strong>（i’）</strong>的<strong>MPT</strong>，即对一切满足$E_{\theta_1}\tilde{\phi}(X)\leq\alpha,E_{\theta_2}\tilde{\phi}(X)\leq\alpha$的$\tilde{\phi}(x)$都有$E_{\theta_3}[\phi_1(X)]\ge E_{\theta_3}[\tilde{\phi}(X)],\theta_1&lt;\theta_3&lt;\theta_2$，并且$\phi_1(x)$在$R^+\cup R^-$上唯一。</1$，设检验函数$\phi_1(x)$可表示为$\phi_1(x)=\begin{cases}1,~~~k_1<t(x)<k_2\\\gamma_{1i},t(x)=k_i(i=1,2)\\0,~~~t(x)<k_1~or~t(x)></p>
+<p><strong>推论</strong> $\phi_1(x)$为检验问题<strong>（i’’）</strong>$H_0:\theta=\theta_1~or~\theta=\theta_2\longleftrightarrow H_1:\theta_1&lt;\theta&lt;\theta_2$的<strong>UMPT</strong>。</p>
+<p><strong>定理4</strong> 对检验问题<strong>（i）</strong>$H_0:\theta\leq\theta_1~or~\theta\ge\theta_2\longleftrightarrow H_1:\theta_1&lt;\theta&lt;\theta_2$，若存在$k_i,\gamma_{11},\gamma_{12}$，使$E_{\theta_1}[\phi_1(X)]=E_{\theta_2}[\phi_1(X)]=\alpha$，则$\phi_1(x)$为假设检验问题<strong>（i）</strong>的<strong>UMPT</strong>，</p>
+<hr>
+<p><strong>引理5</strong> 对于指数分布族，考虑假设检验问题</p>
+<p><strong>（ii‘）</strong>$H_0:\theta=\theta_1~or~\theta=\theta_2\longleftrightarrow H_1:\theta=\theta_4,~\theta_4&lt;\theta_1~or~H_1:\theta=\theta_5,~\theta_5&gt;\theta_2$</p>
+<p>设$0&lt;\alpha<1$，设检验函数$\phi_2(x)$可表示为$\phi_2(x)=\begin{cases}1,~~~t(x)<k_1~or~t(x)>k_2\\\gamma_{2i},T(x)=k_i(i=1,2)\\0,~~~k_1<t(x)<k_2\end{cases}$，若存在$k_i,\gamma_{21},\gamma_{22}$，使$e_{\theta_1}[\phi_2(x)]=e_{\theta_2}[\phi_2(x)]=\alpha$，则对一切满足$e_{\theta_1}\tilde{\phi}_2(x)\leq\alpha,e_{\theta_2}\tilde{\phi}_2(x)\leq\alpha$的$\tilde{\phi}(x)$都有$e_{\theta_4}[\phi_2(x)]\ge e_{\theta_4}[\tilde{\phi}(x)],\theta_4<\theta_1$（或$e_{\theta_5}[\phi_2(x)]\ge e_{\theta_5}[\tilde{\phi}(x)],\theta_5>\theta_2$），并且$\phi_2(x)$在$R^+\cup R^-$上唯一。</t(x)<k_2\end{cases}$，若存在$k_i,\gamma_{21},\gamma_{22}$，使$e_{\theta_1}[\phi_2(x)]=e_{\theta_2}[\phi_2(x)]=\alpha$，则对一切满足$e_{\theta_1}\tilde{\phi}_2(x)\leq\alpha,e_{\theta_2}\tilde{\phi}_2(x)\leq\alpha$的$\tilde{\phi}(x)$都有$e_{\theta_4}[\phi_2(x)]\ge></1$，设检验函数$\phi_2(x)$可表示为$\phi_2(x)=\begin{cases}1,~~~t(x)<k_1~or~t(x)></p>
+<p><strong>推论</strong> $\phi_2(x)$为检验问题<strong>（ii’’）</strong>$H_0:\theta=\theta_1~or~\theta=\theta_2\longleftrightarrow H_1:\theta&lt;\theta_1~or~\theta&gt;\theta_2$的<strong>UMPUT</strong>。</p>
+<p><strong>推论</strong> 记$\phi’_2(x)=1-\phi_1(x)$,其中$\phi_1(x)$由引理4给出，则$\phi’_2(x)$为<strong>（ii’’）</strong>水平为$1-\alpha$的<strong>UMPUT</strong>。</p>
+<p><strong>定理5</strong> 对于假设检验问题<strong>（ii）</strong>$H_0:\theta_1&lt;\theta&lt;\theta_2\longleftrightarrow H_1:\theta\leq\theta_1~or~\theta\ge\theta_2$，若存在$k_i,\gamma_{21},\gamma_{22}$，使$E_{\theta_1}[\phi_2(X)]=E_{\theta_2}[\phi_2(X)]=\alpha$，则$\phi_2(x)$为<strong>（ii）</strong>的<strong>UMPUT</strong>。</p>
+<hr>
+<p><strong>定理6</strong> 考虑满足以下条件的检验函数类：</p>
+<script type="math/tex; mode=display">
+\tilde{\Phi}'_\alpha=\{一切\phi(x):E_{\theta_0}[\phi(X)]=\alpha\stackrel{d}{=}\alpha_1,~E_{\theta_0}[\phi(X)T(X)]=\alpha E_{\theta_0}[T(X)]=\alpha'\stackrel{d}{=}\alpha_2\}</script><p>（1）若存在$k_i,\gamma_{21},\gamma_{22}$，使引理5中的$\phi_2(x)\in\tilde{\Phi}’_\alpha(0&lt;\alpha&lt;1)$则有</p>
+<script type="math/tex; mode=display">
+E_{\theta_1}[\phi_2(X)]\ge E_{\theta_1}[\tilde{\phi}(X)],~\forall\theta_1\not=\theta_0,~\forall\tilde{\phi}(x)\in\tilde{\Phi}'_\alpha</script><p>（2）以上$\phi_2(x)$为假设检验问题<strong>（iii）</strong>$H_0:\theta=\theta_0\longleftrightarrow H_1:\theta\not=\theta_0$的<strong>UMPUT</strong>，即（iii）的UMPUT具有$\phi_2(x)$的形式，且满足：</p>
+<script type="math/tex; mode=display">
+E_{\theta_0}[\phi_2(X)]=\alpha,~~E_{\theta_0}[\phi_2(X)T(X)]=\alpha E_{\theta_0}[T(X)]=\alpha'\tag{6}</script><p><strong>定理7</strong> 条件同定理6，在（6）式中，如果当$\theta=\theta_0$时，$T=T(X)$的分布关于某个对称点$\mu_0$对称，则假设检验问题（iii）的UMPUT可表示为$\phi_2(t)=\begin{cases}1,|t-\mu_0|&gt;k\\\gamma,|t-\mu_0|=k\\0,|t-\mu_0|&lt;k\end{cases}$，其中$k,\gamma$由条件$E_{\theta_0}[\phi_2(T)]=\alpha$决定（即条件$E_{\theta_0}[\phi_2(X)T(X)]=\alpha E_{\theta_0}[T(X)]$可去掉）</p>
+<h2 id="5-5-多参数指数族的检验"><a href="#5-5-多参数指数族的检验" class="headerlink" title="5.5 多参数指数族的检验"></a>5.5 多参数指数族的检验</h2><p>对于指数族分布，有时需要把参数分为两部分：一部分为我们care的参数，一部分为多于参数，我们这里介绍一种有解的情况：</p>
+<script type="math/tex; mode=display">
+X\sim f(x;\theta,\varphi)=h(x)\exp\left\{\theta U(x)+\sum^k_{i=1}\varphi_iT_i(x)-b(\theta,\varphi)\right\}\tag{7}</script><p>其中$U(x),\theta$为一维，$\theta$为有兴趣的参数，$\varphi_1,…,\varphi_k$为多余参数。</p>
+<p>（1）$U=U(X),T=T(X)$的联合分布：</p>
+<script type="math/tex; mode=display">
+(U,T)\sim f(u,t;\theta,\varphi)=h(u,t)\exp\left\{\theta u+\sum^k_{i=1}\varphi_it_i-b(\theta,\varphi)\right\}\tag{8}</script><p>  边缘分布:</p>
+<script type="math/tex; mode=display">
+U\sim f(u;\theta,\varphi)=h_\varphi(u)\exp\left\{\theta u-b(\theta,\varphi)\right\}\\
+T\sim f(t;\varphi,\theta)=h_\theta(t)\exp\left\{\sum^k_{i=1}\varphi_it_i-b(\theta,\varphi)\right\}\\</script><p>（2）$U|T$的条件分布与多余参数$\varphi$无关：</p>
+<script type="math/tex; mode=display">
+U|T\sim f(u|t;\theta)=h^*(u,t)\exp\{\theta u-b_t(\theta)\}\tag{9}</script><blockquote>
+<p>分布族（8）关于$\theta$的假设检验问题UMPUT可以通过求解条件分布（9）关于$\theta$同样的假设检验问题的UMPUT得到，而分布族（9）的UMPUT则可由第三节和第四节的相应结果得到。</p>
+</blockquote>
+<hr>
+<h3 id="5-5-1-带有多余参数时单参数检验的UMPUT"><a href="#5-5-1-带有多余参数时单参数检验的UMPUT" class="headerlink" title="5.5.1 带有多余参数时单参数检验的UMPUT"></a>5.5.1 带有多余参数时单参数检验的UMPUT</h3><p>（1）—（i）$H_0:\theta\leq\theta_0,\varphi任意\longleftrightarrow H_1:\theta&gt;\theta_0,\varphi任意$</p>
+<p>（1）—（ii）$H_0:\theta\ge\theta_0,\varphi任意\longleftrightarrow H_1:\theta&lt;\theta_0,\varphi任意$</p>
+<p>（2）—（i）$H_0:\theta\leq\theta_0\longleftrightarrow H_1:\theta&gt;\theta_0$（与$\varphi$无关）</p>
+<p>（2）—（ii）$H_0:\theta\ge\theta_0\longleftrightarrow H_1:\theta&lt;\theta_0$（与$\varphi$无关）</p>
+<p>（1）—（iii）</p>
+<p>（1）—（iv）</p>
+<p>（1）—（v）</p>
+<h2 id="5-6-似然比检验"><a href="#5-6-似然比检验" class="headerlink" title="5.6 似然比检验"></a>5.6 似然比检验</h2><p>似然比检验的应用范围较为广泛，是理论上非常重要、应用上较为有效的检验方法之一。</p>
+<h3 id="5-6-1-似然比检验"><a href="#5-6-1-似然比检验" class="headerlink" title="5.6.1 似然比检验"></a>5.6.1 似然比检验</h3><h3 id="5-6-2-子集参数的似然比检验及score检验"><a href="#5-6-2-子集参数的似然比检验及score检验" class="headerlink" title="5.6.2 子集参数的似然比检验及score检验"></a>5.6.2 子集参数的似然比检验及score检验</h3>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/12/05/高等数理统计—第四章-点估计的性质/" rel="next" title="高等数理统计—第四章 点估计的性质">
+                  <i class="fa fa-chevron-left"></i> 高等数理统计—第四章 点估计的性质
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/12/05/高等数理统计—第一章-基本概念/" rel="prev" title="高等数理统计—第一章">
+                  高等数理统计—第一章 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章-参数假设检验"><span class="nav-number">1.</span> <span class="nav-text">第五章 参数假设检验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">5.1 基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Neyman-Pearson基本引理"><span class="nav-number">1.2.</span> <span class="nav-text">5.2 Neyman-Pearson基本引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-单调似然比分布族的单边假设"><span class="nav-number">1.3.</span> <span class="nav-text">5.3 单调似然比分布族的单边假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-单参数指数族分布的双边检验"><span class="nav-number">1.4.</span> <span class="nav-text">5.4 单参数指数族分布的双边检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-1-双边检验问题及无偏检验"><span class="nav-number">1.4.1.</span> <span class="nav-text">5.4.1 双边检验问题及无偏检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-2-指数族分布的双边检验"><span class="nav-number">1.4.2.</span> <span class="nav-text">5.4.2 指数族分布的双边检验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-多参数指数族的检验"><span class="nav-number">1.5.</span> <span class="nav-text">5.5 多参数指数族的检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-1-带有多余参数时单参数检验的UMPUT"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.5.1 带有多余参数时单参数检验的UMPUT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-似然比检验"><span class="nav-number">1.6.</span> <span class="nav-text">5.6 似然比检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-1-似然比检验"><span class="nav-number">1.6.1.</span> <span class="nav-text">5.6.1 似然比检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-2-子集参数的似然比检验及score检验"><span class="nav-number">1.6.2.</span> <span class="nav-text">5.6.2 子集参数的似然比检验及score检验</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Feng Pan</p>
+  <div class="site-description" itemprop="description">高等数理统计、高等概率论学习心得</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feng Pan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="才疏学浅，关于数理统计的很多内容仅流于表面，望读者不吝赐教。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高等数理统计—第一章">
+<meta property="og:url" content="http://www.fengpan.xyz/2019/12/05/高等数理统计—第一章-基本概念/index.html">
+<meta property="og:site_name" content="风磐&#39;Blog">
+<meta property="og:description" content="才疏学浅，关于数理统计的很多内容仅流于表面，望读者不吝赐教。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:/Users/zl807/Desktop/高等数理统计/分布关系.jpg">
+<meta property="og:updated_time" content="2019-11-09T03:36:37.400Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高等数理统计—第一章">
+<meta name="twitter:description" content="才疏学浅，关于数理统计的很多内容仅流于表面，望读者不吝赐教。">
+<meta name="twitter:image" content="c:/Users/zl807/Desktop/高等数理统计/分布关系.jpg">
+  <link rel="canonical" href="http://www.fengpan.xyz/2019/12/05/高等数理统计—第一章-基本概念/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>高等数理统计—第一章 | 风磐'Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风磐'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">谁无暴风劲雨时 守得云开见月明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/12/05/高等数理统计—第一章-基本概念/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">高等数理统计—第一章
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-05 16:21:13" itemprop="dateCreated datePublished" datetime="2019-12-05T16:21:13+08:00">2019-12-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-09 11:36:37" itemprop="dateModified" datetime="2019-11-09T11:36:37+08:00">2019-11-09</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>才疏学浅，关于数理统计的很多内容仅流于表面，望读者不吝赐教。</p><a id="more"></a>
+<h1 id="第一章-统计分布基础"><a href="#第一章-统计分布基础" class="headerlink" title="第一章 统计分布基础"></a>第一章 统计分布基础</h1><blockquote>
+<p>本章除指数分布族、$\Gamma$分布本科一般不学之外，其余基本上都是很简单的内容。</p>
+<p>已故的陈希孺院士在《高等数理统计学》一书的序中写到：“多做习题，尤其是多做难题，对掌握并熟练数理统计学基本的论证方法和技巧，有着不可替代的重要性”。陈院士的《高等数理统计学》六百多页厚厚的一本书，有近一半的内容是习题与解答，可见对其重视，望大家在学习的过程中牢记做题的重要。</p>
+</blockquote>
+<h2 id="1-1-基础理论及方法"><a href="#1-1-基础理论及方法" class="headerlink" title="1.1 基础理论及方法"></a>1.1 基础理论及方法</h2><h3 id="1-1-1-统计结构"><a href="#1-1-1-统计结构" class="headerlink" title="1.1.1 统计结构"></a>1.1.1 统计结构</h3><p>数据(客观存在)$\rightarrow$样本(抽象出的对象)</p>
+<p>样本最常见的形式为随机向量$\boldsymbol{X}=(X_1,X_2,…,X_n)$，样本的取值空间称为<strong>样本空间</strong>。</p>
+<p><strong>确定样本的概率分布是整个统计中最关心的问题</strong>。</p>
+<p>通常，样本的真实分布未知，但可以确定一个合理的范围（分布集合），真实的概率分布就在其中，该分布集合即为<strong>概率分布族</strong>。</p>
+<p>$\Longrightarrow$二元体（样本，样本的概率分布族）</p>
+<p>样本空间记作 $\mathbb{X}$ 或 $\Omega$ , 为了与概率论区分，我们用 $\mathbb{X}$ 来表示。将样本空间中的某些子集组成的 $\sigma$ 域 (也叫事件域) 记作$\mathcal{F}$, 由此可以得到一个可测空间$(\mathbb{X},\mathcal{F})$,样本的概率分布族就是该可测空间上的概率分布族，用$\mathbb{P}$表示。</p>
+<p>$\Longrightarrow$三元体（$\mathbb{X},\mathcal{F},\mathbb{P}$）</p>
+<p><strong>定义</strong> 设 $(\mathbb{X},\mathfrak{F})$ 为可测空间，$\mathbb{P}=\{P_{\theta},\theta\in\Theta\}$为 $(\mathbb{X},\mathfrak{F})$ 上的一族概率测度（$\Theta$为指标集也叫参数空间）,称三元体$(\mathbb{X},\mathcal{F},\mathbb{P})$ 为一个<strong>统计结构</strong>或统计模型。</p>
+<p>$\boldsymbol{\star\star\star}$称取值于 $\mathbb{X}$ 上的随机元 $\boldsymbol{X}$ 为<strong>样本</strong></p>
+<p>$\boldsymbol{\star\star\star}$称 $\mathbb{P}$ 中的每一个成员 $P_{\theta}$ 为一个<strong>总体</strong></p>
+<p>$\boldsymbol{\star\star\star}$因此我们统计上常有这样的说法：$X_1,X_2,…,X_n$ 为来自总体的容量为 $n$ 的简单样本，总体的概率密度函数为 $f(x;\theta)$.</p>
+<h3 id="1-1-2-常用公式"><a href="#1-1-2-常用公式" class="headerlink" title="1.1.2 常用公式"></a>1.1.2 常用公式</h3><p><strong>矩母函数</strong>：随机变量$X$,若存在某正实数$\delta&gt;0$，使得对于区间$(-\delta,\delta)$中的每一实数$t$，数学期望$E(e^{tX})$均存在，则称$M(t)=E(e^{tX}),-\delta&lt;t&lt;\delta$为随机变量$X$或其分布的<strong>矩母函数(mgf)</strong>。</p>
+<p>最常用的是:$E(X)=M’(0),Var(X)=M’’(0)-(M’(0))^2$</p>
+<p><strong>特征函数</strong>：就写个函数形式吧，可能暂时也用不着$\varphi(t)\stackrel{d}{=}E(e^{itX})=M(it)$,其中$i$是虚数</p>
+<p>矩母函数和特征函数与随机变量的概率分布唯一确定。</p>
+<p><strong>几个常用的条件期望</strong>：$E(X)=E_T[E(X|T)],Var(X)=E_T[Var(X|T)]+Var_T[E(X|T)]$.</p>
+<h3 id="1-1-3-经验分布函数"><a href="#1-1-3-经验分布函数" class="headerlink" title="1.1.3 经验分布函数"></a>1.1.3 经验分布函数</h3><p>考虑独立同分布的样本$X_1,…,X_n$,给定$x$,记$\nu_n$表示$ X_1,…,X_n$中小于$x$的个数，概率$F(x)=P(X_1\leq x)$可用频率$\nu_n/n$来逼近。即：经验分布函数定义为$F_n(x)\stackrel{d}{=}\nu_n/n$，也可表示为$F_n(x)=n^{-1}\sum^n_{i=1}I_{\{X_i\leq x\}}$.</p>
+<p>由大数定律可知，对任意$\varepsilon&gt;0$,总有$P(|F_n(x)-F(x)|\ge\varepsilon)\rightarrow0~~~(n\rightarrow\infty)$.这表明只要$n$越来越大，样本的经验分布函数$F_n(x)$可以越来越接近总体分布函数$F(x)$.此外，还有比大数定律更强的结论：</p>
+<p><strong>格里汶科定理</strong>：对任意给定的正整数$n$,设$x_1,…,x_n$是取自总体分布函数$F(x)$的一个样本观察值，$F_n(x)$为其经验分布函数，记$D_n=\sup_{-\infty&lt;x&lt;\infty}|F_n(x)-F(x)|$,则有$P(\lim_{n\rightarrow\infty}D_n=0)=1$.</p>
+<h2 id="1-2-常用分布及指数族分布"><a href="#1-2-常用分布及指数族分布" class="headerlink" title="1.2 常用分布及指数族分布"></a>1.2 常用分布及指数族分布</h2><p><img src="C:\Users\zl807\Desktop\高等数理统计\分布关系.jpg" alt></p>
+<p>​                                                                    <strong>常用分布间的关系（图侵删）</strong></p>
+<h3 id="1-2-1-常用离散分布"><a href="#1-2-1-常用离散分布" class="headerlink" title="1.2.1 常用离散分布"></a>1.2.1 常用离散分布</h3><h5 id="两点分布（-Bernoulli-伯努利分布）-X-sim-b-1-theta"><a href="#两点分布（-Bernoulli-伯努利分布）-X-sim-b-1-theta" class="headerlink" title="两点分布（ Bernoulli 伯努利分布）$X \sim b(1,\theta)$"></a>两点分布（ Bernoulli 伯努利分布）$X \sim b(1,\theta)$</h5><p>$X$仅取0,1两个值：$P(X=1)=\theta,P(X=0)=1-\theta$.</p>
+<p>密度函数为$p(x,\theta)=\theta^ x(1-\theta)^{1-x},x=0,1$</p>
+<p>$E(X)=\theta,Var(X)=\theta(1-\theta)$</p>
+<h5 id="二项分布-X-sim-b-n-theta"><a href="#二项分布-X-sim-b-n-theta" class="headerlink" title="二项分布$X \sim b(n,\theta)$"></a>二项分布$X \sim b(n,\theta)$</h5><p>二项分布可以表示为独立同分布的<strong>两点分布之和</strong>。</p>
+<p>密度函数为$p(x,\theta)= \complement^x_n \theta^ x(1-\theta)^{n-x},x=0,1,2,…,n$</p>
+<p>$E(X)=n\theta,Var(X)=n\theta(1-\theta)$</p>
+<p>可加性：$X_i\sim b(n_i,\theta),i=1,2$且独立，则$X_1+X_2\sim b(n_1+n_2,\theta)$</p>
+<h5 id="负二项分布-X-sim-NB-r-theta"><a href="#负二项分布-X-sim-NB-r-theta" class="headerlink" title="负二项分布$X \sim NB(r,\theta)$"></a>负二项分布$X \sim NB(r,\theta)$</h5><p>$X$表示$r$次成功所经历的失败的次数,该分布使用次数较少，后续若有用到我们再详解介绍</p>
+<p>$P(X=i)\stackrel{d}{=}nb(i|r,\theta)=\complement^i_{r+i-1}\theta^r(1-\theta)^i,i=0,1,2,…$</p>
+<h5 id="Poisson分布（泊松分布）-X-sim-P-lambda"><a href="#Poisson分布（泊松分布）-X-sim-P-lambda" class="headerlink" title="Poisson分布（泊松分布）$X\sim P(\lambda)$"></a>Poisson分布（泊松分布）$X\sim P(\lambda)$</h5><p>$P(X=i)\stackrel{d}{=}p(i|\lambda)=\frac{\lambda^i}{i!}e^{-\lambda}$</p>
+<p>密度函数为$p(x,\lambda)=\frac{\lambda^x}{x!}e^{-\lambda}$</p>
+<p>基本性质：（1）$E(X)=\lambda,Var(X)=\lambda$（2）可加性：若$X_i\sim P(\lambda_i),i=1,2$且相互独立，则$X_1+X_2\sim P(\lambda_1+\lambda_2)$</p>
+<h3 id="1-2-2-常用连续分布"><a href="#1-2-2-常用连续分布" class="headerlink" title="1.2.2 常用连续分布"></a>1.2.2 常用连续分布</h3><h5 id="均匀分布-X-sim-R-theta-1-theta-2"><a href="#均匀分布-X-sim-R-theta-1-theta-2" class="headerlink" title="均匀分布 $X\sim R(\theta_1,\theta_2)$"></a>均匀分布 $X\sim R(\theta_1,\theta_2)$</h5><p>密度函数$f(x,\theta_1,\theta_2)=\frac{1}{\theta_2-\theta_1}I_{\{\theta_1\leq x\leq\theta_2\}}$</p>
+<p>$E(X)=(\theta_1+\theta_2)/2,~~~Var(X)=(\theta_2-\theta_1)^{2}/12$</p>
+<h5 id="指数分布-X-sim-E-lambda"><a href="#指数分布-X-sim-E-lambda" class="headerlink" title="指数分布$X\sim E(\lambda)$"></a>指数分布$X\sim E(\lambda)$</h5><p>密度函数$f(x,\lambda)=\lambda e^{-\lambda x}I_{\{x\ge0\}}$</p>
+<p>$E(X)=1/\lambda,~~~Var(X)=1/\lambda^2$</p>
+<h5 id="正态分布-X-sim-N-mu-sigma-2"><a href="#正态分布-X-sim-N-mu-sigma-2" class="headerlink" title="正态分布$X\sim N(\mu,\sigma^2)$"></a>正态分布$X\sim N(\mu,\sigma^2)$</h5><p>密度函数$f(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$</p>
+<p>$E(X)=\mu,~~~Var(X)=\sigma^2$</p>
+<h5 id="对数分布"><a href="#对数分布" class="headerlink" title="对数分布"></a>对数分布</h5><p>研究随机分析必学，就是将随机变量取对数后，服从正态分布。</p>
+<h5 id="chi-2-分布（卡方分布）-X-sim-chi-2-n"><a href="#chi-2-分布（卡方分布）-X-sim-chi-2-n" class="headerlink" title="$\chi^2$分布（卡方分布）$X\sim\chi^2(n)$"></a>$\chi^2$分布（卡方分布）$X\sim\chi^2(n)$</h5><p>卡方分布由$n$个独立同分布的<strong>标准正态分布的平方和</strong>构成，密度函数我们一般不用，$E(X)=n,~~~Var(X)=2n$</p>
+<h5 id="t-分布-X-sim-t-n"><a href="#t-分布-X-sim-t-n" class="headerlink" title="$t$分布$X\sim t(n)$"></a>$t$分布$X\sim t(n)$</h5><p>$X=Y/\sqrt{Z/n},Y\sim N(0,1),Z\sim\chi^2(n)$且独立,密度函数我们一般也不用，$E(X)=0,~Var(X)=n/(n-2)$,与其他分布的关系$X^2\sim F(1,n)$(根据其构造就可以看出来)，此外当$n\rightarrow+\infty,t(n)\rightarrow N(0,1)$.</p>
+<h5 id="F-分布-X-sim-F-n-m"><a href="#F-分布-X-sim-F-n-m" class="headerlink" title="$F$分布$X\sim F(n,m)$"></a>$F$分布$X\sim F(n,m)$</h5><p>$X=\frac{Y/n}{Z/m},Y\sim \chi^2(n),Z\sim\chi^2(m)$且独立，$E(X)=m/(m-2),(m&gt;2)$方差一般不用</p>
+<h5 id="Gamma-分布（伽马分布）-X-sim-Gamma-alpha-beta"><a href="#Gamma-分布（伽马分布）-X-sim-Gamma-alpha-beta" class="headerlink" title="$\Gamma$分布（伽马分布）$X\sim\Gamma(\alpha,\beta)$"></a>$\Gamma$分布（伽马分布）$X\sim\Gamma(\alpha,\beta)$</h5><p>伽马分布和我们上述提到的分布都多少会有些联系.</p>
+<p>密度函数$f(x,\alpha,\beta)=\frac{x^{\alpha-1}}{\beta^\alpha\Gamma(\alpha)}e^{-\frac{x}{\beta}}=\frac{x^{\alpha-1}}{\Gamma(\alpha)}\beta^\alpha e^{-\beta x},x&gt;0$两种密度函数本质都是一个，区别仅在于$\beta$互为倒数,我们以前者为准。</p>
+<blockquote>
+<p>$\alpha$称为形状参数，$\beta$称为尺度参数</p>
+</blockquote>
+<p><strong>与其他分布的关系</strong>：（1）$E(\lambda)=\Gamma(1,\lambda)$（2）$\chi^2(n)=\Gamma(\frac{n}{2},2)$（3）$P(Poisson\leq k-1)=1-P(\Gamma\leq\lambda)$</p>
+<p>$E(X)=\alpha\beta,~~~Var(X)=\alpha\beta^2$</p>
+<p>可加性：$\Gamma(\alpha_1,\beta)+\Gamma(\alpha_2,\beta)=\Gamma(\alpha_1+\alpha_2,\beta)$</p>
+<h3 id="1-2-3-指数族分布"><a href="#1-2-3-指数族分布" class="headerlink" title="1.2.3 指数族分布"></a>1.2.3 指数族分布</h3><p><strong>指数族分布 不是 指数分布族，切记</strong></p>
+<p><strong>定义</strong>：$X\sim f(x,\theta),\theta\in\Theta$称为<strong>指数族分布</strong>，若其密度函数可以表示为：</p>
+<script type="math/tex; mode=display">
+f(x,\theta)=h(x)e^{\xi'(\theta)T(\theta)-b(\theta)}=e^{\xi'(\theta)T(\theta)-b(\theta)-c(x)} \tag{$1$}</script><p>其中,$h(x)=e^{-c(x)}$为非负可测函数，若$1,\xi_1(\theta),…,\xi_k(\theta)$和$1,T_1(\theta),…,T_k(\theta)$分别线性无关，则称指数族为极小、满秩的。</p>
+<blockquote>
+<p>上述的线性无关是参数可识别的必需条件。</p>
+</blockquote>
+<p><strong>例1</strong>：正态分布$X\sim N(\mu,\sigma^2),\theta=(\mu,\sigma^2),f(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$,</p>
+<p>密度函数展开后为$f(x;\mu,\sigma^2)=\exp\left\{-\frac{1}{2\sigma^2}x^2+\frac{\mu}{\sigma^2}x-\frac{\mu^2}{2\sigma^2}-\ln(\sqrt{2\pi\sigma^2})\right\}$</p>
+<p>其中$\xi_1(\theta)=-\frac{1}{2\sigma^2},T_1(x)=x^2,\xi_2(\theta)=\frac{\mu}{\sigma^2},T_2(x)=x,b(\theta)=\frac{\mu^2}{2\sigma^2}+\ln(\sqrt{2\pi\sigma^2})$</p>
+<blockquote>
+<p>很明显可以看到，$\xi_1(\theta),\xi_2(\theta),T_1(x),T_2(x)$的形式不唯一，可以自由安排常数系数的位置</p>
+</blockquote>
+<p><strong>指数族的自然形式</strong></p>
+<p><strong>定义</strong>：$X\sim f(x,\theta),\xi\in\Theta_1$，其密度函数可以表示为：</p>
+<script type="math/tex; mode=display">
+f(x,\theta)=h(x)e^{\xi'T(\theta)-a(\theta)}  \tag{$2$}</script><p>其中,$\xi=(\xi_1,…,\xi_k)’,T(x)=(T_1(x),…,T_k(x))’$,则称其为自然形式的指数族，若$1,T_1(\theta),…,T_k(\theta)$线性无关，则称指数族为极小、满秩的。</p>
+<blockquote>
+<p>其实看上去没啥太大区别对吧，很多教材上也没有说为什么，或者说了但是没说明白。为此翻阅了陈希孺院士的《高等数理统计》，其中是这么说的，参数空间$\Theta$中每一元$\theta$都满足（1）式，，但$\Theta$不一定包含了全部满足（1）式的$\theta$。因此全部这样的$\xi(\theta)$构成一集合$\Theta_1$,它是该指数族参数空间可能最大的扩充，称为该指数型分布族的<strong>自然参数空间</strong>。因此也就有了（2）的自然形式的指数族。</p>
+</blockquote>
+<p>关于自然参数形式我们补充两个定理：</p>
+<p><strong>定理1.1</strong> 设分布族的概率密度函数由（2）式给出，若参数空间$\Theta_1$包含内点，则统计量$T(x)=(T_1(x),…,T_k(x))$就是一个完全充分统计量。</p>
+<blockquote>
+<p>参照那汤松《实变函数论》里对内点的定义，我们总结一个不是那么严谨但是够用的结论：开区间里的点都是它的内点，因此在进行了线性变换后得到的$\Theta_1$若是开集，那就必然包含内点，进而在$T(x)$线性无关的前提下，$T(x)$是完全充分统计量。</p>
+</blockquote>
+<p><strong>定理1.2</strong> 设分布族的概率密度函数由（2）式给出，设$\xi_0\in\Theta_1$且为$\Theta_1$的一个内点，$g(x)$为样本空间$\mathbb{X}$上的一个函数，若当$\xi$在$\xi_0$的某个邻域内时数学期望$E_\xi g(x)=\int g(x)h(x)e^{\xi’T(\theta)-a(\theta)}d\nu$存在，那么作为$\xi$的函数，$E_\xi g(x)$在$\xi_0$的某个邻域内关于$\xi$可求任意阶(偏)导数，且可以在积分号下求偏导数。我们有以下结果：</p>
+<script type="math/tex; mode=display">
+E_\xi T_k=\frac{\partial a(\theta)}{\partial\xi_k},~~~cov(T_k,T_j)=\frac{\partial^2 a(\theta)}{\partial \xi_k\partial\xi_j} \tag{$3$}</script><p><strong>例2</strong>：设$X_1,X_2…,X_n$独立同分布，均服从参数为$(\mu,\sigma^2)$的对数正态分布，即$\ln X_i\sim N(\mu,\sigma^2)$，概率密度函数为$(\theta=(\mu,\sigma^2)):p(t;\theta)=\frac{1}{\sqrt{2\pi\sigma^2t^2}}e^{-\frac{(\ln t+\mu)^2}{2\sigma^2}},t&gt;0$,样本为$X=(X_1,X_2,…,X_n)$易看出样本的概率密度为：$f(x;\theta)=\prod^n_{i=1}p(x_i,\theta)=\prod^n_{i=1}\frac{1}{\sqrt{2\pi\sigma^2x^2_i}}e^{-\frac{(\ln x_i+\mu)^2}{2\sigma^2}}=(2\pi\sigma^2)^{-\frac{n}{2}}(x_1x_2\cdots x_n)^{-1}e^{\frac{-1}{2\sigma^2}\sum^n_{i=1}(\ln^2 x_i-2\mu\ln x_i+\mu^2)}$</p>
+<p>其中参数空间为$\Theta=\{\theta=(\mu,\sigma^2):\mu\in(-\infty,+\infty),\sigma^2&gt;0\}$.</p>
+<p>对于样本的概率密度函数，可以写成$f(x;\theta)=h(x)e^{\xi_1(\theta)T_1(x)+\xi_2(\theta)T_2(x)-b(\theta)}$,这里写的是指数族分布的普通形式，与（1）式对应。其中$T_1(x)=\sum^n_{i=1}\ln x_i,\xi_1(\theta)=\frac{\mu}{\sigma^2},T_2(x)=-\frac{1}{2}\sum^n_{i=1}\ln^2 x_i,\xi_2(\theta)=\frac{1}{\sigma^2},h(x)=(x_1x_2\cdots x_n)^{-1}$.</p>
+<p>存在参数变换$g:\Theta\rightarrow\mathbb{R}^2$,使得$\theta=(\mu,\sigma^2)\rightarrow g(\theta)=(\frac{\mu}{\sigma^2},\frac{1}{\sigma^2})$,在变换$g$下原参数空间与值域$\Theta_1$是重合的。</p>
+<p>由此，分布族的自然参数形式为$(\xi=(\xi_1,\xi_2)\in\Theta_1):f(x;\xi)=h(x)e^{\xi_1T_1(x)+\xi_2T_2(x)-a(\theta)}$,这里的$a(\theta)=b(g^{-1}(\xi))=\frac{n\xi^2_1}{2\xi_2}+\frac{n}{2}\ln(\frac{2\pi}{\xi_2})$,利用式(3)给出的计算方法,我们有$E_\xi(T_1)=E_\xi(\sum^n_{i=1}\ln x_i)=\frac{\partial a(\theta)}{\partial\xi_1}=\frac{n\xi_1}{\xi_2}$,</p>
+<p>$E_\xi(\sum^n_{i=1}\ln^2 x_i)=-2\cdot\frac{\partial a(\theta)}{\partial\xi_2}=\frac{n\xi^2_1}{\xi^2_2}+\frac{n}{\xi_2},Var(\sum^n_{i=1}\ln x_i)=\frac{\partial^2 a(\theta)}{\partial\xi^2_1}=\frac{n}{\xi_2},Var(\sum^n_{i=1}\ln^2 x_i)=4\cdot\frac{\partial^2 a(\theta)}{\partial\xi^2_2}=\frac{4n\xi^2_1}{\xi^2_2}+\frac{2n}{\xi^2_2}$</p>
+<p>以及$cov(\sum^n_{i=1}\ln x_i,\sum^n_{i=1}\ln^2 x_i)=-2\cdot\frac{\partial^2 a(\theta)}{\partial \xi_1\partial\xi_2}=\frac{2n\xi_1}{\xi^2_2}$,其中$\xi_1=\frac{\mu}{\sigma^2},\xi_2=\frac{1}{\sigma^2}$,因此我们得到$E_\theta(\sum^n_{i=1}\ln x_i)=n\mu,E_\theta(\sum^n_{i=1}\ln^2 x_i)=n(\mu^2+\sigma^2),Var(\sum^n_{i=1}\ln x_i)=n\sigma^2,Var(\sum^n_{i=1}\ln^2 x_i)=2n\sigma(2\mu+\sigma^2)$</p>
+<p>,$cov_\theta(\sum^n_{i=1}\ln x_i,\sum^n_{i=1}\ln^2 x_i)=2n\mu\sigma^2$.</p>
+<blockquote>
+<p>这个例子非常典型。</p>
+</blockquote>
+<h2 id="1-3-次序统计量"><a href="#1-3-次序统计量" class="headerlink" title="1.3 次序统计量"></a>1.3 次序统计量</h2><p>这个在基础的数理统计上有，这里简单的回顾一下</p>
+<p>基本分布：记$Y=(Y_1,…,Y_n)’=(X_{(1)},…,X_{(n)})’,Y_i=X_{(i)}\sim f_{(i)}(y),Y\sim f(y_1,y_2,…,y_n)$</p>
+<p>$Y_i=X_{(i)}$的分布密度为</p>
+<script type="math/tex; mode=display">
+f_{(i)}(y)=\frac{n!}{(i-1)!(n-i)!}f(y)[F(y)]^{i-1}[1-F(y)]^{n-i} \notag</script><blockquote>
+<p>推论:最小值和最大值的分布密度函数分别为：</p>
+<script type="math/tex; mode=display">
+f_{(1)}(y)=nf(y)[1-F(y)]^{n-1},~~~f_{(n)}(y)=nF^{n-1}(y)f(y) \notag</script></blockquote>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/12/05/高等数理统计—第五章-参数假设检验/" rel="next" title="高等数理统计—第五章 参数假设检验">
+                  <i class="fa fa-chevron-left"></i> 高等数理统计—第五章 参数假设检验
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-统计分布基础"><span class="nav-number">1.</span> <span class="nav-text">第一章 统计分布基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-基础理论及方法"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基础理论及方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-统计结构"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 统计结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-常用公式"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 常用公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-经验分布函数"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.1.3 经验分布函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-常用分布及指数族分布"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 常用分布及指数族分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-常用离散分布"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 常用离散分布</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#两点分布（-Bernoulli-伯努利分布）-X-sim-b-1-theta"><span class="nav-number">1.2.1.0.1.</span> <span class="nav-text">两点分布（ Bernoulli 伯努利分布）$X \sim b(1,\theta)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二项分布-X-sim-b-n-theta"><span class="nav-number">1.2.1.0.2.</span> <span class="nav-text">二项分布$X \sim b(n,\theta)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#负二项分布-X-sim-NB-r-theta"><span class="nav-number">1.2.1.0.3.</span> <span class="nav-text">负二项分布$X \sim NB(r,\theta)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Poisson分布（泊松分布）-X-sim-P-lambda"><span class="nav-number">1.2.1.0.4.</span> <span class="nav-text">Poisson分布（泊松分布）$X\sim P(\lambda)$</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-常用连续分布"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 常用连续分布</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#均匀分布-X-sim-R-theta-1-theta-2"><span class="nav-number">1.2.2.0.1.</span> <span class="nav-text">均匀分布 $X\sim R(\theta_1,\theta_2)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#指数分布-X-sim-E-lambda"><span class="nav-number">1.2.2.0.2.</span> <span class="nav-text">指数分布$X\sim E(\lambda)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#正态分布-X-sim-N-mu-sigma-2"><span class="nav-number">1.2.2.0.3.</span> <span class="nav-text">正态分布$X\sim N(\mu,\sigma^2)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对数分布"><span class="nav-number">1.2.2.0.4.</span> <span class="nav-text">对数分布</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#chi-2-分布（卡方分布）-X-sim-chi-2-n"><span class="nav-number">1.2.2.0.5.</span> <span class="nav-text">$\chi^2$分布（卡方分布）$X\sim\chi^2(n)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#t-分布-X-sim-t-n"><span class="nav-number">1.2.2.0.6.</span> <span class="nav-text">$t$分布$X\sim t(n)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#F-分布-X-sim-F-n-m"><span class="nav-number">1.2.2.0.7.</span> <span class="nav-text">$F$分布$X\sim F(n,m)$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-分布（伽马分布）-X-sim-Gamma-alpha-beta"><span class="nav-number">1.2.2.0.8.</span> <span class="nav-text">$\Gamma$分布（伽马分布）$X\sim\Gamma(\alpha,\beta)$</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-指数族分布"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.3 指数族分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-次序统计量"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 次序统计量</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Feng Pan</p>
+  <div class="site-description" itemprop="description">高等数理统计、高等概率论学习心得</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feng Pan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="第二章 充分统计量、完备性、样本信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高等数理统计—第二章 充分统计量、完备性、样本信息">
+<meta property="og:url" content="http://www.fengpan.xyz/2019/12/05/高等数理统计—第二章-完全充分统计量/index.html">
+<meta property="og:site_name" content="风磐&#39;Blog">
+<meta property="og:description" content="第二章 充分统计量、完备性、样本信息">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-01T10:07:16.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高等数理统计—第二章 充分统计量、完备性、样本信息">
+<meta name="twitter:description" content="第二章 充分统计量、完备性、样本信息">
+  <link rel="canonical" href="http://www.fengpan.xyz/2019/12/05/高等数理统计—第二章-完全充分统计量/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>高等数理统计—第二章 充分统计量、完备性、样本信息 | 风磐'Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风磐'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">谁无暴风劲雨时 守得云开见月明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://www.fengpan.xyz/2019/12/05/高等数理统计—第二章-完全充分统计量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng Pan">
+      <meta itemprop="description" content="高等数理统计、高等概率论学习心得">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风磐'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">高等数理统计—第二章 充分统计量、完备性、样本信息
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-05 16:21:13" itemprop="dateCreated datePublished" datetime="2019-12-05T16:21:13+08:00">2019-12-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-01 18:07:16" itemprop="dateModified" datetime="2019-12-01T18:07:16+08:00">2019-12-01</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="第二章-充分统计量、完备性、样本信息"><a href="#第二章-充分统计量、完备性、样本信息" class="headerlink" title="第二章 充分统计量、完备性、样本信息"></a>第二章 充分统计量、完备性、样本信息</h1><a id="more"></a><h2 id="2-1-统计量"><a href="#2-1-统计量" class="headerlink" title="2.1 统计量"></a>2.1 统计量</h2><p>统计量是样本的函数，从本质上说，统计量也是一个随机变量，因此有统计量的分布。</p>
+<p>但是当样本 $X$ 的值取定后，统计量便不再是随机变量了。</p>
+<p>通俗地讲，统计量$T=T(X)$是对样本$X$的一个“加工”或压缩。</p>
+<p>既然是用压缩以后的统计量$T(X)$来推断总体，与原样本来推断总体总体，效果是否一样？是否会损失有用的信息？如果效果一样，没有损失信息，我们就称该统计量为充分统计量。</p>
+<h2 id="2-2-充分统计量"><a href="#2-2-充分统计量" class="headerlink" title="2.2 充分统计量"></a>2.2 充分统计量</h2><h3 id="2-2-1-基本概念"><a href="#2-2-1-基本概念" class="headerlink" title="2.2.1 基本概念"></a>2.2.1 基本概念</h3><p>统计量是对样本的一个加工或压缩，通俗地讲</p>
+<script type="math/tex; mode=display">
+X所包含的关于参数\theta的信息=T(X)包含关于参数\theta的信息+T(X)已知后X还包含的关于参数\theta的信息</script><p>若$T(X)$是充分统计量，则后者（T(X)已知后X还包含的信息）应当为零，即$T(X)$已知后，X不再包含关于$\theta$的信息。严格来讲，就是$T(X)$已知后，X的条件分布不再与$\theta$有关。由此可引出以下定义：</p>
+<p><strong>定义2.1</strong> 给定$X\sim(\mathbb{X},\mathcal{B}_X,P^X_\theta),\theta\in\Theta,~T(X)$称为<strong>充分统计量</strong>，若条件概率$P^X_\theta(A|T(X)=t)\stackrel{d}{=}P^X_\theta(A|t)$与$\theta$无关，即条件分布$F(x|t,\theta)$或条件密度$f(x|t;\theta)$与$\theta$无关。 </p>
+<blockquote>
+<p>具体来说，我们需要考察条件密度函数$f(X|t)=\frac{f(X,T(X)=t)}{f(T(X)=t)}$或条件概率$P(X|t)=\frac{P(X,T(X)=t)}{P(T(X)=t)}$是否与$\theta$有关.</p>
+</blockquote>
+<p><strong>定理2.1 (因子分解定理)</strong> $T(X)$为充分统计量的充要条件是$f(x;\theta)$可分解为</p>
+<script type="math/tex; mode=display">
+f(x;\theta)=h(x)g(T(x);\theta)\tag{$1$}</script><p>其中$h(x)$和$g(t;\theta)$都是非负可测函数。</p>
+<p>$\bigstar\bigstar\bigstar$  <strong>判别与导出充分统计量的方法通常有两种：一是直接根据定义判别$X|T$的条件分布是否与参数$\theta$无关；二是应用因子分解定理。</strong></p>
+<p><strong>例1（用定义）</strong>设$X_1,…,X_n$为独立同分布(i.i.d.)的样本，$X_1\sim P(\lambda)$,证明$T=\sum X_i$是充分统计量。</p>
+<p>$X_i\sim e^{-\lambda}\frac{\lambda^{x_i}}{x_i!}$，根据Poisson分布的可加性($X_1+X_2\sim P(\lambda_1+\lambda_2)$)我们有$T=\sum X_i\sim e^{-n\lambda}\frac{(n\lambda)^t}{t!}$</p>
+<p>接下来考察其条件密度函数</p>
+<script type="math/tex; mode=display">
+\begin{align}
+f(x|t)=\frac{f(x,T(x)=t)}{f(T(x)=t)}&=\frac{\prod^n_{i=1}(e^{-\lambda}\frac{\lambda^{x_i}}{x_i!})I\{\sum^n_{i=1} x_i=t\}}{e^{-n\lambda}\frac{(n\lambda)^t}{t!}}\\
+&=\frac{e^{-n\lambda}\lambda^{\Sigma x_i}}{\prod x_i!}\cdot\frac{I\{\sum^n_{i=1} x_i=t\}}{e^{-n\lambda}\frac{(n\lambda)^t}{t!}}\\
+&=\frac{t!I\{\sum^n_{i=1} x_i=t\}}{n^t \prod x_i!}
+\end{align}</script><p>可以看到最后式子中没有$\theta$的存在，所以$T=\sum X_i$是充分统计量。</p>
+<p><strong>例2（用因子分解定理）</strong></p>
+<p>设$X_1,…,X_n$为独立同分布(i.i.d.)的样本，$X_1\sim N(\mu,\sigma^2)$,求充分统计量。</p>
+<script type="math/tex; mode=display">
+f(x;\theta)=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^n\exp\left\{-\frac{1}{2\sigma^2}\left(\sum x^2_i-2\mu\sum x_i+n\mu^2\right)\right\}</script><p>若$\sigma$已知，上式可以写为$((\frac{1}{\sqrt{2\pi}\sigma})^n\cdot\exp\{-\frac{\sum x^2_i}{2\sigma^2}\})\cdot\exp\{-\frac{1}{2\sigma^2}(-2\mu\sum x_i +n\mu^2)\}$符合因子分定理中的$f(x;\theta)=h(x)g(T(x);\theta)$，因此$T=\sum x_i$是充分统计量。</p>
+<p>同理，若$\mu$已知，则$T=\sum(x_i-\mu)^2$是充分统计量。</p>
+<h3 id="2-2-2-极小充分统计量"><a href="#2-2-2-极小充分统计量" class="headerlink" title="2.2.2 极小充分统计量"></a>2.2.2 极小充分统计量</h3><p><strong>定义2.2</strong> 称$T^<em>=T^</em>(X)$为<strong>极小充分统计量</strong>，若$T^<em>=T^</em>(X)$为充分统计量；并且对任一充分统计量$T=T(X)$，都存在$\varphi(\cdot)$，使$T^*(X)=\varphi(T(X))$</p>
+<blockquote>
+<p>由定义可知，极小充分统计量是其他充分统计量的一个”加工”。下面给出求解极小充分统计量的方法。</p>
+</blockquote>
+<p><strong>定理2.2</strong> 设$X=(X_1,…,X_n)’\sim f(x,\theta),\theta\in\Theta,x\in\mathbb{X}$，对任何$x,y\in\mathbb{X}$，若似然比$f(x,\theta)/f(y,\theta)$与$\theta$无关的充要条件为$T^<em>(x)=T^</em>(y)$，且$T^<em>=T^</em>(X)$为充分统计量，则$T^<em>=T^</em>(X)$必为极小充分统计量。</p>
+<blockquote>
+<p>下面依据这个定理给一个例题。</p>
+</blockquote>
+<p><strong>例3</strong> 指数分布族. 设$X_1,…,X_n$为i.i.d.样本，$X_1\sim h(x_1)\exp\{Q’(\theta)T(x_1)-b(\theta)\}$，求极小充分统计量。</p>
+<p>首先有$f(x,\theta)=(\prod^n h(x_i))\exp\{Q’(\theta)\sum^n_i T(x_i)-b(\theta)\}$,接下来考察$f(x,\theta)/f(y,\theta)$有</p>
+<p>$\frac{f(x,\theta)}{f(y,\theta)}=(\prod^n_{i=1}\frac{h(x_i)}{h(y_i)})\exp\{Q’(\theta)[\sum^n_i T(x_i)-\sum^n_i T(y_i)]\}$ 该似然比与$\theta$无关的充要条件是$\sum^n_i T(x_i)=\sum^n_i T(y_i)]$，因此$T^*=\sum^n_i T(X_i)$为极小充分统计量。</p>
+<blockquote>
+<p>以上结果适用于指数族分布的每一个成员。</p>
+</blockquote>
+<h2 id="2-3-完备性（也叫完全性）"><a href="#2-3-完备性（也叫完全性）" class="headerlink" title="2.3 完备性（也叫完全性）"></a>2.3 完备性（也叫完全性）</h2><p>完备性的统计背景不像充分统计量那样好说明，笔者翻阅了多本教材，在提到完备性的理论背景时都没有做详细介绍，陈希孺院士在书中提到：“今后读者会通过有关问题看出这个概念的意义”。在此不再对统计背景做相关介绍，此后遇到相应例题时会说。接下来我们以《参数统计教程》中给出的介绍：<strong>统计量或分布族的完备性与可测函数的数学期望，即积分有关。统计量或分布族的完备性实际上就是积分变换的唯一性</strong>。</p>
+<h3 id="2-3-1-分布族的完备性"><a href="#2-3-1-分布族的完备性" class="headerlink" title="2.3.1 分布族的完备性"></a>2.3.1 分布族的完备性</h3><p><strong>定义2.3</strong> 设$X\sim\mathcal{F}=\{f(x,\theta),\theta\in\Theta\}$,称分布族$\mathcal{F}$为完备的，若对任何可测函数$h(x)$,由$\varphi(x)=E_\theta[h(X)]=\int h(x)F_\theta(x)=0$对任何$\theta\in\Theta$成立，可推出$h(x)=0(a.e.P_\theta)$.  或等价地，由$E_\theta[h_1(X)]=E_\theta[h_2(X)]$对任何$\theta\in\Theta$成立，可推出$h_1(x)=h_2(x)(a.e.P_\theta)$.</p>
+<blockquote>
+<p>一般我们以第一种表述来判别完备性，即$\varphi(x)=E_\theta[h(X)]=\int h(x)F_\theta(x)=0\Longrightarrow h(x)=0(a.e.P_\theta)$.</p>
+<p>可由常用的积分变换（傅里叶变换、拉普拉斯变换）的唯一性来判别分布族的完备性。</p>
+</blockquote>
+<p><strong>例4</strong>  考察二项分布族$\mathcal{F}=\{b(n,\theta),\theta\in(0,1)\}$的完备性。</p>
+<p>若对任何$\theta$有$\varphi(\theta)=E_\theta[h(X)]=0$，即$\varphi(\theta)=\sum^n_{x=0}h(x) \binom{n}{x}\theta^x(1-\theta)^{n-x}=0$，由此可推出(一般是去掉常数与明显不为0的部分)$\sum^n_{x=0}h(x) \binom{n}{x}(\frac{\theta}{1-\theta})^x=0$,该式为$y=\frac{\theta}{1-\theta}$的n次多项式，它对一切$y&gt;0$为零，则其系数必为零，即$h(x) \binom{n}{x}=0$，所以$h(x)=0,x=0,1,2,…,n$.</p>
+<blockquote>
+<p>从这个问题中可以引出一个结论，$T=\sum x_i$是两点分布的完备充分统计量。不明白没关系，看下面例6。</p>
+</blockquote>
+<h3 id="2-3-2-完备统计量"><a href="#2-3-2-完备统计量" class="headerlink" title="2.3.2 完备统计量"></a>2.3.2 完备统计量</h3><p><strong>统计量的完备性，即它对应的分布族的完备性。</strong></p>
+<p><strong>例5</strong> 设$X_1,..X_n$独立同分布，$X_1\sim f(x_1,\theta)$且$E(X_1)$存在，则分布族$X=(X_1,…,X_n)\sim \{f(x,\theta)=\prod f(x_i,\theta),\theta\in\Theta\}$在任何情况下都不完备。</p>
+<blockquote>
+<p>证明的话取一个反例即可，$h(x)=x_1-x_2,E(h(x))=0,h(x)\not=0$</p>
+</blockquote>
+<p>由此可见，<strong>对常见的独立同分布样本而言，其分布族都是不完备的</strong>，但是该分布族中可能存在完备的统计量。在上例中，若$X_1\sim N(\mu,\sigma)$,则对应于$X_1$或$\overline{X}$的分布族完备。<strong>（$\bigstar$）因此统计量的完备性，即它所对应分布族的完备性。</strong></p>
+<p><strong>定义2.4</strong>$\bigstar$ 设$X\sim \mathcal{F}_X=\{f(x,\theta),\theta\in\Theta\}$,统计量$T=T(X)$对应的分布族为$T\sim\mathcal{F}_T=\{g(t,\theta),\theta\in\Theta\}$，若分布族$\mathcal{F}_T$完备，则称$T=T(X)$为完备的统计量。即 由$E_\theta(h(T))=0$对任何$\theta$成立，可推出$h(t)=0(a.e.P^T_\theta)$</p>
+<p><strong>例6</strong>  设$X_1,..X_n$独立同分布，均服从参数为$\theta$的两点分布，证明$T=T(X)=\sum X_i$是完备统计量</p>
+<p>证：因为$n$次独立的两点分布之和为二项分布，即$T\sim\mathcal{F}_T=\{g(t,\theta)=\sum^n_{x=0}h(x) \binom{n}{x}\theta^x(1-\theta)^{n-x},\theta\in\Theta\}$</p>
+<p>我们从<strong>例4</strong>中得到了$h(x)=0,x=0,1,2,…,n$，因此分布族$\mathcal{F}_T$是完备的，$T=T(X)=\sum X_i$为完备的统计量</p>
+<blockquote>
+<p>结合前文，我们用了一个很简单的例子来讲明白完备统计量。实际上求完备还是很难的，因为要涉及拉氏变换、傅氏变换，若要提高能力，还是要做难题。</p>
+</blockquote>
+<h3 id="2-3-3-指数族统计量的完备性"><a href="#2-3-3-指数族统计量的完备性" class="headerlink" title="2.3.3 指数族统计量的完备性"></a>2.3.3 指数族统计量的完备性</h3><p>其实在第一章讲指数族分布的<strong>定理1.1</strong>我们已经给出了这个定理，这里我们重新提一下。</p>
+<p><strong>定理2.3</strong> 设$X\sim f(x,\theta)=h(x)e^{\theta’T(x)-b(\theta)},\theta\in\Theta$，假设$\Theta$有内点，则</p>
+<p>（1）$T=T(x)=(T_1(x),…,T_k(x))$为完备的极小充分统计量。</p>
+<p>（2） 若$X_1,..X_n$为其$n$个独立同分布的样本，则$T(x)=(\sum^n_{i=1}T_1(X_i),…,\sum^n_{i=1}T_k(X_i))$为完备的极小充分统计量。</p>
+<blockquote>
+<p>表达公式与之前略有所区别，但这不是重点，我们给出一个例题来理解这个定理，之前第一章没给。</p>
+</blockquote>
+<p><strong>例7</strong> 设$X_1,..X_n$独立同分布，均服从参数为$\theta(\theta&gt;0)$的指数分布，即密度函数为$p(t,\theta)=\frac{1}{\theta}e^{-\frac{t}{\theta}},t&gt;0$，样本$X=(X_1,…,X_n)$，$X$的概率密度函数为$f(x;\theta)=\prod^n_{i=1}p(x_i;\theta)=\frac{1}{\theta^n}e^{-\frac{1}{\theta}\sum x_i},x_1,…,x_n&gt;0$.今取样本空间为$\mathbb{X}=\{x=(x_1,…,x_n):x_1,…,x_n&gt;0\}$可写$f(x;\theta)=\exp\{-\frac{1}{\theta}\sum x_i-n\ln{\theta}\}=\exp\{\xi(\theta)T(x)-B(\theta)\}$其中$T(x)=-\sum x_i,\xi(\theta)=\frac{1}{\theta},B(\theta)=n\ln(\theta)$,参数空间为$\Theta=\{\theta:\theta&gt;0\}=(0,\infty)$</p>
+<p>参数变换$g:\Theta\rightarrow\mathbb{R},\theta\rightarrow g(\theta)=\frac{1}{\theta}$，可以看出在参数变换$g$下$\Theta$的值域为$\Theta_1=(0,\infty)$。变换$g$是一一对应，其逆映射$g^{-1}$为$\xi\rightarrow g^{-1}(\xi)=\frac{1}{\xi}$，分布族的概率密度在自然参数$\xi$下的表达式为$f(x;\xi)=\exp\{\xi T(x)-A(\xi)\}$，其中$A(\xi)=B(g^{-1}(\xi))=n\ln{\frac{1}{\xi}}=-n\ln{\xi}$由此得到分布的自然参数形式为$f(x;\xi)=\exp\{\xi(-\sum x_i)+n\ln{\xi}\}.(\xi&gt;0)$.</p>
+<p>显然新的参数空间$\Theta_1=(0,\infty)$包含内点（因为是开集，开集包含内点），用定理2.3可知统计量$T(X)=-\sum X_i$为一个完全(完备)充分统计量。同样地样本均值$\overline{X}=\frac{1}{n}\sum X_i$也是一个完全充分统计量。</p>
+<h3 id="2-3-4-Basu定理"><a href="#2-3-4-Basu定理" class="headerlink" title="2.3.4 Basu定理"></a>2.3.4 Basu定理</h3><p>充分性要求统计量要包含$\theta$的全部信息，若统计量不包含任何与$\theta$有关的信息，就称其为辅助统计量。</p>
+<p><strong>定义2.5</strong> 设$X\sim\{f(x,\theta),\theta\in\Theta\}$，若统计量$A=A(X)$的分布与$\theta$无关，则称$A(X)$为<strong>辅助统计量</strong>。</p>
+<p><strong>例8</strong> 设$X_1,…，X_n$独立同分布，$X_1\sim N(\theta,1)$,则$S=\sum(X_i-\overline{X})^2$为辅助统计量，因为$S\sim\chi^2(n-1)$与$\theta$无关。$T=X_{(n)}-X_{(1)}$亦为辅助统计量，因为$T=(X_{(n)}-\theta)-(X_{(1)}-\theta)=Y_{(n)}-Y_{(1)}$，而$Y_i=X_i-\theta\sim N(0,1)$，其分布与$\theta$无关。</p>
+<p><strong>定理2.4(Basu定理)</strong>  设$X\sim\{f(x,\theta),\theta\in\Theta\},T=T(X)$为完备充分统计量，$A=A(X)$为辅助统计量，则$T(X)$与$A(X)$独立。</p>
+<p><strong>例9</strong> 设$X_1,…，X_n$独立同分布，均服从$N(\mu,\sigma^2)$,样本为$X=(X_1,…,X_n)$，分布参数$\theta=(\mu,\sigma^2)$，参数空间为$\Theta=\{\theta=(\mu,\sigma^2)|\mu\in(-\infty,+\infty),\sigma^2&gt;0\}$，相应的分布族为$\mathbb{P}=\{P_\theta=P_{(\mu,\sigma^2)}|\theta=(\mu,\sigma^2)\in\Theta\}$，这里$P_\theta$为样本$X$的概率分布。证明：样本均值与样本方差相互独立。</p>
+<p>固定$\sigma^2$，考虑下面的分布族（原分布族$\mathbb{P}$的子族）$\mathbb{P}_0=\{P_\theta=P_{(\mu,\sigma^2)}|\mu\in(-\infty,+\infty)\}$，对于该分布族，$\sigma^2$视为已知常数，此时的分布参数为$\mu$。根据之前的因子分解定理我们知道，样本均值$\overline{X}$是关于分布族$\mathbb{P}_0$的充分统计量；根据定理2.3，我们知道样本均值$\overline{X}$是完备统计量，因此样本均值$\overline{X}$是完备充分统计量。由例8我们知道样本方差$S^2$在$\sigma$给定的条件下为辅助统计量。因此由Basu定理，完全充分统计量$\overline{X}$与辅助统计量$S^2$相互独立。</p>
+<h2 id="2-4-分布族的信息函数"><a href="#2-4-分布族的信息函数" class="headerlink" title="2.4 分布族的信息函数"></a>2.4 分布族的信息函数</h2><p>分布族的信息函数与充分统计量有紧密联系，比如我们用统计量$T(X)$代替原有样本做统计推断，不应有信息损失。那么何为‘信息’？</p>
+<p>首先本需要给出一组正则条件，这是定义Fisher信息所必需的，由于该条件对于许多常见的情形都能满足，因此我们在此略去。满足该组正则条件的分布族称为正则分布族（也叫Cramer-Rao正则分布族/<strong>C-R分布族</strong>）</p>
+<h3 id="2-4-1-分布参数-theta-为一维的情况"><a href="#2-4-1-分布参数-theta-为一维的情况" class="headerlink" title="2.4.1 分布参数$\theta$为一维的情况"></a>2.4.1 分布参数$\theta$为一维的情况</h3><p><strong>定义2.6</strong> 一维Fisher信息. 若$X\sim\{f(x,\theta),\theta\in\Theta\}$为正则分布族，则</p>
+<script type="math/tex; mode=display">
+I(\theta)=E_\theta\left(\frac{d}{d\theta}\ln f(X;\theta)\right)^2</script><p>称为分布族关于参数$\theta$的Fisher信息函数。</p>
+<blockquote>
+<p>但按照上面的公式计算Fisher信息往往较为复杂或困难。因此有下述命题。</p>
+</blockquote>
+<p><strong>命题1</strong> 若$f(x;\theta)$关于$\theta$具有二阶导数，又设积分$\int f(x;\theta)d\nu$可在积分号下连续两次(关于$\theta$)求导数，即</p>
+<p>$\int \frac{d}{d\theta}f(x;\theta)d\nu=0,\int\frac{d^2}{d\theta^2}f(x;\theta)d\nu=0$，则Fisher信息$I(\theta)$可以如下计算，</p>
+<script type="math/tex; mode=display">
+I(\theta)=-E_\theta\left(\frac{d^2}{d\theta^2}\ln f(X;\theta)\right)  \tag{2}</script><p><strong>例10</strong> 设$X\sim b(1,\theta)$为两点分布，求$X$关于$\theta$的Fisher信息</p>
+<p>解：直接计算</p>
+<script type="math/tex; mode=display">
+X\sim f(x,\theta)=\theta^x(1-\theta)^{1-x}\\
+L(\theta,x)=x\ln \theta+(1-x)\ln(1-\theta)\\
+\frac{dL}{d\theta}=\frac{x}{\theta}-\frac{1-x}{1-\theta}=\frac{x-\theta}{\theta(1-\theta)}\\
+\frac{d^2L}{d\theta^2}=\frac{-\theta^2-x+2x\theta}{\theta^2(1-\theta)^2}</script><p>于是有$I(\theta)=-E_\theta(\frac{d^2L}{d\theta^2})=\frac{1}{\theta(1-\theta)}$</p>
+<blockquote>
+<p>上式在计算期望时用到了$E(x)=\theta$（两点分布的期望值）</p>
+</blockquote>
+<p>如果我们在题目中换个条件，改成：$X_1,…,X_n$独立同分布，$X_1\sim b(1,\theta)$，那么我们在上述计算的时候就变成了（$x=(x_1,…,x_n)$）</p>
+<script type="math/tex; mode=display">
+f(x,\theta)=\theta^{\sum x_i}(1-\theta)^{\sum(1-x_i)}\\
+L(\theta,x)=(\sum x_i)\ln \theta+(\sum(1-x_i))\ln(1-\theta)\\
+\frac{dL}{d\theta}=\frac{\sum x_i}{\theta}-\frac{\sum(1-x_i)}{1-\theta}\\
+\frac{d^2L}{d\theta^2}=-\left(\frac{\sum x_i}{\theta^2}+\frac{\sum(1-x_i)}{(1-\theta)^2}\right)</script><p>于是有$I(\theta)=-E_\theta(\frac{d^2L}{d\theta^2})=\frac{n}{\theta(1-\theta)}$</p>
+<blockquote>
+<p>因此我们在读题的时候，要看清究竟是一个X还是n个独立同分布的X</p>
+</blockquote>
+<h3 id="2-4-2-分布参数-theta-为多维的情况"><a href="#2-4-2-分布参数-theta-为多维的情况" class="headerlink" title="2.4.2 分布参数$\theta$为多维的情况"></a>2.4.2 分布参数$\theta$为多维的情况</h3><p><strong>定义2.6</strong> Fisher信息. 若$X\sim\{f(x,\theta),\theta\in\Theta\}$为正则分布族，则</p>
+<script type="math/tex; mode=display">
+I_{ij}(\theta)=E_\theta\left[\frac{\partial \ln f(x,\theta)}{\partial \theta_i} \frac{\partial \ln f(x,\theta)}{\partial\theta_j}\right].I(\theta)=(I_{ij}(\theta))_{k\times k}</script><p>分别称为分布族关于参数$\Theta$的Fisher信息函数和Fisher信息阵。</p>
+<p><strong>命题2</strong> 若$f(x;\theta)$关于$\theta$具有二阶导数，又设积分$\int f(x;\theta)d\nu$可在积分号下连续两次(关于$\theta$)求偏导，即$\int \frac{\partial^2}{\partial\theta_i\partial\theta_j}f(x;\theta)d\nu=\frac{\partial^2}{\partial\theta_i\partial\theta_j}[\int f(x;\theta)d\nu]=0$，则Fisher信息$I(\theta)$可以如下计算，</p>
+<script type="math/tex; mode=display">
+I_{ij}(\theta)=-E_\theta\left(\frac{\partial^2}{\partial\theta_i\partial\theta_j}\ln f(X;\theta)\right)    \tag{3}</script><p><strong>例10</strong> 设$X\sim N(\mu,\sigma^2)$为正态分布，求$X$关于$\theta=(\mu,\sigma^2)$的Fisher信息。</p>
+<p>解：直接计算</p>
+<script type="math/tex; mode=display">
+\ln f(x,\theta)=-\frac{1}{2}\ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}(x-\mu)^2\\
+\frac{\partial\ln f(x,\theta)}{\partial\mu}=\frac{x-\mu}{\sigma^2}\\
+\frac{\partial^2\ln f(x,\theta)}{\partial\mu^2}=-\frac{1}{\sigma^2}\\
+\frac{\partial\ln f(x,\theta)}{\partial(\sigma^2)}=-\frac{1}{2\sigma^2}+\frac{(x-\mu)^2}{2\sigma^4}\\
+\frac{\partial^2\ln f(x,\theta)}{\partial(\sigma^2)^2}=\frac{1}{2\sigma^4}-\frac{2(x-\mu)^2}{\sigma^6}\\
+\frac{\partial^2\ln f(x,\theta)}{\partial\mu\partial(\sigma^2)}=\frac{\mu-x}{\sigma^4}</script><p>利用公式（3），以及$E(x)=\mu,E(x-\mu)^2=\sigma^2$我们得到信息阵：</p>
+<script type="math/tex; mode=display">
+I(\mu,\sigma^2)=\begin{pmatrix}
+\frac{1}{\sigma^2} & 0 \\
+0 & \frac{1}{2\sigma^4}
+\end{pmatrix}</script><p><strong>定义2.7</strong> 若$T=T(X)\sim\{g(t,\theta),\theta\in\Theta\}$为正则分布族，$L(\theta,t)=\ln g(t,\theta)$，则$T(X)$关于参数$\theta$的Fisher信息定义为</p>
+<script type="math/tex; mode=display">
+I_{Tij}(\theta)=E_\theta\left[\frac{\partial L(\theta,T)}{\partial \theta_i} \frac{\partial L(\theta,T)}{\partial\theta_j}\right].I_T(\theta)=(I_{Tij}(\theta))</script><blockquote>
+<p>在后面，我们要计算统计量的Fisher信息以计算C-R不等式以及统计量的效。这里给出统计量的Fisher信息计算公式，后面到相关内容时会详细讲。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/24/测度与概率第一讲/" rel="next" title="概率与测度—绪论+1.1节 集类与sigma域">
+                  <i class="fa fa-chevron-left"></i> 概率与测度—绪论+1.1节 集类与sigma域
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/12/05/高等数理统计—第三章-点估计/" rel="prev" title="高等数理统计—第三章 点估计">
+                  高等数理统计—第三章 点估计 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-充分统计量、完备性、样本信息"><span class="nav-number">1.</span> <span class="nav-text">第二章 充分统计量、完备性、样本信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-统计量"><span class="nav-number">1.1.</span> <span class="nav-text">2.1 统计量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-充分统计量"><span class="nav-number">1.2.</span> <span class="nav-text">2.2 充分统计量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.2.1 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-极小充分统计量"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2.2 极小充分统计量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-完备性（也叫完全性）"><span class="nav-number">1.3.</span> <span class="nav-text">2.3 完备性（也叫完全性）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-分布族的完备性"><span class="nav-number">1.3.1.</span> <span class="nav-text">2.3.1 分布族的完备性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-完备统计量"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.3.2 完备统计量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-指数族统计量的完备性"><span class="nav-number">1.3.3.</span> <span class="nav-text">2.3.3 指数族统计量的完备性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4-Basu定理"><span class="nav-number">1.3.4.</span> <span class="nav-text">2.3.4 Basu定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-分布族的信息函数"><span class="nav-number">1.4.</span> <span class="nav-text">2.4 分布族的信息函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-分布参数-theta-为一维的情况"><span class="nav-number">1.4.1.</span> <span class="nav-text">2.4.1 分布参数$\theta$为一维的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-分布参数-theta-为多维的情况"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.4.2 分布参数$\theta$为多维的情况</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Feng Pan</p>
+  <div class="site-description" itemprop="description">高等数理统计、高等概率论学习心得</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feng Pan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+</body>
+</html>
